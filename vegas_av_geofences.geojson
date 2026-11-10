@@ -11,16 +11,16 @@
         ]
       },
       "properties": {
-        "id": "stand-f1-koval",
-        "title": "F1 construction: Koval Ln lane reduction",
-        "venue": "Koval Ln (Rochelle - Westchester)",
-        "type": "STANDING_CLOSURE",
+        "id": "f1-koval-lane",
+        "title": "F1 Track: Koval Ln Barrier & Reduction",
+        "venue": "Koval Ln (Flamingo to Harmon)",
+        "type": "F1_CLOSURE",
         "severity": "CRITICAL",
-        "geonet_proximity": "144 m from geonet",
-        "source": "Clark County / RTC Seeing Orange",
+        "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Clark County / F1 Permitting",
         "pudo_status": "Standard",
         "ped_density": "Standard",
-        "detour": "Koval reduced to 1 lane each direction. Shift fleet to Paradise Rd."
+        "detour": "Koval restricted to 1 lane. Shift AV fleet to Paradise Rd."
       }
     },
     {
@@ -33,16 +33,104 @@
         ]
       },
       "properties": {
-        "id": "stand-f1-sands",
-        "title": "F1 construction: Sands Ave & Spring Mountain",
+        "id": "f1-sands-springmtn",
+        "title": "F1 Track: Sands Ave & Koval Intersection",
         "venue": "Sands Ave @ Koval Ln",
-        "type": "STANDING_CLOSURE",
+        "type": "F1_CLOSURE",
         "severity": "CRITICAL",
-        "geonet_proximity": "108 m from geonet",
-        "source": "Clark County / RTC Seeing Orange",
+        "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Clark County / F1 Permitting",
         "pudo_status": "Standard",
         "ped_density": "Standard",
-        "detour": "24-hr closure near Las Vegas Blvd. Shift traffic to Desert Inn Arterial."
+        "detour": "Severe turn throttling. Divert north fleet to Desert Inn Arterial."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1655,
+          36.1082
+        ]
+      },
+      "properties": {
+        "id": "f1-harmon-strip",
+        "title": "F1 Track: Harmon Ave Paddock Access",
+        "venue": "East Harmon Ave @ Audrie St",
+        "type": "F1_CLOSURE",
+        "severity": "CRITICAL",
+        "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Clark County / F1 Permitting",
+        "pudo_status": "Standard",
+        "ped_density": "Standard",
+        "detour": "Paddock logistics active. Use Tropicana Ave for cross-valley travel."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.184,
+          36.101
+        ]
+      },
+      "properties": {
+        "id": "so-i15-tropicana",
+        "title": "I-15 / Tropicana Interchange Project",
+        "venue": "I-15 at Tropicana Ave",
+        "type": "RTC_SEEING_ORANGE",
+        "severity": "CRITICAL",
+        "geonet_proximity": "Valley Wide Regional Domain",
+        "source": "Seeing Orange (NDOT)",
+        "pudo_status": "Standard",
+        "ped_density": "Standard",
+        "detour": "Active ramp shifts. Use Russell Rd or Flamingo Rd exits."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.21,
+          36.068
+        ]
+      },
+      "properties": {
+        "id": "so-cc215-south",
+        "title": "CC-215 Beltway Widening (Decatur - Jones)",
+        "venue": "CC-215 Beltway South",
+        "type": "RTC_SEEING_ORANGE",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Wide Regional Domain",
+        "source": "Seeing Orange (Clark County)",
+        "pudo_status": "Standard",
+        "ped_density": "Standard",
+        "detour": "Nighttime lane closures. Plan for 45 mph speed limit."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.163,
+          36.1585
+        ]
+      },
+      "properties": {
+        "id": "so-charleston-downtown",
+        "title": "Charleston Blvd Reconstruction",
+        "venue": "Charleston Blvd (Rancho to Grand Central)",
+        "type": "RTC_SEEING_ORANGE",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Wide Regional Domain",
+        "source": "Seeing Orange (City of Las Vegas)",
+        "pudo_status": "Standard",
+        "ped_density": "Standard",
+        "detour": "Right lane closed. Shift traffic to Bonneville Ave."
       }
     },
     {
