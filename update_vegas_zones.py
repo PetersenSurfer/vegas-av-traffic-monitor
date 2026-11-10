@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 from datetime import datetime, timedelta, timezone
 import requests
 
@@ -8,9 +9,14 @@ TM_API_KEY = os.getenv("TM_API_KEY", "")
 LAS_VEGAS_LAT = 36.1147
 LAS_VEGAS_LNG = -115.1728
 
-# Full Valley Bounding Box matching Seeing Orange map
+# Full Valley Bounding Box matching Seeing Orange extent
 MIN_LAT, MAX_LAT = 35.95, 36.35
 MIN_LNG, MAX_LNG = -115.38, -114.95
+
+BROWSER_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*"
+}
 
 VENUE_PROFILES = {
     "T-Mobile Arena": {
@@ -67,9 +73,8 @@ VENUE_PROFILES = {
 
 def fetch_weather_advisories():
     url = "https://api.weather.gov/alerts/active?zone=NVZ020"
-    headers = {"User-Agent": "AV-Mission-Control/1.0"}
     try:
-        res = requests.get(url, headers=headers, timeout=5)
+        res = requests.get(url, headers={"User-Agent": "AV-Mission-Control/1.0"}, timeout=6)
         if res.status_code == 200:
             features = res.json().get("features", [])
             if features:
@@ -79,19 +84,22 @@ def fetch_weather_advisories():
     return "Normal Mojave Operations (No Active Alerts)"
 
 def extract_coords(geom):
-    if not geom:
+    if not isinstance(geom, dict):
         return None, None
-    if "y" in geom and "x" in geom:
-        return geom["y"], geom["x"]
-    if "paths" in geom and len(geom["paths"]) > 0:
-        pts = geom["paths"][0]
-        if pts:
-            mid = len(pts) // 2
-            return pts[mid][1], pts[mid][0]
+    try:
+        if "y" in geom and "x" in geom and geom["y"] is not None and geom["x"] is not None:
+            return float(geom["y"]), float(geom["x"])
+        if "paths" in geom and isinstance(geom["paths"], list) and len(geom["paths"]) > 0:
+            pts = geom["paths"][0]
+            if pts and len(pts) > 0:
+                mid = len(pts) // 2
+                pt = pts[mid]
+                return float(pt[1]), float(pt[0])
+    except Exception:
+        pass
     return None, None
 
 def get_f1_strip_standing():
-    """Dedicated F1 circuit and immediate Strip track restrictions."""
     now = datetime.now(timezone.utc)
     return [
         {
@@ -145,8 +153,6 @@ def get_f1_strip_standing():
     ]
 
 def fetch_seeing_orange_regional():
-    """Fetches the full valley-wide Seeing Orange construction layer shown on the portal."""
-    headers = {"User-Agent": "AV-Fleet-Dispatch/1.0"}
     regional_work = []
     seen = set()
 
@@ -166,49 +172,49 @@ def fetch_seeing_orange_regional():
     }
 
     try:
-        res = requests.get(url, params=params, headers=headers, timeout=10)
+        res = requests.get(url, params=params, headers=BROWSER_HEADERS, timeout=10)
         if res.status_code == 200:
-            for feat in res.json().get("features", []):
-                props = feat.get("attributes", {})
-                geom = feat.get("geometry", {})
+            features = res.json().get("features", [])
+            for feat in features:
+                props = feat.get("attributes", {}) or {}
+                geom = feat.get("geometry", {}) or {}
                 lat, lng = extract_coords(geom)
 
-                if lat and lng and (MIN_LAT <= lat <= MAX_LAT) and (MIN_LNG <= lng <= MAX_LNG):
-                    oid = props.get("OBJECTID") or f"{lat}_{lng}"
+                if lat is not None and lng is not None and (MIN_LAT <= lat <= MAX_LAT) and (MIN_LNG <= lng <= MAX_LNG):
+                    oid = props.get("OBJECTID") or f"{lat:.4f}_{lng:.4f}"
                     if oid in seen:
                         continue
                     seen.add(oid)
 
-                    name = props.get("PROJECT_NAME") or props.get("ProjectName") or "RTC Regional Roadwork"
-                    agency = props.get("AGENCY") or props.get("Agency") or "RTC / NDOT"
-                    details = props.get("RESTRICTION_DESC") or props.get("Scope") or "Lane reduction / capital project."
-                    loc = props.get("LOCATION") or props.get("Location") or "Valley Arterial"
-                    end_date = props.get("EST_COMPLETION") or props.get("EndDate") or "Capital Project"
+                    name = str(props.get("PROJECT_NAME") or props.get("ProjectName") or "RTC Regional Roadwork")
+                    agency = str(props.get("AGENCY") or props.get("Agency") or "RTC / NDOT")
+                    details = str(props.get("RESTRICTION_DESC") or props.get("Scope") or "Lane reduction / capital project.")
+                    loc = str(props.get("LOCATION") or props.get("Location") or "Valley Arterial")
+                    end_date = str(props.get("EST_COMPLETION") or props.get("EndDate") or "Capital Project")
 
-                    # Avoid placing F1 work in the generic Seeing Orange folder
                     if "F1" in name.upper() or "FORMULA" in name.upper():
                         continue
 
                     regional_work.append({
                         "id": f"so-{oid}",
                         "title": name,
-                        "venue": str(loc),
+                        "venue": loc,
                         "source": f"Seeing Orange ({agency})",
                         "type": "RTC_SEEING_ORANGE",
                         "start_time": datetime.now(timezone.utc).isoformat(),
-                        "duration": str(end_date),
+                        "duration": end_date,
                         "severity": "MODERATE",
                         "impact_tier": "Regional Capital",
-                        "latitude": float(lat),
-                        "longitude": float(lng),
+                        "latitude": lat,
+                        "longitude": lng,
                         "geonet_dist": "Valley Wide Regional Domain",
                         "exclusion_radius": 400,
                         "recommended_detour": f"{details} Anticipate speed reductions in work zone."
                     })
     except Exception as e:
-        print(f"Seeing Orange regional query notice: {e}")
+        print(f"Seeing Orange regional notice: {e}")
 
-    # Fallback representative projects if ArcGIS service is under maintenance
+    # Fallback regional projects so data is always present
     if not regional_work:
         regional_work.extend([
             {
@@ -265,20 +271,19 @@ def fetch_seeing_orange_regional():
 
 def fetch_open_incidents():
     url = "https://nvroads.com/api/v2/get/events"
-    headers = {"User-Agent": "AV-Fleet-Dispatch/1.0"}
     events = []
     try:
-        res = requests.get(url, headers=headers, timeout=8)
+        res = requests.get(url, headers=BROWSER_HEADERS, timeout=8)
         if res.status_code == 200:
             for item in res.json():
                 lat = item.get("latitude")
                 lng = item.get("longitude")
-                if lat and lng and (MIN_LAT <= lat <= MAX_LAT) and (MIN_LNG <= lng <= MAX_LNG):
-                    headline = item.get("headline", "Road Incident")
+                if lat is not None and lng is not None and (MIN_LAT <= float(lat) <= MAX_LAT) and (MIN_LNG <= float(lng) <= MAX_LNG):
+                    headline = str(item.get("headline", "Road Incident"))
                     events.append({
                         "id": f"nv-open-{item.get('id', lat)}",
                         "title": headline,
-                        "venue": item.get("roadName", "Las Vegas Corridor"),
+                        "venue": str(item.get("roadName", "Las Vegas Corridor")),
                         "source": "NV 511 / RTC FAST",
                         "type": "LIVE_INCIDENT",
                         "start_time": datetime.now(timezone.utc).isoformat(),
@@ -421,11 +426,11 @@ def main():
     combined = []
     weather_info = fetch_weather_advisories()
 
-    # 1. Dedicated F1 & Strip Core Closures
+    # 1. F1 Strip Core Work
     combined.extend(get_f1_strip_standing())
-    # 2. Regional Seeing Orange Valley-Wide Capital Projects
+    # 2. Seeing Orange Regional Projects
     combined.extend(fetch_seeing_orange_regional())
-    # 3. Live Hazards & Open 511 Incidents
+    # 3. Live Incidents
     combined.extend(fetch_open_incidents())
     # 4. Conventions & Ticketmaster Events
     combined.extend(fetch_conventions())
@@ -434,4 +439,39 @@ def main():
     payload = {
         "metadata": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "active_
+            "active_events_count": len(combined),
+            "weather_advisory": weather_info,
+            "system_name": "Mapping Event Mission Control"
+        },
+        "events": combined
+    }
+
+    with open("vegas_events.json", "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+
+    features = []
+    for ev in combined:
+        features.append({
+            "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": [ev["longitude"], ev["latitude"]]},
+            "properties": {
+                "id": ev["id"],
+                "title": ev["title"],
+                "venue": ev["venue"],
+                "type": ev["type"],
+                "severity": ev["severity"],
+                "geonet_proximity": ev["geonet_dist"],
+                "source": ev.get("source", "Standard"),
+                "pudo_status": ev.get("pudo_status", "Standard"),
+                "ped_density": ev.get("ped_density", "Standard"),
+                "detour": ev["recommended_detour"]
+            }
+        })
+
+    with open("vegas_av_geofences.geojson", "w", encoding="utf-8") as f:
+        json.dump({"type": "FeatureCollection", "features": features}, f, indent=2)
+
+    print(f"Pipeline successfully generated {len(combined)} active operational elements.")
+
+if __name__ == "__main__":
+    main()
