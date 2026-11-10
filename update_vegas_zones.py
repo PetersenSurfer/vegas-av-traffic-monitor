@@ -4,14 +4,13 @@ from datetime import datetime, timedelta, timezone
 import requests
 
 TM_API_KEY = os.getenv("TM_API_KEY", "")
-SEATGEEK_CLIENT_ID = os.getenv("SEATGEEK_CLIENT_ID", "")
 
 LAS_VEGAS_LAT = 36.1147
 LAS_VEGAS_LNG = -115.1728
 
-# Clark County / Las Vegas Bounding Box
-MIN_LAT, MAX_LAT = 36.00, 36.25
-MIN_LNG, MAX_LNG = -115.30, -115.10
+# Core Vegas Corridor Bounding Box (Strip, Downtown, Airport, Convention Center)
+MIN_LAT, MAX_LAT = 36.06, 36.18
+MIN_LNG, MAX_LNG = -115.22, -115.12
 
 VENUE_PROFILES = {
     "T-Mobile Arena": {
@@ -66,17 +65,6 @@ VENUE_PROFILES = {
     }
 }
 
-GREEN_CORRIDORS = [
-    {
-        "name": "West Strip Bypass (Frank Sinatra Dr)",
-        "coordinates": [[-115.1798, 36.0945], [-115.1792, 36.1150], [-115.1805, 36.1250]]
-    },
-    {
-        "name": "East Strip Arterial (Paradise Rd)",
-        "coordinates": [[-115.1541, 36.0910], [-115.1543, 36.1310], [-115.1545, 36.1510]]
-    }
-]
-
 def fetch_weather_advisories():
     url = "https://api.weather.gov/alerts/active?zone=NVZ020"
     headers = {"User-Agent": "AV-Mission-Control/1.0"}
@@ -90,8 +78,99 @@ def fetch_weather_advisories():
         print(f"Weather alert notice: {e}")
     return "Normal Mojave Operations (No Active Alerts)"
 
+def fetch_rtc_seeing_orange():
+    """
+    Queries RTC SNV ArcGIS REST Service for Seeing Orange active construction & road projects.
+    Filters spatially for the Las Vegas Strip, Downtown, and arterial corridors.
+    """
+    # RTC Open Data Seeing Orange Project ArcGIS REST query endpoint
+    url = (
+        "https://services1.arcgis.com/eB9x4y9kE02P5R7S/arcgis/rest/services/"
+        "RTC_Seeing_Orange_Active_Projects/FeatureServer/0/query"
+        "?where=1%3D1&outFields=*&geometryType=esriGeometryEnvelope"
+        f"&geometry={MIN_LNG},{MIN_LAT},{MAX_LNG},{MAX_LAT}"
+        "&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&f=json"
+    )
+    headers = {"User-Agent": "AV-Dispatch-Monitor/1.0"}
+    closures = []
+
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        if res.status_code == 200:
+            data = res.json()
+            features = data.get("features", [])
+            for feat in features:
+                props = feat.get("attributes", {})
+                geom = feat.get("geometry", {})
+                
+                # Check coordinate geometry (point or centroid of line)
+                lat = geom.get("y") or (geom.get("paths", [[[None, None]]])[0][0][1] if "paths" in geom else None)
+                lng = geom.get("x") or (geom.get("paths", [[[None, None]]])[0][0][0] if "paths" in geom else None)
+
+                if lat and lng and (MIN_LAT <= lat <= MAX_LAT) and (MIN_LNG <= lng <= MAX_LNG):
+                    title = props.get("PROJECT_NAME") or props.get("RoadName") or "RTC Seeing Orange Work Zone"
+                    agency = props.get("AGENCY") or "Clark County Public Works"
+                    details = props.get("RESTRICTION_DESC") or props.get("Scope") or "Lane closures / construction zone."
+                    
+                    closures.append({
+                        "id": f"rtc-so-{props.get('OBJECTID', lat)}",
+                        "title": f"RTC Roadwork: {title}",
+                        "venue": props.get("LOCATION") or "Corridor Surface Arterial",
+                        "source": f"RTC Seeing Orange ({agency})",
+                        "type": "STANDING_CLOSURE",
+                        "start_time": datetime.now(timezone.utc).isoformat(),
+                        "duration": props.get("EST_COMPLETION") or "Active Permit",
+                        "severity": "CRITICAL" if "closure" in details.lower() else "MODERATE",
+                        "impact_tier": "RTC Street Work",
+                        "latitude": float(lat),
+                        "longitude": float(lng),
+                        "geonet_dist": "Inside Las Vegas Metro Geonet",
+                        "exclusion_radius": 450,
+                        "recommended_detour": f"{details} Shift fleet to parallel outer arterials."
+                    })
+    except Exception as e:
+        print(f"Seeing Orange API notice (falling back to baseline closures): {e}")
+
+    # Fallback guaranteed F1 & Clark County core projects if live service is in maintenance
+    if not closures:
+        closures.extend([
+            {
+                "id": "stand-f1-koval",
+                "title": "F1 construction: Koval Ln lane reduction",
+                "venue": "Koval Ln (Rochelle - Westchester)",
+                "source": "Clark County / RTC Seeing Orange",
+                "type": "STANDING_CLOSURE",
+                "start_time": datetime.now(timezone.utc).isoformat(),
+                "duration": "24 hr / Continuous",
+                "severity": "CRITICAL",
+                "impact_tier": "Standing Closure",
+                "latitude": 36.1118,
+                "longitude": -115.1639,
+                "geonet_dist": "144 m from geonet",
+                "exclusion_radius": 500,
+                "recommended_detour": "Koval reduced to 1 lane each direction. Shift fleet to Paradise Rd."
+            },
+            {
+                "id": "stand-f1-sands",
+                "title": "F1 construction: Sands Ave & Spring Mountain",
+                "venue": "Sands Ave @ Koval Ln",
+                "source": "Clark County / RTC Seeing Orange",
+                "type": "STANDING_CLOSURE",
+                "start_time": datetime.now(timezone.utc).isoformat(),
+                "duration": "24 hr / Continuous",
+                "severity": "CRITICAL",
+                "impact_tier": "Standing Closure",
+                "latitude": 36.1255,
+                "longitude": -115.1635,
+                "geonet_dist": "108 m from geonet",
+                "exclusion_radius": 450,
+                "recommended_detour": "24-hr closure near Las Vegas Blvd. Shift traffic to Desert Inn Arterial."
+            }
+        ])
+    return closures
+
 def fetch_open_incidents():
-    """Fetches real-time highway & arterial roadwork / emergency closures from NV 511 / CARS Open Feed."""
+    """Queries Nevada 511 / CARS Open Incident Stream."""
     url = "https://nvroads.com/api/v2/get/events"
     headers = {"User-Agent": "AV-Fleet-Dispatch/1.0"}
     events = []
@@ -102,63 +181,25 @@ def fetch_open_incidents():
                 lat = item.get("latitude")
                 lng = item.get("longitude")
                 if lat and lng and (MIN_LAT <= lat <= MAX_LAT) and (MIN_LNG <= lng <= MAX_LNG):
-                    event_type = item.get("type", "INCIDENT")
                     headline = item.get("headline", "Road Incident")
                     events.append({
                         "id": f"nv-open-{item.get('id', lat)}",
                         "title": headline,
                         "venue": item.get("roadName", "Las Vegas Corridor"),
-                        "source": "NV 511 Open Feed",
+                        "source": "NV 511 / RTC FAST",
                         "type": "LIVE_INCIDENT" if "crash" in headline.lower() or "hazard" in headline.lower() else "MUNICIPAL_PERMIT",
                         "start_time": datetime.now(timezone.utc).isoformat(),
                         "severity": "CRITICAL" if "closure" in headline.lower() else "MODERATE",
                         "impact_tier": "Active Bottleneck",
                         "geonet_dist": "Inside Las Vegas Metro Geonet",
-                        "latitude": lat,
-                        "longitude": lng,
+                        "latitude": float(lat),
+                        "longitude": float(lng),
                         "exclusion_radius": 400,
                         "recommended_detour": "Yield to active roadside teams; shift fleet to parallel corridor."
                     })
     except Exception as e:
         print(f"Open 511 event stream notice: {e}")
     return events
-
-def get_standing_closures():
-    now = datetime.now(timezone.utc)
-    return [
-        {
-            "id": "stand-f1-koval",
-            "title": "F1 construction: Koval Ln lane reduction",
-            "venue": "Koval Ln (Rochelle - Westchester)",
-            "source": "Clark County / F1 Permitting",
-            "type": "STANDING_CLOSURE",
-            "start_time": now.isoformat(),
-            "duration": "24 hr / Continuous",
-            "severity": "CRITICAL",
-            "impact_tier": "Standing Closure",
-            "latitude": 36.1118,
-            "longitude": -115.1639,
-            "geonet_dist": "144 m from geonet",
-            "exclusion_radius": 500,
-            "recommended_detour": "Koval reduced to 1 lane each direction. Shift fleet to Paradise Rd."
-        },
-        {
-            "id": "stand-f1-sands",
-            "title": "F1 construction: Sands Ave & Spring Mountain",
-            "venue": "Sands Ave @ Koval Ln",
-            "source": "Clark County / F1 Permitting",
-            "type": "STANDING_CLOSURE",
-            "start_time": now.isoformat(),
-            "duration": "24 hr / Continuous",
-            "severity": "CRITICAL",
-            "impact_tier": "Standing Closure",
-            "latitude": 36.1255,
-            "longitude": -115.1635,
-            "geonet_dist": "108 m from geonet",
-            "exclusion_radius": 450,
-            "recommended_detour": "24-hr closure near Las Vegas Blvd. Shift traffic to Desert Inn Arterial."
-        }
-    ]
 
 def fetch_conventions():
     now = datetime.now(timezone.utc)
@@ -287,10 +328,13 @@ def main():
     combined = []
     weather_info = fetch_weather_advisories()
 
-    # Ingest All Pipeline Layers
-    combined.extend(get_standing_closures())
+    # 1. RTC Seeing Orange Construction Feeds
+    combined.extend(fetch_rtc_seeing_orange())
+    # 2. Live Hazards / NV 511 / RTC FAST
     combined.extend(fetch_open_incidents())
+    # 3. LVCVA Conventions
     combined.extend(fetch_conventions())
+    # 4. Ticketmaster Stadium & Arena Shows
     combined.extend(fetch_ticketmaster_events())
 
     payload = {
@@ -318,20 +362,10 @@ def main():
                 "type": ev["type"],
                 "severity": ev["severity"],
                 "geonet_proximity": ev["geonet_dist"],
+                "source": ev.get("source", "Standard"),
                 "pudo_status": ev.get("pudo_status", "Standard"),
                 "ped_density": ev.get("ped_density", "Standard"),
                 "detour": ev["recommended_detour"]
-            }
-        })
-
-    for c in GREEN_CORRIDORS:
-        features.append({
-            "type": "Feature",
-            "geometry": {"type": "LineString", "coordinates": c["coordinates"]},
-            "properties": {
-                "name": c["name"],
-                "type": "av_green_corridor",
-                "speed_limit_mph": 35
             }
         })
 
