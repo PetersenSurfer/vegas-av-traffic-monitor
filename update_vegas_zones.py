@@ -9,6 +9,10 @@ SEATGEEK_CLIENT_ID = os.getenv("SEATGEEK_CLIENT_ID", "")
 LAS_VEGAS_LAT = 36.1147
 LAS_VEGAS_LNG = -115.1728
 
+# Clark County / Las Vegas Bounding Box
+MIN_LAT, MAX_LAT = 36.00, 36.25
+MIN_LNG, MAX_LNG = -115.30, -115.10
+
 VENUE_PROFILES = {
     "T-Mobile Arena": {
         "coords": [36.1028, -115.1783],
@@ -74,22 +78,52 @@ GREEN_CORRIDORS = [
 ]
 
 def fetch_weather_advisories():
-    """Queries National Weather Service (NWS) API for Clark County weather advisories."""
     url = "https://api.weather.gov/alerts/active?zone=NVZ020"
-    headers = {"User-Agent": "AV-Mission-Control/1.0 (contact@missioncontrol.internal)"}
+    headers = {"User-Agent": "AV-Mission-Control/1.0"}
     try:
         res = requests.get(url, headers=headers, timeout=5)
         if res.status_code == 200:
-            data = res.json()
-            features = data.get("features", [])
+            features = res.json().get("features", [])
             if features:
                 return features[0].get("properties", {}).get("headline", "Active Advisory in Valley")
     except Exception as e:
-        print(f"NWS weather feed bypassed: {e}")
+        print(f"Weather alert notice: {e}")
     return "Normal Mojave Operations (No Active Alerts)"
 
+def fetch_open_incidents():
+    """Fetches real-time highway & arterial roadwork / emergency closures from NV 511 / CARS Open Feed."""
+    url = "https://nvroads.com/api/v2/get/events"
+    headers = {"User-Agent": "AV-Fleet-Dispatch/1.0"}
+    events = []
+    try:
+        res = requests.get(url, headers=headers, timeout=8)
+        if res.status_code == 200:
+            for item in res.json():
+                lat = item.get("latitude")
+                lng = item.get("longitude")
+                if lat and lng and (MIN_LAT <= lat <= MAX_LAT) and (MIN_LNG <= lng <= MAX_LNG):
+                    event_type = item.get("type", "INCIDENT")
+                    headline = item.get("headline", "Road Incident")
+                    events.append({
+                        "id": f"nv-open-{item.get('id', lat)}",
+                        "title": headline,
+                        "venue": item.get("roadName", "Las Vegas Corridor"),
+                        "source": "NV 511 Open Feed",
+                        "type": "LIVE_INCIDENT" if "crash" in headline.lower() or "hazard" in headline.lower() else "MUNICIPAL_PERMIT",
+                        "start_time": datetime.now(timezone.utc).isoformat(),
+                        "severity": "CRITICAL" if "closure" in headline.lower() else "MODERATE",
+                        "impact_tier": "Active Bottleneck",
+                        "geonet_dist": "Inside Las Vegas Metro Geonet",
+                        "latitude": lat,
+                        "longitude": lng,
+                        "exclusion_radius": 400,
+                        "recommended_detour": "Yield to active roadside teams; shift fleet to parallel corridor."
+                    })
+    except Exception as e:
+        print(f"Open 511 event stream notice: {e}")
+    return events
+
 def get_standing_closures():
-    """Standing multi-day road closures (F1 track preparation, major construction)."""
     now = datetime.now(timezone.utc)
     return [
         {
@@ -127,7 +161,6 @@ def get_standing_closures():
     ]
 
 def fetch_conventions():
-    """Major LVCVA trade shows & expos."""
     now = datetime.now(timezone.utc)
     conventions = [
         {"title": "Mecum Las Vegas 2026", "venue": "Las Vegas Convention Center", "offset": 2, "attendance": "~15,000 over show", "severity": "MODERATE"},
@@ -167,7 +200,6 @@ def fetch_conventions():
     return results
 
 def fetch_ticketmaster_events():
-    """Queries Ticketmaster with crowd clearing & valet PUDO factors."""
     if not TM_API_KEY:
         return []
 
@@ -188,8 +220,7 @@ def fetch_ticketmaster_events():
     try:
         res = requests.get(url, timeout=12)
         if res.status_code == 200:
-            data = res.json()
-            for item in data.get("_embedded", {}).get("events", []):
+            for item in res.json().get("_embedded", {}).get("events", []):
                 venues = item.get("_embedded", {}).get("venues", [])
                 if not venues:
                     continue
@@ -256,7 +287,9 @@ def main():
     combined = []
     weather_info = fetch_weather_advisories()
 
+    # Ingest All Pipeline Layers
     combined.extend(get_standing_closures())
+    combined.extend(fetch_open_incidents())
     combined.extend(fetch_conventions())
     combined.extend(fetch_ticketmaster_events())
 
