@@ -12,12 +12,12 @@
       },
       "properties": {
         "id": "stand-f1-koval",
-        "title": "F1 Track Work: Koval Ln Lane Reduction",
+        "title": "F1 construction: Koval Ln lane reduction",
         "venue": "Koval Ln (Rochelle - Westchester)",
         "type": "STANDING_CLOSURE",
         "severity": "CRITICAL",
         "geonet_proximity": "144 m from geonet",
-        "detour": "Koval reduced to 1 lane each way. Shift all routing to Paradise Rd."
+        "detour": "Koval reduced to 1 lane each direction. Shift fleet to Paradise Rd."
       }
     },
     {
@@ -31,7 +31,7 @@
       },
       "properties": {
         "id": "stand-f1-sands",
-        "title": "F1 Track Work: Sands Ave & Spring Mountain",
+        "title": "F1 construction: Sands Ave & Spring Mountain",
         "venue": "Sands Ave @ Koval Ln",
         "type": "STANDING_CLOSURE",
         "severity": "CRITICAL",
@@ -49,13 +49,13 @@
         ]
       },
       "properties": {
-        "id": "conv-mecum",
+        "id": "conv-mecumla",
         "title": "Mecum Las Vegas 2026",
         "venue": "Las Vegas Convention Center",
         "type": "MAJOR_CONVENTION",
         "severity": "MODERATE",
         "geonet_proximity": "207 m from geonet",
-        "detour": "Peak afternoon discharge. Throttle pass-through traffic on Paradise Rd."
+        "detour": "Avoid Paradise Rd / Convention Center Dr; use Maryland Pkwy."
       }
     },
     {
@@ -68,13 +68,13 @@
         ]
       },
       "properties": {
-        "id": "conv-designercon",
+        "id": "conv-designer",
         "title": "DesignerCon 2026",
         "venue": "The Expo at World Market Center",
         "type": "MAJOR_CONVENTION",
         "severity": "HIGH",
         "geonet_proximity": "9 m from geonet",
-        "detour": "Directly impacts Grand Central Pkwy geonet boundary. Avoid Symphony Park."
+        "detour": "Bypass Grand Central Pkwy via Bonneville or MLK."
       }
     },
     {
@@ -93,7 +93,45 @@
         "type": "MAJOR_CONVENTION",
         "severity": "MODERATE",
         "geonet_proximity": "207 m from geonet",
-        "detour": "Moderate local traffic around Convention Center loop."
+        "detour": "Avoid Paradise Rd / Convention Center Dr; use Maryland Pkwy."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1645,
+          36.122
+        ]
+      },
+      "properties": {
+        "id": "conv-awsre:i",
+        "title": "AWS re:Invent Expo",
+        "venue": "Venetian Expo",
+        "type": "MAJOR_CONVENTION",
+        "severity": "CRITICAL",
+        "geonet_proximity": "95 m from geonet",
+        "detour": "Shift to Koval Ln or Paradise Rd."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1517,
+          36.1315
+        ]
+      },
+      "properties": {
+        "id": "conv-national",
+        "title": "National Finals Rodeo Cowboy Christmas",
+        "venue": "Las Vegas Convention Center",
+        "type": "MAJOR_CONVENTION",
+        "severity": "CRITICAL",
+        "geonet_proximity": "207 m from geonet",
+        "detour": "Avoid Paradise Rd / Convention Center Dr; use Maryland Pkwy."
       }
     },
     {
@@ -1462,6 +1500,56 @@
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
         "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -115.1798,
+            36.0945
+          ],
+          [
+            -115.1792,
+            36.115
+          ],
+          [
+            -115.1805,
+            36.125
+          ]
+        ]
+      },
+      "properties": {
+        "name": "West Strip Bypass (Frank Sinatra Dr)",
+        "type": "av_green_corridor",
+        "speed_limit_mph": 35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -115.1541,
+            36.091
+          ],
+          [
+            -115.1543,
+            36.131
+          ],
+          [
+            -115.1545,
+            36.151
+          ]
+        ]
+      },
+      "properties": {
+        "name": "East Strip Arterial (Paradise Rd)",
+        "type": "av_green_corridor",
+        "speed_limit_mph": 35
       }
     }
   ]
