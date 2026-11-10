@@ -9,41 +9,68 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; display: flex; height: 100vh; overflow: hidden; }
-    #sidebar { width: 380px; background: #1e293b; border-right: 1px solid #334155; display: flex; flex-direction: column; }
-    .header { padding: 1.25rem; border-bottom: 1px solid #334155; }
-    .header h1 { font-size: 1.15rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
-    .header p { font-size: 0.8rem; color: #94a3b8; margin-top: 4px; }
-    .status-bar { padding: 0.75rem 1.25rem; background: #0f172a; border-bottom: 1px solid #334155; font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
+    
+    #sidebar { width: 390px; background: #1e293b; border-right: 1px solid #334155; display: flex; flex-direction: column; }
+    .header { padding: 1.1rem 1.25rem; border-bottom: 1px solid #334155; }
+    .header h1 { font-size: 1.1rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+    .header p { font-size: 0.78rem; color: #94a3b8; margin-top: 3px; }
+    
+    .status-bar { padding: 0.65rem 1.25rem; background: #0f172a; border-bottom: 1px solid #334155; font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
     .status-live { display: inline-flex; align-items: center; gap: 6px; color: #4ade80; font-weight: 600; }
     .status-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 6px #4ade80; }
-    #event-list { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
-    .event-card { background: #0f172a; border-radius: 8px; padding: 0.85rem; border-left: 4px solid #94a3b8; cursor: pointer; transition: transform 0.15s ease; }
-    .event-card:hover { transform: translateX(2px); }
+    
+    .layer-controls { padding: 0.65rem 1.25rem; background: #182234; border-bottom: 1px solid #334155; display: flex; gap: 12px; font-size: 0.75rem; }
+    .layer-controls label { display: flex; align-items: center; gap: 6px; cursor: pointer; color: #cbd5e1; }
+    
+    #event-list { flex: 1; overflow-y: auto; padding: 0.85rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    
+    .date-header { font-size: 0.75rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.6rem 0 0.2rem 0; padding-bottom: 3px; border-bottom: 1px dashed #334155; }
+    .date-header:first-child { margin-top: 0; }
+    
+    .event-card { background: #0f172a; border-radius: 7px; padding: 0.75rem; border-left: 4px solid #94a3b8; cursor: pointer; transition: transform 0.15s ease, background 0.15s ease; margin-bottom: 0.4rem; }
+    .event-card:hover { transform: translateX(3px); background: #131d31; }
     .card-critical { border-left-color: #ef4444; }
     .card-severe { border-left-color: #f97316; }
     .card-moderate { border-left-color: #eab308; }
-    .event-title { font-size: 0.88rem; font-weight: 600; color: #f1f5f9; }
-    .event-venue { font-size: 0.78rem; color: #38bdf8; margin-top: 2px; }
-    .event-detour { font-size: 0.72rem; color: #a5f3fc; background: #164e63; padding: 4px 6px; border-radius: 4px; margin-top: 6px; display: inline-block; }
-    .footer { padding: 1rem; border-top: 1px solid #334155; }
+    .card-closure { border-left-color: #dc2626; border-left-style: dashed; }
+    
+    .event-title { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; }
+    .event-venue { font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
+    .event-detour { font-size: 0.72rem; color: #a5f3fc; background: #164e63; padding: 3px 6px; border-radius: 4px; margin-top: 5px; display: inline-block; }
+    
+    .footer { padding: 0.85rem; border-top: 1px solid #334155; background: #1e293b; }
     .btn-export { width: 100%; background: #0284c7; color: white; border: none; padding: 0.65rem; border-radius: 6px; font-weight: 600; font-size: 0.85rem; cursor: pointer; }
     .btn-export:hover { background: #0369a1; }
+    
     #map-container { flex: 1; position: relative; }
     #map { width: 100%; height: 100%; }
-    .legend { position: absolute; bottom: 20px; right: 20px; background: rgba(15, 23, 42, 0.9); padding: 12px; border-radius: 8px; font-size: 0.75rem; border: 1px solid #334155; z-index: 1000; }
-    .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-    .legend-color { width: 12px; height: 12px; border-radius: 2px; }
+    
+    .legend { position: absolute; bottom: 20px; right: 20px; background: rgba(15, 23, 42, 0.95); padding: 12px; border-radius: 8px; font-size: 0.75rem; border: 1px solid #334155; z-index: 1000; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+    .legend-pin { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #fff; }
+    
+    /* Clean pulse marker CSS */
+    .pin-pulse { border-radius: 50%; height: 14px; width: 14px; position: absolute; left: -7px; top: -7px; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 8px rgba(0,0,0,0.6); }
+    .pin-critical { background: #ef4444; }
+    .pin-moderate { background: #eab308; }
+    .pin-closure { background: #dc2626; border-radius: 2px; }
   </style>
 </head>
 <body>
+
   <aside id="sidebar">
     <div class="header">
       <h1><span>&#9888;</span> AV Strip Traffic Command</h1>
-      <p>Dynamic Exclusion Geofences & Green Corridors</p>
+      <p>Organized Incident & Closure Timeline</p>
     </div>
     <div class="status-bar">
-      <span class="status-live"><span class="status-dot"></span> AUTO-SYNC</span>
-      <span id="last-updated" style="color: #64748b;">Loading feed...</span>
+      <span class="status-live"><span class="status-dot"></span> LIVE TIMELINE</span>
+      <span id="last-updated" style="color: #64748b;">Loading...</span>
+    </div>
+    <div class="layer-controls">
+      <label><input type="checkbox" id="toggle-events" checked onchange="toggleLayers()"> Event Pins</label>
+      <label><input type="checkbox" id="toggle-closures" checked onchange="toggleLayers()"> NV 511 Roadwork</label>
+      <label><input type="checkbox" id="toggle-buffers" onchange="toggleLayers()"> Geofence Rings</label>
     </div>
     <div id="event-list"></div>
     <div class="footer">
@@ -54,10 +81,11 @@
   <div id="map-container">
     <div id="map"></div>
     <div class="legend">
-      <div style="font-weight: 700; margin-bottom: 8px;">Routing Map Key</div>
-      <div class="legend-item"><div class="legend-color" style="background: #ef4444;"></div> Exclusion Zone (Critical/Game)</div>
-      <div class="legend-item"><div class="legend-color" style="background: #eab308;"></div> Throttled Zone (Moderate)</div>
-      <div class="legend-item"><div class="legend-color" style="background: #10b981; height: 3px;"></div> AV Green Corridor (Bypass)</div>
+      <div style="font-weight: 700; margin-bottom: 8px; color: #38bdf8;">Map Visuals</div>
+      <div class="legend-item"><div class="legend-pin" style="background: #ef4444;"></div> Arena Game / Critical Surge</div>
+      <div class="legend-item"><div class="legend-pin" style="background: #eab308;"></div> Concert / Theater Show</div>
+      <div class="legend-item"><div class="legend-pin" style="background: #dc2626; border-radius: 2px;"></div> NV 511 Roadwork / Closure</div>
+      <div class="legend-item"><div style="width: 14px; height: 3px; background: #10b981;"></div> AV Safe Bypass Corridor</div>
     </div>
   </div>
 
@@ -68,7 +96,9 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    const exclusionLayer = L.layerGroup().addTo(map);
+    const pinLayer = L.layerGroup().addTo(map);
+    const bufferLayer = L.layerGroup(); // Off by default to avoid large blobs
+    const closureLayer = L.layerGroup().addTo(map);
     const corridorLayer = L.layerGroup().addTo(map);
 
     const corridors = [
@@ -82,89 +112,135 @@
         .addTo(corridorLayer);
     });
 
-    async function updateDashboard() {
+    function toggleLayers() {
+      const showEvents = document.getElementById('toggle-events').checked;
+      const showClosures = document.getElementById('toggle-closures').checked;
+      const showBuffers = document.getElementById('toggle-buffers').checked;
+
+      if (showEvents) map.addLayer(pinLayer); else map.removeLayer(pinLayer);
+      if (showClosures) map.addLayer(closureLayer); else map.removeLayer(closureLayer);
+      if (showBuffers) map.addLayer(bufferLayer); else map.removeLayer(bufferLayer);
+    }
+
+    function parseTimeInfo(isoString) {
+      if (!isoString) return { dateKey: 'Upcoming Events', dateLabel: 'Upcoming', timeLabel: 'TBD', surgeLabel: 'Surge window active' };
+      const date = new Date(isoString);
+      
+      const dateKey = date.toISOString().split('T')[0];
+      const dateLabel = date.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
+      const timeLabel = date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      
+      const exitPeak = new Date(date.getTime() + (2.5 * 60 * 60 * 1000));
+      const surgeLabel = `${timeLabel} – ${exitPeak.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}`;
+
+      return { dateKey, dateLabel, timeLabel, surgeLabel, timestamp: date.getTime() };
+    }
+
+    async function loadData() {
       try {
         const res = await fetch(`vegas_events.json?timestamp=${Date.now()}`);
-        if (!res.ok) throw new Error("Awaiting first feed run");
+        if (!res.ok) throw new Error("Could not load feed");
         const payload = await res.json();
+        
         document.getElementById('last-updated').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        renderEvents(payload.events);
+        renderDashboard(payload.events || []);
       } catch (err) {
-        console.log("Feed not populated yet. Waiting on initial Action run.");
+        console.warn("Awaiting live data commit:", err);
       }
     }
 
-    function formatTimeWindow(isoString) {
-      if (!isoString) return { formattedDate: 'TBD', surgeWindow: 'Active Window TBD' };
-      const start = new Date(isoString);
-      
-      const dateStr = start.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
-      const timeStr = start.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-
-      // High congestion window: 1 hour prior through exit peak (~2.5h after start)
-      const exitPeak = new Date(start.getTime() + (2.5 * 60 * 60 * 1000));
-      const exitTimeStr = exitPeak.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-
-      return {
-        formattedDate: `${dateStr} • ${timeStr}`,
-        surgeWindow: `Avoid: ${timeStr} – ${exitTimeStr}`
-      };
-    }
-
-    function renderEvents(events) {
-      exclusionLayer.clearLayers();
+    function renderDashboard(items) {
+      pinLayer.clearLayers();
+      bufferLayer.clearLayers();
+      closureLayer.clearLayers();
       const listContainer = document.getElementById('event-list');
       listContainer.innerHTML = '';
 
-      events.forEach(ev => {
-        const isCritical = ev.severity === 'CRITICAL';
-        const color = isCritical ? '#ef4444' : '#eab308';
-        const timeInfo = formatTimeWindow(ev.start_time);
+      // 1. Sort all items chronologically
+      items.sort((a, b) => new Date(a.start_time || 0) - new Date(b.start_time || 0));
 
-        // Map Geofence Circle
-        const circle = L.circle([ev.latitude, ev.longitude], {
-          color: color,
-          fillColor: color,
-          fillOpacity: 0.35,
-          radius: ev.exclusion_radius,
-          weight: 2
-        }).addTo(exclusionLayer);
+      // 2. Group items by Day
+      const grouped = {};
+      items.forEach(ev => {
+        const timeInfo = parseTimeInfo(ev.start_time);
+        const groupKey = timeInfo.dateLabel;
+        if (!grouped[groupKey]) grouped[groupKey] = [];
+        grouped[groupKey].push({ ev, timeInfo });
+      });
 
-        circle.bindPopup(`
-          <div style="font-family: sans-serif; color: #1e293b; min-width: 180px;">
-            <strong style="font-size: 0.95rem;">${ev.title}</strong><br>
-            <span style="color: #64748b; font-size: 0.8rem;">${ev.venue}</span><br>
-            <div style="margin: 6px 0; font-size: 0.8rem; color: #b91c1c; font-weight: 600;">
-              ⏰ ${timeInfo.formattedDate}<br>
-              ⚠️ ${timeInfo.surgeWindow}
+      // 3. Render grouped timeline in sidebar and crisp pins on map
+      Object.keys(grouped).forEach(dateLabel => {
+        const header = document.createElement('div');
+        header.className = 'date-header';
+        header.textContent = `📅 ${dateLabel}`;
+        listContainer.appendChild(header);
+
+        grouped[dateLabel].forEach(({ ev, timeInfo }) => {
+          const isClosure = ev.id && ev.id.startsWith('ndot-');
+          const isCritical = ev.severity === 'CRITICAL';
+          const pinColor = isClosure ? '#dc2626' : (isCritical ? '#ef4444' : '#eab308');
+
+          // Subtle custom point pin
+          const pinIcon = L.divIcon({
+            className: 'custom-pin',
+            html: `<div class="pin-pulse" style="background: ${pinColor}; ${isClosure ? 'border-radius:2px;' : ''}"></div>`,
+            iconSize: [14, 14]
+          });
+
+          const marker = L.marker([ev.latitude, ev.longitude], { icon: pinIcon });
+          marker.bindPopup(`
+            <div style="font-family: sans-serif; color: #0f172a; min-width: 190px;">
+              <strong style="font-size: 0.95rem;">${ev.title}</strong><br>
+              <span style="color: #64748b; font-size: 0.8rem;">📍 ${ev.venue}</span><br>
+              <div style="margin: 6px 0; font-size: 0.78rem; color: #b91c1c; font-weight: 600;">
+                ⏰ ${timeInfo.dateLabel} • ${timeInfo.timeLabel}<br>
+                🚫 Restriction: ${timeInfo.surgeLabel}
+              </div>
+              <div style="font-size: 0.75rem; background: #e0f2fe; padding: 4px; border-radius: 4px; color: #0369a1;">
+                <strong>AV Detour:</strong> ${ev.recommended_detour}
+              </div>
             </div>
-            <div style="font-size: 0.8rem;"><strong>Detour:</strong> ${ev.recommended_detour}</div>
-          </div>
-        `);
+          `);
 
-        // Sidebar Item
-        const card = document.createElement('div');
-        card.className = `event-card ${isCritical ? 'card-critical' : 'card-moderate'}`;
-        card.innerHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 4px;">
-            <div class="event-title">${ev.title}</div>
-            <span style="font-size: 0.68rem; font-weight: 700; color: ${color}; background: #1e293b; padding: 2px 6px; border-radius: 4px; border: 1px solid ${color}; white-space: nowrap;">${ev.severity}</span>
-          </div>
-          <div class="event-venue">${ev.venue}</div>
-          <div style="margin-top: 6px; font-size: 0.76rem; color: #fbbf24; font-weight: 600; display: flex; align-items: center; gap: 4px;">
-            <span>📅 ${timeInfo.formattedDate}</span>
-          </div>
-          <div style="margin-top: 2px; font-size: 0.72rem; color: #f87171; font-weight: 500;">
-            🚫 ${timeInfo.surgeWindow}
-          </div>
-          <div class="event-detour">&#8618; ${ev.recommended_detour}</div>
-        `;
+          if (isClosure) {
+            marker.addTo(closureLayer);
+          } else {
+            marker.addTo(pinLayer);
+          }
 
-        card.onclick = () => {
-          map.flyTo([ev.latitude, ev.longitude], 15, { duration: 1.2 });
-          circle.openPopup();
-        };
-        listContainer.appendChild(card);
+          // Optional subtle buffer circle (hidden by default)
+          L.circle([ev.latitude, ev.longitude], {
+            color: pinColor,
+            fillColor: pinColor,
+            fillOpacity: 0.12,
+            weight: 1,
+            radius: ev.exclusion_radius || 400
+          }).addTo(bufferLayer);
+
+          // Build sidebar entry
+          const card = document.createElement('div');
+          card.className = `event-card ${isClosure ? 'card-closure' : (isCritical ? 'card-critical' : 'card-moderate')}`;
+          card.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 4px;">
+              <div class="event-title">${ev.title}</div>
+              <span style="font-size: 0.65rem; font-weight: 700; color: ${pinColor}; background: #1e293b; padding: 2px 5px; border-radius: 4px; border: 1px solid ${pinColor}; white-space: nowrap;">
+                ${isClosure ? 'ROADWORK' : ev.severity}
+              </span>
+            </div>
+            <div class="event-venue">${ev.venue}</div>
+            <div style="margin-top: 5px; font-size: 0.74rem; color: #f87171; font-weight: 600;">
+              🚫 Avoid: ${timeInfo.surgeLabel}
+            </div>
+            <div class="event-detour">&#8618; ${ev.recommended_detour}</div>
+          `;
+
+          card.onclick = () => {
+            map.flyTo([ev.latitude, ev.longitude], 15, { duration: 1 });
+            marker.openPopup();
+          };
+
+          listContainer.appendChild(card);
+        });
       });
     }
 
@@ -172,8 +248,8 @@
       window.open('vegas_av_geofences.geojson', '_blank');
     }
 
-    updateDashboard();
-    setInterval(updateDashboard, 180000);
+    loadData();
+    setInterval(loadData, 180000);
   </script>
 </body>
 </html>
