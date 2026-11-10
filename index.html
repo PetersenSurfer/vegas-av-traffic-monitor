@@ -74,14 +74,20 @@
       border-radius: 10px; 
       font-weight: 600;
     }
-    
-    /* RTC Seeing Orange Folder - Safety Orange */
-    .closure-folder { border-color: #ea580c; }
-    .closure-folder .date-folder-header { background: #2a1508; color: #fb923c; }
-    .closure-folder .date-folder-header:hover { background: #3c1e0b; }
-    .closure-folder .count-pill { background: #c2410c; color: #ffedd5; border: 1px solid #ea580c; }
 
-    /* Live Hazards Folder - Red */
+    /* 1. F1 & Strip Track Roadwork (Dark Red/Crimson Accent) */
+    .f1-folder { border-color: #e11d48; }
+    .f1-folder .date-folder-header { background: #310811; color: #fb7185; }
+    .f1-folder .date-folder-header:hover { background: #440d18; }
+    .f1-folder .count-pill { background: #9f1239; color: #ffe4e6; border: 1px solid #f43f5e; }
+
+    /* 2. Seeing Orange Regional Folder (Safety Orange Accent) */
+    .orange-folder { border-color: #ea580c; }
+    .orange-folder .date-folder-header { background: #2a1508; color: #fb923c; }
+    .orange-folder .date-folder-header:hover { background: #3c1e0b; }
+    .orange-folder .count-pill { background: #c2410c; color: #ffedd5; border: 1px solid #ea580c; }
+
+    /* 3. Live Hazards Folder (Urgent Red Accent) */
     .hazard-folder { border-color: #dc2626; }
     .hazard-folder .date-folder-header { background: #2b0d0e; color: #f87171; }
     .hazard-folder .date-folder-header:hover { background: #3d1416; }
@@ -111,17 +117,19 @@
     .card-critical { border-left-color: #ef4444; }
     .card-high { border-left-color: #f97316; }
     .card-moderate { border-left-color: #eab308; }
-    .card-standing { border-left-color: #f97316; background: #1c130b; }
+    .card-f1 { border-left-color: #e11d48; background: #1a080d; }
+    .card-orange { border-left-color: #ea580c; background: #1c130b; }
     .card-hazard { border-left-color: #ef4444; background: #1f0b0d; }
 
     .card-header-line { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
     .event-title { font-size: 0.82rem; font-weight: 600; color: #f1f5f9; }
     .impact-badge { font-size: 0.62rem; font-weight: 700; padding: 2px 5px; border-radius: 4px; text-transform: uppercase; white-space: nowrap; }
+    .badge-f1 { background: #4c0519; color: #fda4af; border: 1px solid #e11d48; }
+    .badge-orange { background: #431407; color: #fdba74; border: 1px solid #ea580c; }
+    .badge-hazard { background: #450a0a; color: #fca5a5; border: 1px solid #dc2626; }
     .badge-critical { background: #450a0a; color: #f87171; border: 1px solid #ef4444; }
     .badge-high { background: #431407; color: #fb923c; border: 1px solid #f97316; }
     .badge-mod { background: #422006; color: #facc15; border: 1px solid #eab308; }
-    .badge-orange { background: #431407; color: #fdba74; border: 1px solid #ea580c; }
-    .badge-hazard { background: #450a0a; color: #fca5a5; border: 1px solid #dc2626; }
 
     .venue-meta { font-size: 0.72rem; color: #94a3b8; margin-top: 3px; display: flex; align-items: center; gap: 6px; }
     .geonet-tag { color: #38bdf8; font-weight: 600; }
@@ -134,7 +142,7 @@
     .pudo-tag { background: #2e1065; color: #c084fc; border: 1px solid #7e22ce; }
     .ped-tag { background: #3b0764; color: #f472b6; border: 1px solid #db2777; margin-left: 4px; }
     
-    .event-detour { font-size: 0.7rem; color: #fed7aa; background: #431407; padding: 3px 6px; border-radius: 4px; margin-top: 6px; display: inline-block; border-left: 2px solid #ea580c; }
+    .event-detour { font-size: 0.7rem; color: #fed7aa; background: #331507; padding: 3px 6px; border-radius: 4px; margin-top: 6px; display: inline-block; border-left: 2px solid #ea580c; }
     
     .footer { padding: 0.85rem; border-top: 1px solid #1f2937; background: #0f172a; }
     .btn-export { width: 100%; background: #0284c7; color: white; border: none; padding: 0.65rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; }
@@ -190,7 +198,7 @@
   <aside id="sidebar">
     <div class="header">
       <h1><span>🚗</span> Mapping Event Mission Control</h1>
-      <p>ODD Traffic, RTC Seeing Orange & Hazards</p>
+      <p>ODD Traffic, F1 Track & Seeing Orange Regional</p>
     </div>
     
     <div class="status-bar">
@@ -207,7 +215,7 @@
         </div>
       </div>
       <div class="control-row">
-        <label><input type="checkbox" id="toggle-transit" onchange="toggleTransit()"> 🚌 RTC Strip Bus Conflict Zones</label>
+        <label><input type="checkbox" id="toggle-regional" checked onchange="toggleRegional()"> 🚧 Regional Seeing Orange Pins</label>
         <label><input type="checkbox" id="toggle-basemap" checked onchange="toggleBaseTheme()"> 🌙 Tactical Dark Map</label>
       </div>
     </div>
@@ -240,8 +248,8 @@
           <div class="hud-stat-value" id="hud-slowdown">Monitoring</div>
         </div>
         <div class="hud-stat-box">
-          <div class="hud-stat-label">Data Sources</div>
-          <div class="hud-stat-value" style="color: #fb923c;">RTC Orange</div>
+          <div class="hud-stat-label">Telemetry Feed</div>
+          <div class="hud-stat-value" style="color: #fb923c;">F1 + RTC</div>
         </div>
       </div>
 
@@ -263,20 +271,20 @@
 
       <div class="hud-section-title">ODD Hierarchy</div>
       <div class="legend-row">
+        <div class="legend-row-left"><div class="legend-pin" style="background: #e11d48; border-radius: 2px;"></div> F1 / Strip Track Work</div>
+        <span style="color: #fb7185;">Circuit</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-row-left"><div class="legend-pin" style="background: #ea580c; border-radius: 2px;"></div> Seeing Orange Regional</div>
+        <span style="color: #fb923c;">Valley</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-row-left"><div class="legend-pin" style="background: #dc2626; border-radius: 2px;"></div> Live Hazard / Crash</div>
+        <span style="color: #f87171;">Urgent</span>
+      </div>
+      <div class="legend-row">
         <div class="legend-row-left"><div class="legend-pin" style="background: #ef4444;"></div> Arena Surge / Game</div>
         <span style="color: #ef4444; font-weight: 600;">Tier 1</span>
-      </div>
-      <div class="legend-row">
-        <div class="legend-row-left"><div class="legend-pin" style="background: #f97316;"></div> Major Convention</div>
-        <span style="color: #f97316; font-weight: 600;">Tier 2</span>
-      </div>
-      <div class="legend-row">
-        <div class="legend-row-left"><div class="legend-pin" style="background: #ea580c; border-radius: 2px;"></div> RTC Seeing Orange Work</div>
-        <span style="color: #fb923c;">Permit</span>
-      </div>
-      <div class="legend-row">
-        <div class="legend-row-left"><div class="legend-pin" style="background: #dc2626; border-radius: 2px;"></div> Live Hazard / Incident</div>
-        <span style="color: #f87171;">Urgent</span>
       </div>
 
       <div class="hud-prompt">💡 Click any road segment to query live speed & delay</div>
@@ -289,7 +297,7 @@
     // 1. Base Map Setup (Keyless OpenStreetMap)
     const map = L.map('map', {
       center: [36.1147, -115.1728],
-      zoom: 14
+      zoom: 13
     });
 
     const baseTileLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -297,12 +305,11 @@
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // High-vibrancy pane for TomTom traffic lines
     map.createPane('trafficPane');
     map.getPane('trafficPane').style.zIndex = 450;
     map.getPane('trafficPane').classList.add('traffic-bright-pane');
 
-    // 2. TomTom Real-Time Traffic Flow Layer
+    // 2. TomTom Real-Time Traffic Layer
     let trafficLayer = L.tileLayer(
       `https://api.tomtom.com/traffic/map/4/tile/flow/relative0/{z}/{x}/{y}.png?key=${TOMTOM_KEY}`,
       {
@@ -313,30 +320,7 @@
     ).addTo(map);
 
     const pinLayer = L.layerGroup().addTo(map);
-    const transitLayer = L.layerGroup();
-
-    // Key RTC The Deuce Curbside Stops
-    const rtcDeuceStops = [
-      { name: "Deuce: Mandalay Bay Curbside", coords: [36.0915, -115.1748] },
-      { name: "Deuce: MGM Grand / Tropicana", coords: [36.1012, -115.1724] },
-      { name: "Deuce: Planet Hollywood / Bellagio Bridge", coords: [36.1105, -115.1718] },
-      { name: "Deuce: Caesars Palace Curbside", coords: [36.1165, -115.1742] },
-      { name: "Deuce: The Venetian / Mirage", coords: [36.1218, -115.1712] },
-      { name: "Deuce: Wynn / Fashion Show Mall", coords: [36.1280, -115.1685] },
-      { name: "Deuce: Resorts World Stop", coords: [36.1345, -115.1625] },
-      { name: "Deuce: Sahara Las Vegas / Monorail", coords: [36.1428, -115.1568] }
-    ];
-
-    rtcDeuceStops.forEach(st => {
-      const icon = L.divIcon({
-        className: 't-pin',
-        html: `<div class="transit-pin" title="${st.name}"></div>`,
-        iconSize: [8, 8]
-      });
-      L.marker(st.coords, { icon: icon })
-        .bindPopup(`<strong>🚌 RTC Transit Conflict Zone</strong><br>${st.name}<br><span style="color:#06b6d4;font-size:0.7rem;">High-frequency bus dwell zone. Avoid AV curb queuing.</span>`)
-        .addTo(transitLayer);
-    });
+    const regionalOrangeLayer = L.layerGroup().addTo(map);
 
     // 3. Interactive Road Click-To-Inspect
     map.on('click', async function(e) {
@@ -415,10 +399,10 @@
       else map.removeLayer(trafficLayer);
     }
 
-    function toggleTransit() {
-      const show = document.getElementById('toggle-transit').checked;
-      if (show) map.addLayer(transitLayer);
-      else map.removeLayer(transitLayer);
+    function toggleRegional() {
+      const show = document.getElementById('toggle-regional').checked;
+      if (show) map.addLayer(regionalOrangeLayer);
+      else map.removeLayer(regionalOrangeLayer);
     }
 
     function updateTrafficOpacity(val) {
@@ -463,58 +447,104 @@
 
     function renderMissionControl(items) {
       pinLayer.clearLayers();
+      regionalOrangeLayer.clearLayers();
       const listContainer = document.getElementById('event-list');
       listContainer.innerHTML = '';
 
-      const standing = items.filter(i => i.type === 'STANDING_CLOSURE' || i.type === 'MUNICIPAL_PERMIT');
+      const f1Items = items.filter(i => i.type === 'F1_CLOSURE');
+      const regionalItems = items.filter(i => i.type === 'RTC_SEEING_ORANGE');
       const liveHazards = items.filter(i => i.type === 'LIVE_INCIDENT');
-      const dynamicEvents = items.filter(i => i.type !== 'STANDING_CLOSURE' && i.type !== 'MUNICIPAL_PERMIT' && i.type !== 'LIVE_INCIDENT');
+      const dynamicEvents = items.filter(i => !['F1_CLOSURE', 'RTC_SEEING_ORANGE', 'LIVE_INCIDENT'].includes(i.type));
 
-      // 1. RTC Seeing Orange Roadwork Folder (Styled Safety Orange)
-      if (standing.length > 0) {
-        const closureFolder = document.createElement('div');
-        closureFolder.className = 'date-folder closure-folder';
+      // 1. Dedicated F1 & Strip Core Track Work Folder (Crimson / Race Circuit)
+      if (f1Items.length > 0) {
+        const f1Folder = document.createElement('div');
+        f1Folder.className = 'date-folder f1-folder';
 
         const fHeader = document.createElement('div');
         fHeader.className = 'date-folder-header';
         fHeader.innerHTML = `
-          <div><span class="arrow">&#9658;</span> 🚧 RTC SEEING ORANGE & ROADWORK</div>
-          <span class="count-pill">${standing.length} active</span>
+          <div><span class="arrow">&#9658;</span> 🏎️ F1 & STRIP TRACK ROADWORK</div>
+          <span class="count-pill">${f1Items.length} active</span>
         `;
-        fHeader.onclick = () => closureFolder.classList.toggle('open');
+        fHeader.onclick = () => f1Folder.classList.toggle('open');
 
         const fBody = document.createElement('div');
         fBody.className = 'date-folder-body';
 
-        standing.forEach(cl => {
+        f1Items.forEach(cl => {
           const pinIcon = L.divIcon({
             className: 'c-pin',
-            html: `<div class="pin-pulse" style="background: #ea580c; border-radius: 2px;"></div>`,
+            html: `<div class="pin-pulse" style="background: #e11d48; border-radius: 2px;"></div>`,
             iconSize: [13, 13]
           });
           const marker = L.marker([cl.latitude, cl.longitude], { icon: pinIcon }).addTo(pinLayer);
-          marker.bindPopup(`<strong>${cl.title}</strong><br>${cl.venue}<br><span style="color:#fb923c">${cl.source}</span>`);
+          marker.bindPopup(`<strong>${cl.title}</strong><br>${cl.venue}<br><span style="color:#fb7185">${cl.source}</span>`);
 
           const el = document.createElement('div');
-          el.className = 'event-card card-standing';
+          el.className = 'event-card card-f1';
           el.innerHTML = `
             <div class="card-header-line">
               <div class="event-title">${cl.title}</div>
-              <span class="impact-badge badge-orange">${cl.duration || 'Active Work'}</span>
+              <span class="impact-badge badge-f1">CIRCUIT</span>
             </div>
-            <div class="venue-meta">📍 ${cl.venue} • <span class="geonet-tag" style="color:#fb923c;">${cl.source}</span></div>
-            <div class="event-detour">&#8618; ${cl.recommended_detour}</div>
+            <div class="venue-meta">📍 ${cl.venue} • <span class="geonet-tag" style="color:#fb7185;">${cl.source}</span></div>
+            <div class="event-detour" style="border-left-color: #e11d48; color: #fecdd3; background: #330d17;">&#8618; ${cl.recommended_detour}</div>
           `;
           el.onclick = () => { map.flyTo([cl.latitude, cl.longitude], 16); marker.openPopup(); };
           fBody.appendChild(el);
         });
 
-        closureFolder.appendChild(fHeader);
-        closureFolder.appendChild(fBody);
-        listContainer.appendChild(closureFolder);
+        f1Folder.appendChild(fHeader);
+        f1Folder.appendChild(fBody);
+        listContainer.appendChild(f1Folder);
       }
 
-      // 2. Live Hazards Folder (Styled Urgent Red)
+      // 2. Regional Seeing Orange Valley-Wide Folder (Safety Orange)
+      if (regionalItems.length > 0) {
+        const orangeFolder = document.createElement('div');
+        orangeFolder.className = 'date-folder orange-folder';
+
+        const oHeader = document.createElement('div');
+        oHeader.className = 'date-folder-header';
+        oHeader.innerHTML = `
+          <div><span class="arrow">&#9658;</span> 🚧 REGIONAL SEEING ORANGE (VALLEY)</div>
+          <span class="count-pill">${regionalItems.length} projects</span>
+        `;
+        oHeader.onclick = () => orangeFolder.classList.toggle('open');
+
+        const oBody = document.createElement('div');
+        oBody.className = 'date-folder-body';
+
+        regionalItems.forEach(reg => {
+          const pinIcon = L.divIcon({
+            className: 'c-pin',
+            html: `<div class="pin-pulse" style="background: #ea580c; border-radius: 2px;"></div>`,
+            iconSize: [12, 12]
+          });
+          const marker = L.marker([reg.latitude, reg.longitude], { icon: pinIcon }).addTo(regionalOrangeLayer);
+          marker.bindPopup(`<strong>${reg.title}</strong><br>${reg.venue}<br><span style="color:#fb923c">${reg.source}</span>`);
+
+          const el = document.createElement('div');
+          el.className = 'event-card card-orange';
+          el.innerHTML = `
+            <div class="card-header-line">
+              <div class="event-title">${reg.title}</div>
+              <span class="impact-badge badge-orange">${reg.duration || 'Capital'}</span>
+            </div>
+            <div class="venue-meta">📍 ${reg.venue} • <span class="geonet-tag" style="color:#fb923c;">${reg.source}</span></div>
+            <div class="event-detour">&#8618; ${reg.recommended_detour}</div>
+          `;
+          el.onclick = () => { map.flyTo([reg.latitude, reg.longitude], 15); marker.openPopup(); };
+          oBody.appendChild(el);
+        });
+
+        orangeFolder.appendChild(oHeader);
+        orangeFolder.appendChild(oBody);
+        listContainer.appendChild(orangeFolder);
+      }
+
+      // 3. Live Hazards Folder (Urgent Red)
       if (liveHazards.length > 0) {
         const hazardFolder = document.createElement('div');
         hazardFolder.className = 'date-folder hazard-folder';
@@ -547,7 +577,7 @@
               <span class="impact-badge badge-hazard">LIVE</span>
             </div>
             <div class="venue-meta">📍 ${hz.venue} • <span class="geonet-tag" style="color:#f87171;">${hz.source}</span></div>
-            <div class="event-detour">&#8618; ${hz.recommended_detour}</div>
+            <div class="event-detour" style="border-left-color:#ef4444; color:#fca5a5; background:#330b0f;">&#8618; ${hz.recommended_detour}</div>
           `;
           el.onclick = () => { map.flyTo([hz.latitude, hz.longitude], 16); marker.openPopup(); };
           fBody.appendChild(el);
@@ -558,7 +588,7 @@
         listContainer.appendChild(hazardFolder);
       }
 
-      // 3. Chronological Date Folders
+      // 4. Chronological Date Folders
       dynamicEvents.sort((a, b) => new Date(a.start_time || 0) - new Date(b.start_time || 0));
       const grouped = {};
       dynamicEvents.forEach(ev => {
