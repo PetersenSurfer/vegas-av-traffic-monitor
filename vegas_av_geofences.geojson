@@ -358,14 +358,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.170666,
-          36.122448
+          -115.1706395,
+          36.12799028
         ]
       },
       "properties": {
-        "id": "tm-LvZ18QEi-M5UYqq4C5HU_",
-        "title": "The Venetian Resort Gondolas",
-        "venue": "Gondola Ride at the Venetian",
+        "id": "tm-LvZ18QcTtNPgfJo54eXA3",
+        "title": "Colors of Mexico",
+        "venue": "Fantasy Lab Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -380,14 +380,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.1706395,
-          36.12799028
+          -115.170666,
+          36.122448
         ]
       },
       "properties": {
-        "id": "tm-LvZ18QcTtNPgfJo54eXA3",
-        "title": "Colors of Mexico",
-        "venue": "Fantasy Lab Las Vegas",
+        "id": "tm-LvZ18QEi-M5UYqq4C5HUQ",
+        "title": "The Venetian Resort Gondolas",
+        "venue": "Gondola Ride at the Venetian",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -2720,6 +2720,28 @@
         "id": "tm-G5ezZbgZel_hy",
         "title": "BGCC: Kristin Key with Daniel Eachus & Frazer Smith",
         "venue": "Brad Garrett's Comedy Club",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.167991,
+          36.10226
+        ]
+      },
+      "properties": {
+        "id": "tm-G5ezZ_1Umbw6o",
+        "title": "Steve Falcon",
+        "venue": "Underground Theater at MGM Grand",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
