@@ -75,19 +75,17 @@
       font-weight: 600;
     }
 
-    /* 1. F1 & Strip Track Roadwork (Dark Red/Crimson Accent) */
+    /* Fixed Roadwork & Hazard Folders */
     .f1-folder { border-color: #e11d48; }
     .f1-folder .date-folder-header { background: #310811; color: #fb7185; }
     .f1-folder .date-folder-header:hover { background: #440d18; }
     .f1-folder .count-pill { background: #9f1239; color: #ffe4e6; border: 1px solid #f43f5e; }
 
-    /* 2. Seeing Orange Regional Folder (Safety Orange Accent) */
     .orange-folder { border-color: #ea580c; }
     .orange-folder .date-folder-header { background: #2a1508; color: #fb923c; }
     .orange-folder .date-folder-header:hover { background: #3c1e0b; }
     .orange-folder .count-pill { background: #c2410c; color: #ffedd5; border: 1px solid #ea580c; }
 
-    /* 3. Live Hazards Folder (Urgent Red Accent) */
     .hazard-folder { border-color: #dc2626; }
     .hazard-folder .date-folder-header { background: #2b0d0e; color: #f87171; }
     .hazard-folder .date-folder-header:hover { background: #3d1416; }
@@ -102,7 +100,50 @@
       border-top: 1px solid #1f2937;
     }
     .date-folder.open .date-folder-body { display: flex; }
-    
+
+    /* Sub-Tier Drawers Inside Day Folders */
+    .tier-subdrawer {
+      border: 1px solid #1f2937;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .tier-sub-header {
+      padding: 0.45rem 0.65rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .tier-sub-header .arrow {
+      display: inline-block;
+      transition: transform 0.2s ease;
+      font-size: 0.6rem;
+      margin-right: 5px;
+    }
+    .tier-subdrawer.open .arrow { transform: rotate(90deg); }
+    .tier-sub-body {
+      display: none;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      background: #060a12;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .tier-subdrawer.open .tier-sub-body { display: flex; }
+
+    .t1-sub { border-color: #7f1d1d; }
+    .t1-sub .tier-sub-header { background: #2a0b0e; color: #f87171; }
+    .t2-sub { border-color: #7c2d12; }
+    .t2-sub .tier-sub-header { background: #261106; color: #fb923c; }
+    .t3-sub { border-color: #713f12; }
+    .t3-sub .tier-sub-header { background: #221703; color: #facc15; }
+    .t4-sub { border-color: #0369a1; }
+    .t4-sub .tier-sub-header { background: #082035; color: #38bdf8; }
+
     /* Event Cards */
     .event-card { 
       background: #111827; 
@@ -114,9 +155,10 @@
       transition: transform 0.15s ease, border-color 0.15s ease; 
     }
     .event-card:hover { transform: translateX(2px); border-color: #38bdf8; }
-    .card-critical { border-left-color: #ef4444; }
-    .card-high { border-left-color: #f97316; }
-    .card-moderate { border-left-color: #eab308; }
+    .card-t1 { border-left-color: #ef4444; }
+    .card-t2 { border-left-color: #f97316; }
+    .card-t3 { border-left-color: #eab308; }
+    .card-t4 { border-left-color: #38bdf8; background: #0b1728; }
     .card-f1 { border-left-color: #e11d48; background: #1a080d; }
     .card-orange { border-left-color: #ea580c; background: #1c130b; }
     .card-hazard { border-left-color: #ef4444; background: #1f0b0d; }
@@ -127,9 +169,10 @@
     .badge-f1 { background: #4c0519; color: #fda4af; border: 1px solid #e11d48; }
     .badge-orange { background: #431407; color: #fdba74; border: 1px solid #ea580c; }
     .badge-hazard { background: #450a0a; color: #fca5a5; border: 1px solid #dc2626; }
-    .badge-critical { background: #450a0a; color: #f87171; border: 1px solid #ef4444; }
-    .badge-high { background: #431407; color: #fb923c; border: 1px solid #f97316; }
-    .badge-mod { background: #422006; color: #facc15; border: 1px solid #eab308; }
+    .badge-t1 { background: #450a0a; color: #f87171; border: 1px solid #ef4444; }
+    .badge-t2 { background: #431407; color: #fb923c; border: 1px solid #f97316; }
+    .badge-t3 { background: #422006; color: #facc15; border: 1px solid #eab308; }
+    .badge-t4 { background: #0c283f; color: #7dd3fc; border: 1px solid #38bdf8; }
 
     .venue-meta { font-size: 0.72rem; color: #94a3b8; margin-top: 3px; display: flex; align-items: center; gap: 6px; }
     .geonet-tag { color: #38bdf8; font-weight: 600; }
@@ -151,17 +194,15 @@
     #map-container { flex: 1; position: relative; }
     #map { width: 100%; height: 100%; background: #0b0f19; }
 
-    /* Tactical Dark Filter applied ONLY to base street map tiles */
     .dark-basemap-active .leaflet-tile-pane > .leaflet-layer:first-child {
       filter: brightness(0.55) invert(1) contrast(3.2) hue-rotate(200deg) saturate(0.25) brightness(0.65);
     }
 
-    /* Bright High-Contrast Traffic Overlays */
     .traffic-bright-pane {
       filter: contrast(1.35) saturate(1.5) drop-shadow(0 0 1px rgba(0, 0, 0, 0.7));
     }
     
-    /* Mission Control HUD Panel */
+    /* Mission Control HUD */
     .hud-panel {
       position: absolute;
       bottom: 24px;
@@ -190,7 +231,6 @@
     .hud-prompt { background: #090e1a; border: 1px dashed #38bdf8; border-radius: 6px; padding: 6px 8px; font-size: 0.68rem; color: #7dd3fc; text-align: center; margin-top: 8px; }
 
     .pin-pulse { border-radius: 50%; height: 13px; width: 13px; position: absolute; left: -6.5px; top: -6.5px; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 8px rgba(0,0,0,0.6); }
-    .transit-pin { background: #06b6d4; border: 1px solid #fff; border-radius: 3px; width: 8px; height: 8px; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -198,7 +238,7 @@
   <aside id="sidebar">
     <div class="header">
       <h1><span>🚗</span> Mapping Event Mission Control</h1>
-      <p>ODD Traffic, F1 Track & Seeing Orange Regional</p>
+      <p>Daily Operations & 4-Tier Hierarchy</p>
     </div>
     
     <div class="status-bar">
@@ -235,7 +275,7 @@
   <div id="map-container">
     <div id="map" class="dark-basemap-active"></div>
 
-    <!-- Mission Control HUD -->
+    <!-- Mission Control HUD Panel -->
     <div class="hud-panel">
       <div class="hud-header">
         <span>STRIP CORRIDOR TELEMETRY</span>
@@ -279,12 +319,12 @@
         <span style="color: #fb923c;">Valley</span>
       </div>
       <div class="legend-row">
-        <div class="legend-row-left"><div class="legend-pin" style="background: #dc2626; border-radius: 2px;"></div> Live Hazard / Crash</div>
-        <span style="color: #f87171;">Urgent</span>
+        <div class="legend-row-left"><div class="legend-pin" style="background: #ef4444;"></div> Tier 1 Stadium Surge</div>
+        <span style="color: #ef4444; font-weight: 600;">Tier 1</span>
       </div>
       <div class="legend-row">
-        <div class="legend-row-left"><div class="legend-pin" style="background: #ef4444;"></div> Arena Surge / Game</div>
-        <span style="color: #ef4444; font-weight: 600;">Tier 1</span>
+        <div class="legend-row-left"><div class="legend-pin" style="background: #f97316;"></div> Tier 2 Major Convention / Arena</div>
+        <span style="color: #f97316; font-weight: 600;">Tier 2</span>
       </div>
 
       <div class="hud-prompt">💡 Click any road segment to query live speed & delay</div>
@@ -420,11 +460,53 @@
     }
 
     function formatTimeWindow(ev) {
-      if (!ev.start_time) return { dateLabel: 'Upcoming', timeLabel: 'TBD' };
+      if (!ev.start_time) return { dateKey: 'Upcoming', dateLabel: 'Upcoming', timeLabel: 'TBD' };
       const date = new Date(ev.start_time);
-      const dateLabel = date.toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' }).toUpperCase();
+      const dateKey = date.toISOString().split('T')[0];
+      const dateLabel = date.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase();
       const timeLabel = date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-      return { dateLabel, timeLabel };
+      return { dateKey, dateLabel, timeLabel };
+    }
+
+    function buildEventCard(ev, pinColor, cardClass, badgeClass, tierLabel) {
+      const pinIcon = L.divIcon({
+        className: 'c-pin',
+        html: `<div class="pin-pulse" style="background: ${pinColor};"></div>`,
+        iconSize: [13, 13]
+      });
+      const marker = L.marker([ev.latitude, ev.longitude], { icon: pinIcon }).addTo(pinLayer);
+      marker.bindPopup(`<strong>${ev.title}</strong><br>${ev.venue}<br><span style="color:#38bdf8">${ev.geonet_dist}</span>`);
+
+      const timeInfo = formatTimeWindow(ev);
+      const card = document.createElement('div');
+      card.className = `event-card ${cardClass}`;
+      
+      card.innerHTML = `
+        <div class="card-header-line">
+          <div class="event-title">${ev.title}</div>
+          <span class="impact-badge ${badgeClass}">${tierLabel}</span>
+        </div>
+        <div class="venue-meta">📍 ${ev.venue} • <span class="geonet-tag">${timeInfo.timeLabel}</span></div>
+        
+        ${ev.clearing_window ? `
+          <div class="crowd-phase-box">
+            <div class="crowd-phase-line"><span>Venue Cap: <strong>${ev.capacity || 'N/A'}</strong></span></div>
+            <div class="crowd-phase-line clearing-text"><span>🚪 Crowds clearing:</span> <span>${ev.clearing_window}</span></div>
+          </div>
+        ` : `
+          <div class="crowd-phase-box">
+            <div class="crowd-phase-line"><span>Attendance Impact:</span> <strong>${ev.attendance || 'Standard Attendance'}</strong></div>
+          </div>
+        `}
+
+        ${ev.pudo_status ? `<span class="factor-tag pudo-tag">🚖 ${ev.pudo_status}</span>` : ''}
+        ${ev.ped_density ? `<span class="factor-tag ped-tag">🚶 ${ev.ped_density}</span>` : ''}
+
+        <div class="event-detour">&#8618; ${ev.recommended_detour}</div>
+      `;
+
+      card.onclick = () => { map.flyTo([ev.latitude, ev.longitude], 15); marker.openPopup(); };
+      return card;
     }
 
     async function loadData() {
@@ -456,7 +538,7 @@
       const liveHazards = items.filter(i => i.type === 'LIVE_INCIDENT');
       const dynamicEvents = items.filter(i => !['F1_CLOSURE', 'RTC_SEEING_ORANGE', 'LIVE_INCIDENT'].includes(i.type));
 
-      // 1. Dedicated F1 & Strip Core Track Work Folder (Crimson / Race Circuit)
+      // 1. Dedicated F1 Track Work
       if (f1Items.length > 0) {
         const f1Folder = document.createElement('div');
         f1Folder.className = 'date-folder f1-folder';
@@ -500,7 +582,7 @@
         listContainer.appendChild(f1Folder);
       }
 
-      // 2. Regional Seeing Orange Valley-Wide Folder (Safety Orange)
+      // 2. Regional Seeing Orange Valley-Wide Folder
       if (regionalItems.length > 0) {
         const orangeFolder = document.createElement('div');
         orangeFolder.className = 'date-folder orange-folder';
@@ -544,7 +626,7 @@
         listContainer.appendChild(orangeFolder);
       }
 
-      // 3. Live Hazards Folder (Urgent Red)
+      // 3. Live Hazards Folder
       if (liveHazards.length > 0) {
         const hazardFolder = document.createElement('div');
         hazardFolder.className = 'date-folder hazard-folder';
@@ -588,80 +670,88 @@
         listContainer.appendChild(hazardFolder);
       }
 
-      // 4. Chronological Date Folders
+      // --- 4. Group Events by Day, Then Nested Tiers 1-4 Inside Each Day ---
       dynamicEvents.sort((a, b) => new Date(a.start_time || 0) - new Date(b.start_time || 0));
-      const grouped = {};
+
+      const groupedByDay = {};
       dynamicEvents.forEach(ev => {
-        const { dateLabel } = formatTimeWindow(ev);
-        if (!grouped[dateLabel]) grouped[dateLabel] = [];
-        grouped[dateLabel].push(ev);
+        const { dateKey, dateLabel } = formatTimeWindow(ev);
+        if (!groupedByDay[dateKey]) {
+          groupedByDay[dateKey] = { label: dateLabel, items: [] };
+        }
+        groupedByDay[dateKey].items.push(ev);
       });
 
-      let isFirstDate = true;
-      Object.keys(grouped).forEach(dateLabel => {
-        const folder = document.createElement('div');
-        folder.className = `date-folder ${isFirstDate ? 'open' : ''}`;
+      let isFirstDay = true;
+      Object.keys(groupedByDay).sort().forEach(dayKey => {
+        const dayData = groupedByDay[dayKey];
+        const dayFolder = document.createElement('div');
+        dayFolder.className = `date-folder ${isFirstDay ? 'open' : ''}`;
 
-        const fHeader = document.createElement('div');
-        fHeader.className = 'date-folder-header';
-        fHeader.innerHTML = `
-          <div><span class="arrow">&#9658;</span> 📅 ${dateLabel}</div>
-          <span class="count-pill">${grouped[dateLabel].length} events</span>
+        const dHeader = document.createElement('div');
+        dHeader.className = 'date-folder-header';
+        dHeader.innerHTML = `
+          <div><span class="arrow">&#9658;</span> 📅 ${dayData.label}</div>
+          <span class="count-pill">${dayData.items.length} events</span>
         `;
-        fHeader.onclick = () => folder.classList.toggle('open');
+        dHeader.onclick = () => dayFolder.classList.toggle('open');
 
-        const fBody = document.createElement('div');
-        fBody.className = 'date-folder-body';
+        const dBody = document.createElement('div');
+        dBody.className = 'date-folder-body';
 
-        grouped[dateLabel].forEach(ev => {
-          const isCrit = ev.severity === 'CRITICAL';
-          const isHigh = ev.severity === 'HIGH';
-          const pinColor = isCrit ? '#ef4444' : (isHigh ? '#f97316' : '#eab308');
-
-          const pinIcon = L.divIcon({
-            className: 'c-pin',
-            html: `<div class="pin-pulse" style="background: ${pinColor};"></div>`,
-            iconSize: [13, 13]
-          });
-          const marker = L.marker([ev.latitude, ev.longitude], { icon: pinIcon }).addTo(pinLayer);
-          marker.bindPopup(`<strong>${ev.title}</strong><br>${ev.venue}<br><span style="color:#38bdf8">${ev.geonet_dist}</span>`);
-
-          const timeInfo = formatTimeWindow(ev);
-          const card = document.createElement('div');
-          card.className = `event-card ${isCrit ? 'card-critical' : (isHigh ? 'card-high' : 'card-moderate')}`;
-          
-          card.innerHTML = `
-            <div class="card-header-line">
-              <div class="event-title">${ev.title}</div>
-              <span class="impact-badge ${isCrit ? 'badge-critical' : (isHigh ? 'badge-high' : 'badge-mod')}">${ev.impact_tier || ev.severity}</span>
-            </div>
-            <div class="venue-meta">📍 ${ev.venue} • <span class="geonet-tag">${ev.geonet_dist}</span></div>
-            
-            ${ev.clearing_window ? `
-              <div class="crowd-phase-box">
-                <div class="crowd-phase-line"><span>Start: <strong>${timeInfo.timeLabel}</strong></span> <span>Cap: ${ev.capacity || 'N/A'}</span></div>
-                <div class="crowd-phase-line clearing-text"><span>🚪 Crowds clearing:</span> <span>${ev.clearing_window}</span></div>
-              </div>
-            ` : `
-              <div class="crowd-phase-box">
-                <div class="crowd-phase-line"><span>Show Attendance:</span> <strong>${ev.attendance || 'Major Attendance'}</strong></div>
-              </div>
-            `}
-
-            ${ev.pudo_status ? `<span class="factor-tag pudo-tag">🚖 ${ev.pudo_status}</span>` : ''}
-            ${ev.ped_density ? `<span class="factor-tag ped-tag">🚶 ${ev.ped_density}</span>` : ''}
-
-            <div class="event-detour">&#8618; ${ev.recommended_detour}</div>
-          `;
-
-          card.onclick = () => { map.flyTo([ev.latitude, ev.longitude], 15); marker.openPopup(); };
-          fBody.appendChild(card);
+        // Categorize Day's Events into Tiers 1 through 4
+        const t1 = dayData.items.filter(e => {
+          const t = (e.title || '').toUpperCase(), v = (e.venue || '').toUpperCase(), imp = (e.impact_tier || '').toUpperCase();
+          return e.severity === 'CRITICAL' || imp.includes('TIER 1') || v.includes('ALLEGIANT') || v.includes('T-MOBILE') || t.includes('KNIGHTS') || t.includes('RAIDERS') || t.includes('UFC');
         });
 
-        folder.appendChild(fHeader);
-        folder.appendChild(fBody);
-        listContainer.appendChild(folder);
-        isFirstDate = false;
+        const t2 = dayData.items.filter(e => {
+          if (t1.includes(e)) return false;
+          const t = (e.title || '').toUpperCase(), v = (e.venue || '').toUpperCase(), imp = (e.impact_tier || '').toUpperCase();
+          return e.severity === 'HIGH' || imp.includes('TIER 2') || e.type === 'MAJOR_CONVENTION' || v.includes('SPHERE') || v.includes('CONVENTION') || v.includes('WORLD MARKET') || t.includes('CONCERT');
+        });
+
+        const t4 = dayData.items.filter(e => {
+          if (t1.includes(e) || t2.includes(e)) return false;
+          const t = (e.title || '').toUpperCase(), v = (e.venue || '').toUpperCase(), s = (e.source || '').toUpperCase();
+          return t.includes('COMMUNITY:') || s.includes('COMMUNITY') || v.includes('TOWN SQUARE') || v.includes('PARK') || v.includes('PRESERVE');
+        });
+
+        const t3 = dayData.items.filter(e => !t1.includes(e) && !t2.includes(e) && !t4.includes(e));
+
+        function createSubDrawer(title, count, items, subClass, pinColor, cardClass, badgeClass, tierLabel, openDefault) {
+          if (items.length === 0) return null;
+          const drawer = document.createElement('div');
+          drawer.className = `tier-subdrawer ${subClass} ${openDefault ? 'open' : ''}`;
+          
+          const sHeader = document.createElement('div');
+          sHeader.className = 'tier-sub-header';
+          sHeader.innerHTML = `<div><span class="arrow">&#9658;</span> ${title}</div><span class="count-pill" style="font-size:0.6rem;padding:1px 5px;">${count}</span>`;
+          sHeader.onclick = (e) => { e.stopPropagation(); drawer.classList.toggle('open'); };
+
+          const sBody = document.createElement('div');
+          sBody.className = 'tier-sub-body';
+          items.forEach(ev => sBody.appendChild(buildEventCard(ev, pinColor, cardClass, badgeClass, tierLabel)));
+
+          drawer.appendChild(sHeader);
+          drawer.appendChild(sBody);
+          return drawer;
+        }
+
+        const t1El = createSubDrawer('🔴 Tier 1: Critical Stadium Surge', t1.length, t1, 't1-sub', '#ef4444', 'card-t1', 'badge-t1', 'Tier 1', true);
+        const t2El = createSubDrawer('🟠 Tier 2: Conventions & Headliners', t2.length, t2, 't2-sub', '#f97316', 'card-t2', 'badge-t2', 'Tier 2', true);
+        const t3El = createSubDrawer('🟡 Tier 3: Showrooms & Residencies', t3.length, t3, 't3-sub', '#eab308', 'card-t3', 'badge-t3', 'Tier 3', false);
+        const t4El = createSubDrawer('🔵 Tier 4: Community & Town Square', t4.length, t4, 't4-sub', '#38bdf8', 'card-t4', 'badge-t4', 'Tier 4', false);
+
+        if (t1El) dBody.appendChild(t1El);
+        if (t2El) dBody.appendChild(t2El);
+        if (t3El) dBody.appendChild(t3El);
+        if (t4El) dBody.appendChild(t4El);
+
+        dayFolder.appendChild(dHeader);
+        dayFolder.appendChild(dBody);
+        listContainer.appendChild(dayFolder);
+        isFirstDay = false;
       });
     }
 
