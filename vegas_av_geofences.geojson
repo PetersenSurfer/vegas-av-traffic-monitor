@@ -17,6 +17,7 @@
         "type": "STANDING_CLOSURE",
         "severity": "CRITICAL",
         "geonet_proximity": "144 m from geonet",
+        "source": "Clark County / RTC Seeing Orange",
         "pudo_status": "Standard",
         "ped_density": "Standard",
         "detour": "Koval reduced to 1 lane each direction. Shift fleet to Paradise Rd."
@@ -38,6 +39,7 @@
         "type": "STANDING_CLOSURE",
         "severity": "CRITICAL",
         "geonet_proximity": "108 m from geonet",
+        "source": "Clark County / RTC Seeing Orange",
         "pudo_status": "Standard",
         "ped_density": "Standard",
         "detour": "24-hr closure near Las Vegas Blvd. Shift traffic to Desert Inn Arterial."
@@ -59,6 +61,7 @@
         "type": "MAJOR_CONVENTION",
         "severity": "MODERATE",
         "geonet_proximity": "207 m from geonet",
+        "source": "LVCVA Calendar",
         "pudo_status": "West Hall Loop Restricted",
         "ped_density": "Silver Lot Crossing",
         "detour": "Avoid Paradise Rd / Convention Center Dr; use Maryland Pkwy."
@@ -80,6 +83,7 @@
         "type": "MAJOR_CONVENTION",
         "severity": "HIGH",
         "geonet_proximity": "9 m from geonet",
+        "source": "LVCVA Calendar",
         "pudo_status": "Grand Central Gate Restricted",
         "ped_density": "Symphony Park Spillover",
         "detour": "Bypass Grand Central Pkwy via Bonneville or MLK."
@@ -101,6 +105,7 @@
         "type": "MAJOR_CONVENTION",
         "severity": "MODERATE",
         "geonet_proximity": "207 m from geonet",
+        "source": "LVCVA Calendar",
         "pudo_status": "West Hall Loop Restricted",
         "ped_density": "Silver Lot Crossing",
         "detour": "Avoid Paradise Rd / Convention Center Dr; use Maryland Pkwy."
@@ -122,6 +127,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -143,6 +149,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -164,6 +171,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -185,6 +193,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -206,6 +215,7 @@
         "type": "TIMED_EVENT",
         "severity": "CRITICAL",
         "geonet_proximity": "120 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Lot N / Dean Martin PUDO Only",
         "ped_density": "Hacienda Bridge Wave",
         "detour": "Reroute via Valley View Blvd or I-15 South Collector."
@@ -227,6 +237,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -248,6 +259,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -269,6 +281,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -290,6 +303,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -311,6 +325,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -332,6 +347,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -353,6 +369,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Sands Porte-Cochere Queue",
         "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
@@ -374,6 +391,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "83 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Valet Gate Throttled",
         "ped_density": "High Pedestrian Spillover",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
@@ -395,6 +413,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -416,6 +435,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -437,6 +457,7 @@
         "type": "TIMED_EVENT",
         "severity": "CRITICAL",
         "geonet_proximity": "83 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Valet Gate Throttled",
         "ped_density": "High Pedestrian Spillover",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
@@ -458,6 +479,7 @@
         "type": "TIMED_EVENT",
         "severity": "CRITICAL",
         "geonet_proximity": "83 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Valet Gate Throttled",
         "ped_density": "High Pedestrian Spillover",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
@@ -479,6 +501,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -500,6 +523,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -521,6 +545,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -542,6 +567,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -563,6 +589,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -584,6 +611,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -605,6 +633,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -626,6 +655,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -647,6 +677,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -668,6 +699,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -689,6 +721,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -710,6 +743,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -731,6 +765,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -752,6 +787,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -773,6 +809,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -794,6 +831,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -815,6 +853,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -836,6 +875,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -857,6 +897,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -878,6 +919,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -899,6 +941,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -920,6 +963,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -941,6 +985,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -962,6 +1007,7 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -983,6 +1029,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1004,6 +1051,7 @@
         "type": "TIMED_EVENT",
         "severity": "CRITICAL",
         "geonet_proximity": "83 m from geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Valet Gate Throttled",
         "ped_density": "High Pedestrian Spillover",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
@@ -1025,6 +1073,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1046,6 +1095,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1067,6 +1117,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1088,6 +1139,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1109,6 +1161,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1130,6 +1183,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1151,6 +1205,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1172,6 +1227,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1193,6 +1249,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1214,6 +1271,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1235,6 +1293,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1256,6 +1315,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1277,6 +1337,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1298,6 +1359,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1319,6 +1381,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1340,6 +1403,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1361,6 +1425,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1382,6 +1447,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1403,6 +1469,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1424,6 +1491,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1445,6 +1513,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1466,6 +1535,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1487,6 +1557,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1508,6 +1579,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1529,6 +1601,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1550,6 +1623,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1571,6 +1645,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1592,6 +1667,7 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
@@ -1613,59 +1689,10 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "source": "Ticketmaster Live",
         "pudo_status": "Driveway Normal",
         "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -115.1798,
-            36.0945
-          ],
-          [
-            -115.1792,
-            36.115
-          ],
-          [
-            -115.1805,
-            36.125
-          ]
-        ]
-      },
-      "properties": {
-        "name": "West Strip Bypass (Frank Sinatra Dr)",
-        "type": "av_green_corridor",
-        "speed_limit_mph": 35
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -115.1541,
-            36.091
-          ],
-          [
-            -115.1543,
-            36.131
-          ],
-          [
-            -115.1545,
-            36.151
-          ]
-        ]
-      },
-      "properties": {
-        "name": "East Strip Arterial (Paradise Rd)",
-        "type": "av_green_corridor",
-        "speed_limit_mph": 35
       }
     }
   ]
