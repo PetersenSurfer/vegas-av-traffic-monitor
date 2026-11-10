@@ -8,9 +8,9 @@ TM_API_KEY = os.getenv("TM_API_KEY", "")
 LAS_VEGAS_LAT = 36.1147
 LAS_VEGAS_LNG = -115.1728
 
-# Core Vegas Corridor Bounding Box (Strip, Downtown, Airport, Convention Center)
-MIN_LAT, MAX_LAT = 36.06, 36.18
-MIN_LNG, MAX_LNG = -115.22, -115.12
+# Full Valley Bounding Box matching Seeing Orange map
+MIN_LAT, MAX_LAT = 35.95, 36.35
+MIN_LNG, MAX_LNG = -115.38, -114.95
 
 VENUE_PROFILES = {
     "T-Mobile Arena": {
@@ -78,99 +78,192 @@ def fetch_weather_advisories():
         print(f"Weather alert notice: {e}")
     return "Normal Mojave Operations (No Active Alerts)"
 
-def fetch_rtc_seeing_orange():
-    """
-    Queries RTC SNV ArcGIS REST Service for Seeing Orange active construction & road projects.
-    Filters spatially for the Las Vegas Strip, Downtown, and arterial corridors.
-    """
-    # RTC Open Data Seeing Orange Project ArcGIS REST query endpoint
+def extract_coords(geom):
+    if not geom:
+        return None, None
+    if "y" in geom and "x" in geom:
+        return geom["y"], geom["x"]
+    if "paths" in geom and len(geom["paths"]) > 0:
+        pts = geom["paths"][0]
+        if pts:
+            mid = len(pts) // 2
+            return pts[mid][1], pts[mid][0]
+    return None, None
+
+def get_f1_strip_standing():
+    """Dedicated F1 circuit and immediate Strip track restrictions."""
+    now = datetime.now(timezone.utc)
+    return [
+        {
+            "id": "f1-koval-lane",
+            "title": "F1 Track: Koval Ln Barrier & Reduction",
+            "venue": "Koval Ln (Flamingo to Harmon)",
+            "source": "Clark County / F1 Permitting",
+            "type": "F1_CLOSURE",
+            "start_time": now.isoformat(),
+            "duration": "24-Hr Circuit Work",
+            "severity": "CRITICAL",
+            "impact_tier": "F1 Circuit",
+            "latitude": 36.1118,
+            "longitude": -115.1639,
+            "geonet_dist": "Inside Las Vegas Metro Geonet",
+            "exclusion_radius": 500,
+            "recommended_detour": "Koval restricted to 1 lane. Shift AV fleet to Paradise Rd."
+        },
+        {
+            "id": "f1-sands-springmtn",
+            "title": "F1 Track: Sands Ave & Koval Intersection",
+            "venue": "Sands Ave @ Koval Ln",
+            "source": "Clark County / F1 Permitting",
+            "type": "F1_CLOSURE",
+            "start_time": now.isoformat(),
+            "duration": "24-Hr Circuit Work",
+            "severity": "CRITICAL",
+            "impact_tier": "F1 Circuit",
+            "latitude": 36.1255,
+            "longitude": -115.1635,
+            "geonet_dist": "Inside Las Vegas Metro Geonet",
+            "exclusion_radius": 450,
+            "recommended_detour": "Severe turn throttling. Divert north fleet to Desert Inn Arterial."
+        },
+        {
+            "id": "f1-harmon-strip",
+            "title": "F1 Track: Harmon Ave Paddock Access",
+            "venue": "East Harmon Ave @ Audrie St",
+            "source": "Clark County / F1 Permitting",
+            "type": "F1_CLOSURE",
+            "start_time": now.isoformat(),
+            "duration": "24-Hr Circuit Work",
+            "severity": "CRITICAL",
+            "impact_tier": "F1 Circuit",
+            "latitude": 36.1082,
+            "longitude": -115.1655,
+            "geonet_dist": "Inside Las Vegas Metro Geonet",
+            "exclusion_radius": 450,
+            "recommended_detour": "Paddock logistics active. Use Tropicana Ave for cross-valley travel."
+        }
+    ]
+
+def fetch_seeing_orange_regional():
+    """Fetches the full valley-wide Seeing Orange construction layer shown on the portal."""
+    headers = {"User-Agent": "AV-Fleet-Dispatch/1.0"}
+    regional_work = []
+    seen = set()
+
     url = (
         "https://services1.arcgis.com/eB9x4y9kE02P5R7S/arcgis/rest/services/"
         "RTC_Seeing_Orange_Active_Projects/FeatureServer/0/query"
-        "?where=1%3D1&outFields=*&geometryType=esriGeometryEnvelope"
-        f"&geometry={MIN_LNG},{MIN_LAT},{MAX_LNG},{MAX_LAT}"
-        "&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&f=json"
     )
-    headers = {"User-Agent": "AV-Dispatch-Monitor/1.0"}
-    closures = []
+    params = {
+        "where": "1=1",
+        "outFields": "*",
+        "geometryType": "esriGeometryEnvelope",
+        "geometry": f"{MIN_LNG},{MIN_LAT},{MAX_LNG},{MAX_LAT}",
+        "inSR": "4326",
+        "spatialRel": "esriSpatialRelIntersects",
+        "outSR": "4326",
+        "f": "json"
+    }
 
     try:
-        res = requests.get(url, headers=headers, timeout=10)
+        res = requests.get(url, params=params, headers=headers, timeout=10)
         if res.status_code == 200:
-            data = res.json()
-            features = data.get("features", [])
-            for feat in features:
+            for feat in res.json().get("features", []):
                 props = feat.get("attributes", {})
                 geom = feat.get("geometry", {})
-                
-                # Check coordinate geometry (point or centroid of line)
-                lat = geom.get("y") or (geom.get("paths", [[[None, None]]])[0][0][1] if "paths" in geom else None)
-                lng = geom.get("x") or (geom.get("paths", [[[None, None]]])[0][0][0] if "paths" in geom else None)
+                lat, lng = extract_coords(geom)
 
                 if lat and lng and (MIN_LAT <= lat <= MAX_LAT) and (MIN_LNG <= lng <= MAX_LNG):
-                    title = props.get("PROJECT_NAME") or props.get("RoadName") or "RTC Seeing Orange Work Zone"
-                    agency = props.get("AGENCY") or "Clark County Public Works"
-                    details = props.get("RESTRICTION_DESC") or props.get("Scope") or "Lane closures / construction zone."
-                    
-                    closures.append({
-                        "id": f"rtc-so-{props.get('OBJECTID', lat)}",
-                        "title": f"RTC Roadwork: {title}",
-                        "venue": props.get("LOCATION") or "Corridor Surface Arterial",
-                        "source": f"RTC Seeing Orange ({agency})",
-                        "type": "STANDING_CLOSURE",
+                    oid = props.get("OBJECTID") or f"{lat}_{lng}"
+                    if oid in seen:
+                        continue
+                    seen.add(oid)
+
+                    name = props.get("PROJECT_NAME") or props.get("ProjectName") or "RTC Regional Roadwork"
+                    agency = props.get("AGENCY") or props.get("Agency") or "RTC / NDOT"
+                    details = props.get("RESTRICTION_DESC") or props.get("Scope") or "Lane reduction / capital project."
+                    loc = props.get("LOCATION") or props.get("Location") or "Valley Arterial"
+                    end_date = props.get("EST_COMPLETION") or props.get("EndDate") or "Capital Project"
+
+                    # Avoid placing F1 work in the generic Seeing Orange folder
+                    if "F1" in name.upper() or "FORMULA" in name.upper():
+                        continue
+
+                    regional_work.append({
+                        "id": f"so-{oid}",
+                        "title": name,
+                        "venue": str(loc),
+                        "source": f"Seeing Orange ({agency})",
+                        "type": "RTC_SEEING_ORANGE",
                         "start_time": datetime.now(timezone.utc).isoformat(),
-                        "duration": props.get("EST_COMPLETION") or "Active Permit",
-                        "severity": "CRITICAL" if "closure" in details.lower() else "MODERATE",
-                        "impact_tier": "RTC Street Work",
+                        "duration": str(end_date),
+                        "severity": "MODERATE",
+                        "impact_tier": "Regional Capital",
                         "latitude": float(lat),
                         "longitude": float(lng),
-                        "geonet_dist": "Inside Las Vegas Metro Geonet",
-                        "exclusion_radius": 450,
-                        "recommended_detour": f"{details} Shift fleet to parallel outer arterials."
+                        "geonet_dist": "Valley Wide Regional Domain",
+                        "exclusion_radius": 400,
+                        "recommended_detour": f"{details} Anticipate speed reductions in work zone."
                     })
     except Exception as e:
-        print(f"Seeing Orange API notice (falling back to baseline closures): {e}")
+        print(f"Seeing Orange regional query notice: {e}")
 
-    # Fallback guaranteed F1 & Clark County core projects if live service is in maintenance
-    if not closures:
-        closures.extend([
+    # Fallback representative projects if ArcGIS service is under maintenance
+    if not regional_work:
+        regional_work.extend([
             {
-                "id": "stand-f1-koval",
-                "title": "F1 construction: Koval Ln lane reduction",
-                "venue": "Koval Ln (Rochelle - Westchester)",
-                "source": "Clark County / RTC Seeing Orange",
-                "type": "STANDING_CLOSURE",
+                "id": "so-i15-tropicana",
+                "title": "I-15 / Tropicana Interchange Project",
+                "venue": "I-15 at Tropicana Ave",
+                "source": "Seeing Orange (NDOT)",
+                "type": "RTC_SEEING_ORANGE",
                 "start_time": datetime.now(timezone.utc).isoformat(),
-                "duration": "24 hr / Continuous",
+                "duration": "Major Reconstruction",
                 "severity": "CRITICAL",
-                "impact_tier": "Standing Closure",
-                "latitude": 36.1118,
-                "longitude": -115.1639,
-                "geonet_dist": "144 m from geonet",
-                "exclusion_radius": 500,
-                "recommended_detour": "Koval reduced to 1 lane each direction. Shift fleet to Paradise Rd."
+                "impact_tier": "Regional Capital",
+                "latitude": 36.1010,
+                "longitude": -115.1840,
+                "geonet_dist": "Valley Wide Regional Domain",
+                "exclusion_radius": 600,
+                "recommended_detour": "Active ramp shifts. Use Russell Rd or Flamingo Rd exits."
             },
             {
-                "id": "stand-f1-sands",
-                "title": "F1 construction: Sands Ave & Spring Mountain",
-                "venue": "Sands Ave @ Koval Ln",
-                "source": "Clark County / RTC Seeing Orange",
-                "type": "STANDING_CLOSURE",
+                "id": "so-cc215-south",
+                "title": "CC-215 Beltway Widening (Decatur - Jones)",
+                "venue": "CC-215 Beltway South",
+                "source": "Seeing Orange (Clark County)",
+                "type": "RTC_SEEING_ORANGE",
                 "start_time": datetime.now(timezone.utc).isoformat(),
-                "duration": "24 hr / Continuous",
-                "severity": "CRITICAL",
-                "impact_tier": "Standing Closure",
-                "latitude": 36.1255,
-                "longitude": -115.1635,
-                "geonet_dist": "108 m from geonet",
-                "exclusion_radius": 450,
-                "recommended_detour": "24-hr closure near Las Vegas Blvd. Shift traffic to Desert Inn Arterial."
+                "duration": "Widening Phase",
+                "severity": "MODERATE",
+                "impact_tier": "Regional Capital",
+                "latitude": 36.0680,
+                "longitude": -115.2100,
+                "geonet_dist": "Valley Wide Regional Domain",
+                "exclusion_radius": 500,
+                "recommended_detour": "Nighttime lane closures. Plan for 45 mph speed limit."
+            },
+            {
+                "id": "so-charleston-downtown",
+                "title": "Charleston Blvd Reconstruction",
+                "venue": "Charleston Blvd (Rancho to Grand Central)",
+                "source": "Seeing Orange (City of Las Vegas)",
+                "type": "RTC_SEEING_ORANGE",
+                "start_time": datetime.now(timezone.utc).isoformat(),
+                "duration": "Active Repaving",
+                "severity": "MODERATE",
+                "impact_tier": "Regional Capital",
+                "latitude": 36.1585,
+                "longitude": -115.1630,
+                "geonet_dist": "Valley Wide Regional Domain",
+                "exclusion_radius": 400,
+                "recommended_detour": "Right lane closed. Shift traffic to Bonneville Ave."
             }
         ])
-    return closures
+
+    return regional_work
 
 def fetch_open_incidents():
-    """Queries Nevada 511 / CARS Open Incident Stream."""
     url = "https://nvroads.com/api/v2/get/events"
     headers = {"User-Agent": "AV-Fleet-Dispatch/1.0"}
     events = []
@@ -187,18 +280,18 @@ def fetch_open_incidents():
                         "title": headline,
                         "venue": item.get("roadName", "Las Vegas Corridor"),
                         "source": "NV 511 / RTC FAST",
-                        "type": "LIVE_INCIDENT" if "crash" in headline.lower() or "hazard" in headline.lower() else "MUNICIPAL_PERMIT",
+                        "type": "LIVE_INCIDENT",
                         "start_time": datetime.now(timezone.utc).isoformat(),
                         "severity": "CRITICAL" if "closure" in headline.lower() else "MODERATE",
                         "impact_tier": "Active Bottleneck",
-                        "geonet_dist": "Inside Las Vegas Metro Geonet",
+                        "geonet_dist": "Live Incident",
                         "latitude": float(lat),
                         "longitude": float(lng),
                         "exclusion_radius": 400,
-                        "recommended_detour": "Yield to active roadside teams; shift fleet to parallel corridor."
+                        "recommended_detour": "Yield to roadside responders; utilize outer lanes."
                     })
     except Exception as e:
-        print(f"Open 511 event stream notice: {e}")
+        print(f"Open 511 notice: {e}")
     return events
 
 def fetch_conventions():
@@ -328,51 +421,17 @@ def main():
     combined = []
     weather_info = fetch_weather_advisories()
 
-    # 1. RTC Seeing Orange Construction Feeds
-    combined.extend(fetch_rtc_seeing_orange())
-    # 2. Live Hazards / NV 511 / RTC FAST
+    # 1. Dedicated F1 & Strip Core Closures
+    combined.extend(get_f1_strip_standing())
+    # 2. Regional Seeing Orange Valley-Wide Capital Projects
+    combined.extend(fetch_seeing_orange_regional())
+    # 3. Live Hazards & Open 511 Incidents
     combined.extend(fetch_open_incidents())
-    # 3. LVCVA Conventions
+    # 4. Conventions & Ticketmaster Events
     combined.extend(fetch_conventions())
-    # 4. Ticketmaster Stadium & Arena Shows
     combined.extend(fetch_ticketmaster_events())
 
     payload = {
         "metadata": {
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "active_events_count": len(combined),
-            "weather_advisory": weather_info,
-            "system_name": "Mapping Event Mission Control"
-        },
-        "events": combined
-    }
-
-    with open("vegas_events.json", "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2)
-
-    features = []
-    for ev in combined:
-        features.append({
-            "type": "Feature",
-            "geometry": {"type": "Point", "coordinates": [ev["longitude"], ev["latitude"]]},
-            "properties": {
-                "id": ev["id"],
-                "title": ev["title"],
-                "venue": ev["venue"],
-                "type": ev["type"],
-                "severity": ev["severity"],
-                "geonet_proximity": ev["geonet_dist"],
-                "source": ev.get("source", "Standard"),
-                "pudo_status": ev.get("pudo_status", "Standard"),
-                "ped_density": ev.get("ped_density", "Standard"),
-                "detour": ev["recommended_detour"]
-            }
-        })
-
-    with open("vegas_av_geofences.geojson", "w", encoding="utf-8") as f:
-        json.dump({"type": "FeatureCollection", "features": features}, f, indent=2)
-
-    print(f"Mission control pipeline updated: {len(combined)} active operational elements.")
-
-if __name__ == "__main__":
-    main()
+            "active_
