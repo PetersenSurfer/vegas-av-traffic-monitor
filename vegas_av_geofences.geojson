@@ -17,6 +17,8 @@
         "type": "STANDING_CLOSURE",
         "severity": "CRITICAL",
         "geonet_proximity": "144 m from geonet",
+        "pudo_status": "Standard",
+        "ped_density": "Standard",
         "detour": "Koval reduced to 1 lane each direction. Shift fleet to Paradise Rd."
       }
     },
@@ -36,6 +38,8 @@
         "type": "STANDING_CLOSURE",
         "severity": "CRITICAL",
         "geonet_proximity": "108 m from geonet",
+        "pudo_status": "Standard",
+        "ped_density": "Standard",
         "detour": "24-hr closure near Las Vegas Blvd. Shift traffic to Desert Inn Arterial."
       }
     },
@@ -55,6 +59,8 @@
         "type": "MAJOR_CONVENTION",
         "severity": "MODERATE",
         "geonet_proximity": "207 m from geonet",
+        "pudo_status": "West Hall Loop Restricted",
+        "ped_density": "Silver Lot Crossing",
         "detour": "Avoid Paradise Rd / Convention Center Dr; use Maryland Pkwy."
       }
     },
@@ -74,6 +80,8 @@
         "type": "MAJOR_CONVENTION",
         "severity": "HIGH",
         "geonet_proximity": "9 m from geonet",
+        "pudo_status": "Grand Central Gate Restricted",
+        "ped_density": "Symphony Park Spillover",
         "detour": "Bypass Grand Central Pkwy via Bonneville or MLK."
       }
     },
@@ -93,44 +101,8 @@
         "type": "MAJOR_CONVENTION",
         "severity": "MODERATE",
         "geonet_proximity": "207 m from geonet",
-        "detour": "Avoid Paradise Rd / Convention Center Dr; use Maryland Pkwy."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1645,
-          36.122
-        ]
-      },
-      "properties": {
-        "id": "conv-awsre:i",
-        "title": "AWS re:Invent Expo",
-        "venue": "Venetian Expo",
-        "type": "MAJOR_CONVENTION",
-        "severity": "CRITICAL",
-        "geonet_proximity": "95 m from geonet",
-        "detour": "Shift to Koval Ln or Paradise Rd."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1517,
-          36.1315
-        ]
-      },
-      "properties": {
-        "id": "conv-national",
-        "title": "National Finals Rodeo Cowboy Christmas",
-        "venue": "Las Vegas Convention Center",
-        "type": "MAJOR_CONVENTION",
-        "severity": "CRITICAL",
-        "geonet_proximity": "207 m from geonet",
+        "pudo_status": "West Hall Loop Restricted",
+        "ped_density": "Silver Lot Crossing",
         "detour": "Avoid Paradise Rd / Convention Center Dr; use Maryland Pkwy."
       }
     },
@@ -150,6 +122,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -169,6 +143,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -188,6 +164,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -207,6 +185,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -226,6 +206,8 @@
         "type": "TIMED_EVENT",
         "severity": "CRITICAL",
         "geonet_proximity": "120 m from geonet",
+        "pudo_status": "Lot N / Dean Martin PUDO Only",
+        "ped_density": "Hacienda Bridge Wave",
         "detour": "Reroute via Valley View Blvd or I-15 South Collector."
       }
     },
@@ -245,6 +227,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -264,6 +248,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -283,6 +269,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -302,6 +290,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -321,6 +311,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -340,6 +332,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -359,6 +353,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "110 m from geonet",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
         "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
       }
     },
@@ -378,6 +374,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "83 m from geonet",
+        "pudo_status": "Valet Gate Throttled",
+        "ped_density": "High Pedestrian Spillover",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
       }
     },
@@ -397,6 +395,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -416,6 +416,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -435,6 +437,8 @@
         "type": "TIMED_EVENT",
         "severity": "CRITICAL",
         "geonet_proximity": "83 m from geonet",
+        "pudo_status": "Valet Gate Throttled",
+        "ped_density": "High Pedestrian Spillover",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
       }
     },
@@ -454,6 +458,8 @@
         "type": "TIMED_EVENT",
         "severity": "CRITICAL",
         "geonet_proximity": "83 m from geonet",
+        "pudo_status": "Valet Gate Throttled",
+        "ped_density": "High Pedestrian Spillover",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
       }
     },
@@ -473,6 +479,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -492,6 +500,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -511,6 +521,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -530,6 +542,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -549,6 +563,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -568,6 +584,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -587,6 +605,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -606,6 +626,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -625,6 +647,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -644,6 +668,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -663,6 +689,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -682,6 +710,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -701,6 +731,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -720,6 +752,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -739,6 +773,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -758,6 +794,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -777,6 +815,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -796,6 +836,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -815,6 +857,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -834,6 +878,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -853,6 +899,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -872,6 +920,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -891,6 +941,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -910,6 +962,8 @@
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -929,6 +983,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -948,6 +1004,8 @@
         "type": "TIMED_EVENT",
         "severity": "CRITICAL",
         "geonet_proximity": "83 m from geonet",
+        "pudo_status": "Valet Gate Throttled",
+        "ped_density": "High Pedestrian Spillover",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
       }
     },
@@ -967,6 +1025,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -986,6 +1046,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1005,6 +1067,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1024,6 +1088,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1043,6 +1109,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1062,6 +1130,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1081,6 +1151,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1100,6 +1172,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1119,6 +1193,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1138,6 +1214,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1157,6 +1235,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1176,6 +1256,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1195,6 +1277,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1214,6 +1298,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1233,6 +1319,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1252,6 +1340,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1271,6 +1361,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1290,6 +1382,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1309,6 +1403,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1328,6 +1424,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1347,6 +1445,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1366,6 +1466,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1385,6 +1487,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1404,6 +1508,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1423,6 +1529,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1442,6 +1550,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1461,6 +1571,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1480,6 +1592,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
@@ -1499,6 +1613,8 @@
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Inside Las Vegas Metro Geonet",
+        "pudo_status": "Driveway Normal",
+        "ped_density": "Moderate Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
     },
