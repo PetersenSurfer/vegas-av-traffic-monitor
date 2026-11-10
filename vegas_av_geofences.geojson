@@ -6,18 +6,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.1783,
-          36.1028
+          -115.1621,
+          36.1212
         ]
       },
       "properties": {
-        "id": "sim-vgk-01",
-        "title": "Vegas Golden Knights Match",
-        "venue": "T-Mobile Arena",
-        "type": "exclusion_zone",
-        "severity": "CRITICAL",
-        "buffer_radius_m": 750,
-        "detour_instructions": "Reroute to Frank Sinatra Dr or Dean Martin Way"
+        "id": "tm-1A9Zk37GkdXVozi",
+        "title": "Eagles Live at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
       }
     },
     {
@@ -30,13 +30,13 @@
         ]
       },
       "properties": {
-        "id": "sim-sphere-02",
-        "title": "Sphere Live Production",
+        "id": "tm-1A9Zk37GkdXg-zV",
+        "title": "Eagles Live at Sphere",
         "venue": "Sphere",
-        "type": "exclusion_zone",
+        "source": "Ticketmaster",
         "severity": "MODERATE",
         "buffer_radius_m": 700,
-        "detour_instructions": "Reroute to Paradise Rd"
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
       }
     },
     {
@@ -44,18 +44,1861 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.1438,
-          36.1699
+          -115.1621,
+          36.1212
         ]
       },
       "properties": {
-        "id": "sim-dtlv-03",
-        "title": "Downtown Fremont Block Gathering",
-        "venue": "Fremont Street Experience",
-        "type": "exclusion_zone",
-        "severity": "SEVERE",
+        "id": "tm-17AYv0G65p_1As2",
+        "title": "Eagles - Suite Reservation",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G65p_1Ps9",
+        "title": "Eagles - Suite Reservation",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1833,
+          36.0908
+        ]
+      },
+      "properties": {
+        "id": "tm-1AvjZ_kGkSdsH2V",
+        "title": "Las Vegas Raiders vs. Seattle Seahawks",
+        "venue": "Allegiant Stadium",
+        "source": "Ticketmaster",
+        "severity": "CRITICAL",
+        "buffer_radius_m": 1300,
+        "detour_instructions": "Reroute to Valley View Blvd or I-15 South Collector"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1833,
+          36.0908
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G653GwmJq",
+        "title": "Las Vegas Raiders vs. Seattle Seahawks\u00a0| Official Hotel Packages",
+        "venue": "Allegiant Stadium",
+        "source": "Ticketmaster",
+        "severity": "CRITICAL",
+        "buffer_radius_m": 1300,
+        "detour_instructions": "Reroute to Valley View Blvd or I-15 South Collector"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9ZkuPGkdYlnIL",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-169Zk8s7MZAu8vGv",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1FAYv0GoCkZ78vC7",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYvN_tGA2j_xN",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9ZkuPGkdYnBI_",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6ulh8dA2",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-16vjZbUffG7gjY2",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYvN_IGAGrEhK",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1FAYv0GoCvZ78vua",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-169Zk8sk3ZA2vGeF",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYvN_IGAGL9hQ",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1avjZ_d7_GYZdGd2",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-16vjZbUffG7UGYf",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6ulhoNA4",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1avjZ_d7_CZZdGAG",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9ZkfpGkdQ89E3",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9ZkfpGkdQu6Ju",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1621,
+          36.1212
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYvN_IGAGO6hq",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 700,
+        "detour_instructions": "Reroute to Paradise Rd or Howard Hughes Pkwy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1783,
+          36.1028
+        ]
+      },
+      "properties": {
+        "id": "tm-Z7r9jZ1A7xpfb",
+        "title": "Teddy Swims",
+        "venue": "T-Mobile Arena",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 750,
+        "detour_instructions": "Reroute to Frank Sinatra Dr or Dean Martin Way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.174805,
+          36.103949
+        ]
+      },
+      "properties": {
+        "id": "tm-G5ezZ_ur4KsK0",
+        "title": "Kill Tony",
+        "venue": "Dolby Live",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.174805,
+          36.103949
+        ]
+      },
+      "properties": {
+        "id": "tm-G5ezZ_ur44oKW",
+        "title": "Kill Tony",
+        "venue": "Dolby Live",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1783,
+          36.1028
+        ]
+      },
+      "properties": {
+        "id": "tm-Z7r9jZ1A7J4_N",
+        "title": "Vegas Golden Knights vs. Nashville Predators",
+        "venue": "T-Mobile Arena",
+        "source": "Ticketmaster",
+        "severity": "CRITICAL",
+        "buffer_radius_m": 750,
+        "detour_instructions": "Reroute to Frank Sinatra Dr or Dean Martin Way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1783,
+          36.1028
+        ]
+      },
+      "properties": {
+        "id": "tm-Z7r9jZ1A7J4_-",
+        "title": "Vegas Golden Knights vs. Utah Mammoth",
+        "venue": "T-Mobile Arena",
+        "source": "Ticketmaster",
+        "severity": "CRITICAL",
+        "buffer_radius_m": 750,
+        "detour_instructions": "Reroute to Frank Sinatra Dr or Dean Martin Way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16923919,
+          36.12139406
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3FGketU3MH",
+        "title": "The Book of Mormon (Touring)",
+        "venue": "The Venetian Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16923919,
+          36.12139406
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3FGketMxz0",
+        "title": "The Book of Mormon (Touring)",
+        "venue": "The Venetian Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16923919,
+          36.12139406
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3FGketWwH6",
+        "title": "The Book of Mormon (Touring)",
+        "venue": "The Venetian Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16923919,
+          36.12139406
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3FGketH3Ds",
+        "title": "The Book of Mormon (Touring)",
+        "venue": "The Venetian Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16923919,
+          36.12139406
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3FGketzwyq",
+        "title": "The Book of Mormon (Touring)",
+        "venue": "The Venetian Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16923919,
+          36.12139406
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3FGketTeXK",
+        "title": "The Book of Mormon (Touring)",
+        "venue": "The Venetian Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16923919,
+          36.12139406
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3FGketBeBs",
+        "title": "The Book of Mormon (Touring)",
+        "venue": "The Venetian Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16923919,
+          36.12139406
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3FGketDeDP",
+        "title": "The Book of Mormon (Touring)",
+        "venue": "The Venetian Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1678,
+          36.1017
+        ]
+      },
+      "properties": {
+        "id": "tm-G5ezZ_1Y6-wMN",
+        "title": "KATSEYE: THE WILDWORLD TOUR",
+        "venue": "MGM Grand Garden Arena",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
         "buffer_radius_m": 600,
-        "detour_instructions": "Reroute to E Charleston Blvd"
+        "detour_instructions": "Bypass Tropicana Ave via Koval Ln"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17247058,
+          36.10961689
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZk39GkdDbXL9",
+        "title": "Jeezy: The Legend of The Snowman",
+        "venue": "PH Live at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17247058,
+          36.10961689
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZk39GkdD9mLK",
+        "title": "Jeezy: The Legend of The Snowman",
+        "venue": "PH Live at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.174742,
+          36.087535
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6Ck13z7P",
+        "title": "SiriusXM Presents An Intimate Evening with SANTANA Greatest Hits Live",
+        "venue": "House of Blues Las Vegas ",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.174742,
+          36.087535
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6Ck1oI7r",
+        "title": "SiriusXM Presents An Intimate Evening with SANTANA Greatest Hits Live",
+        "venue": "House of Blues Las Vegas ",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.174742,
+          36.087535
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6Ck1fb7i",
+        "title": "SiriusXM Presents An Intimate Evening with SANTANA Greatest Hits Live",
+        "venue": "House of Blues Las Vegas ",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.174742,
+          36.087535
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6Ck18F79",
+        "title": "SiriusXM Presents An Intimate Evening with SANTANA Greatest Hits Live",
+        "venue": "House of Blues Las Vegas ",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1678,
+          36.1017
+        ]
+      },
+      "properties": {
+        "id": "tm-Z7r9jZ1A70OuV",
+        "title": "KATSEYE: THE WILDWORLD TOUR",
+        "venue": "MGM Grand Garden Arena",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 600,
+        "detour_instructions": "Bypass Tropicana Ave via Koval Ln"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.146599,
+          36.0853
+        ]
+      },
+      "properties": {
+        "id": "tm-Z7r9jZ1A70EqS",
+        "title": "Don Omar",
+        "venue": "Michelob Ultra Arena",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17446213,
+          36.11620512
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbUGkBz9HBU",
+        "title": "High Roller Wheel at The LINQ",
+        "venue": "High Roller Wheel at The LINQ Promenade",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17446213,
+          36.11620512
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbUGkBzpHBs",
+        "title": "High Roller Wheel at The LINQ",
+        "venue": "High Roller Wheel at The LINQ Promenade",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17446213,
+          36.11620512
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbUGkBzbiBy",
+        "title": "High Roller Wheel at The LINQ",
+        "venue": "High Roller Wheel at The LINQ Promenade",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17446213,
+          36.11620512
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbUGkBzpGBR",
+        "title": "High Roller Wheel at The LINQ",
+        "venue": "High Roller Wheel at The LINQ Promenade",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17446213,
+          36.11620512
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbUGkBz9jBS",
+        "title": "High Roller Wheel at The LINQ",
+        "venue": "High Roller Wheel at The LINQ Promenade",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17446213,
+          36.11620512
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbUGkBz_iBX",
+        "title": "High Roller Wheel at The LINQ",
+        "venue": "High Roller Wheel at The LINQ Promenade",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17446213,
+          36.11620512
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbUGkBz_GBD",
+        "title": "High Roller Wheel at The LINQ",
+        "venue": "High Roller Wheel at The LINQ Promenade",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.175058,
+          36.116156
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_6Gkmx5wS8",
+        "title": "VIVA LA LISA",
+        "venue": "The Colosseum at Caesars Palace",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G62K5zuJ3",
+        "title": "Lionel Richie - King of Hearts",
+        "venue": "Encore Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G62K5yqJh",
+        "title": "Lionel Richie - King of Hearts",
+        "venue": "Encore Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G62K5zcJ9",
+        "title": "Lionel Richie - King of Hearts",
+        "venue": "Encore Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.175058,
+          36.116156
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_6Gkmx1xSa",
+        "title": "VIVA LA LISA",
+        "venue": "The Colosseum at Caesars Palace",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.175058,
+          36.116156
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZk3pGkd12mGg",
+        "title": "VIVA LA LISA",
+        "venue": "The Colosseum at Caesars Palace",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17247058,
+          36.10961689
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_oGkctuYgF",
+        "title": "Jeezy | Official Caesars Ticket + Hotel Packages\u00a0",
+        "venue": "PH Live at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17247058,
+          36.10961689
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_oGkctCZg1",
+        "title": "Jeezy | Official Caesars Ticket + Hotel Packages\u00a0",
+        "venue": "PH Live at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.172576,
+          36.117775
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6G5hzxax",
+        "title": "Underoath - Define the Great Line 20th Anniversary Tour",
+        "venue": "Brooklyn Bowl Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17318003,
+          36.10907659
+        ]
+      },
+      "properties": {
+        "id": "tm-169ZkfdOvZA26A51",
+        "title": "Steve Lacy: Oh yeah? Tour",
+        "venue": "The Cosmopolitan of Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1755,
+          36.0925
+        ]
+      },
+      "properties": {
+        "id": "tm-G5ezZ_KdvFglO",
+        "title": "Nick Cannon Presents: Wild 'N Out Live - The Next Generation",
+        "venue": "Michelob ULTRA Arena",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 600,
+        "detour_instructions": "Bypass via Frank Sinatra Dr"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1783,
+          36.1028
+        ]
+      },
+      "properties": {
+        "id": "tm-Z7r9jZ1A7J4_P",
+        "title": "Vegas Golden Knights vs. Vancouver Canucks",
+        "venue": "T-Mobile Arena",
+        "source": "Ticketmaster",
+        "severity": "CRITICAL",
+        "buffer_radius_m": 750,
+        "detour_instructions": "Reroute to Frank Sinatra Dr or Dean Martin Way"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuMzdw",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAugbdO",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuBFdH",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuWIAo",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuzzdz",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuUIdn",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuHb7S",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuXIAl",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuDb76",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1676835,
+          36.1276013
+        ]
+      },
+      "properties": {
+        "id": "tm-1kAYv0jZGAuTzAH",
+        "title": "Awakening",
+        "venue": "Awakening Theater at Wynn Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.146599,
+          36.0853
+        ]
+      },
+      "properties": {
+        "id": "tm-Z7r9jZ1AAvVaU",
+        "title": "Nick Cannon Presents: MTV Wild 'N Out Live",
+        "venue": "Michelob Ultra Arena",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.172576,
+          36.117775
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk34GkdoXUhG",
+        "title": "GWAR",
+        "venue": "Brooklyn Bowl Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.172576,
+          36.117775
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GEDpSl8",
+        "title": "STATE CHAMPS - 10 YEARS OF 'AROUND THE WORLD AND BACK'",
+        "venue": "Brooklyn Bowl Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.172576,
+          36.117775
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6CliQufc",
+        "title": "Buzzcocks - Celebrating 50 Years Of Buzzcocks",
+        "venue": "Brooklyn Bowl Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16833797,
+          36.12425393
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9ZkofGkdoYh6X",
+        "title": "Brian Regan",
+        "venue": "The Palazzo Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17318003,
+          36.10907659
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6CD3PR5r",
+        "title": "MLB Awards",
+        "venue": "The Cosmopolitan of Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17228685,
+          36.11632233
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkGSGketpkGq",
+        "title": "RuPaul's Drag Race LIVE! Las Vegas",
+        "venue": "Flamingo Showroom at Flamingo Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17228685,
+          36.11632233
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkGSGketpJGL",
+        "title": "RuPaul's Drag Race LIVE! Las Vegas",
+        "venue": "Flamingo Showroom at Flamingo Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17228685,
+          36.11632233
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkGSGket9pGP",
+        "title": "RuPaul's Drag Race LIVE! Las Vegas",
+        "venue": "Flamingo Showroom at Flamingo Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17228685,
+          36.11632233
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkGSGket4JGh",
+        "title": "RuPaul's Drag Race LIVE! Las Vegas",
+        "venue": "Flamingo Showroom at Flamingo Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17228685,
+          36.11632233
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkGSGket9UGE",
+        "title": "RuPaul's Drag Race LIVE! Las Vegas",
+        "venue": "Flamingo Showroom at Flamingo Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17228685,
+          36.11632233
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkGSGketbJGt",
+        "title": "RuPaul's Drag Race LIVE! Las Vegas",
+        "venue": "Flamingo Showroom at Flamingo Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1869771,
+          36.1153362
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_6GkXA0ofh",
+        "title": "Penn & Teller",
+        "venue": "Penn & Teller Theater at Rio Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1869771,
+          36.1153362
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_6GkXAP-fq",
+        "title": "Penn & Teller",
+        "venue": "Penn & Teller Theater at Rio Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.170162,
+          36.109695
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZk3FGkd37S51",
+        "title": "Criss Angel MINDFREAK (Las Vegas)",
+        "venue": "Criss Angel Theater at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1869771,
+          36.1153362
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_6GkXAxvf3",
+        "title": "Penn & Teller",
+        "venue": "Penn & Teller Theater at Rio Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1869771,
+          36.1153362
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_6GkXANofp",
+        "title": "Penn & Teller",
+        "venue": "Penn & Teller Theater at Rio Las Vegas",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.170162,
+          36.109695
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZk3FGkd3vd1W",
+        "title": "Criss Angel MINDFREAK (Las Vegas)",
+        "venue": "Criss Angel Theater at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.170162,
+          36.109695
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZk3FGkd3eK5v",
+        "title": "Criss Angel MINDFREAK (Las Vegas)",
+        "venue": "Criss Angel Theater at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.170162,
+          36.109695
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZk3FGkd3dN57",
+        "title": "Criss Angel MINDFREAK (Las Vegas)",
+        "venue": "Criss Angel Theater at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.170162,
+          36.109695
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZk3FGkd3kd5G",
+        "title": "Criss Angel MINDFREAK (Las Vegas)",
+        "venue": "Criss Angel Theater at Planet Hollywood",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.151524,
+          36.136052
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYvxG62dW9Jut",
+        "title": "Barry Manilow",
+        "venue": "Westgate Las Vegas International Theater",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16833797,
+          36.12425393
+        ]
+      },
+      "properties": {
+        "id": "tm-1AvjZbSGkIZDaKb",
+        "title": "Shin Lim",
+        "venue": "The Palazzo Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16833797,
+          36.12425393
+        ]
+      },
+      "properties": {
+        "id": "tm-1AvjZbSGkIZHyf9",
+        "title": "Shin Lim",
+        "venue": "The Palazzo Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16833797,
+          36.12425393
+        ]
+      },
+      "properties": {
+        "id": "tm-1AvjZbSGkIZDyKm",
+        "title": "Shin Lim",
+        "venue": "The Palazzo Theatre at The Venetian Resort",
+        "source": "Ticketmaster",
+        "severity": "MODERATE",
+        "buffer_radius_m": 500,
+        "detour_instructions": "Reroute around local corridor"
       }
     },
     {
