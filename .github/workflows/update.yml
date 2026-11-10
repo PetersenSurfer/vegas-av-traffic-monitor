@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,6 +29,7 @@ jobs:
       - name: Run feed generator
         env:
           TM_API_KEY: ${{ secrets.TM_API_KEY }}
+          SEATGEEK_CLIENT_ID: ${{ secrets.SEATGEEK_CLIENT_ID }}
         run: python update_vegas_zones.py
 
       - name: Commit and push changes
@@ -38,5 +41,6 @@ jobs:
             echo "No changes found."
           else
             git commit -m "chore(feed): auto-update Las Vegas exclusion zones [skip ci]"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
