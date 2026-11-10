@@ -72,10 +72,17 @@
       font-weight: 600;
     }
     
+    /* Road Closure Folder Style */
     .closure-folder { border-color: #991b1b; }
     .closure-folder .date-folder-header { background: #2a1215; color: #f87171; }
     .closure-folder .date-folder-header:hover { background: #3b161b; }
     .closure-folder .count-pill { background: #7f1d1d; color: #fca5a5; }
+
+    /* Live Hazards Folder Style */
+    .hazard-folder { border-color: #d97706; }
+    .hazard-folder .date-folder-header { background: #331f08; color: #fbbf24; }
+    .hazard-folder .date-folder-header:hover { background: #452a0a; }
+    .hazard-folder .count-pill { background: #b45309; color: #fef3c7; }
 
     .date-folder-body { 
       display: none; 
@@ -102,6 +109,7 @@
     .card-high { border-left-color: #f97316; }
     .card-moderate { border-left-color: #eab308; }
     .card-standing { border-left-color: #dc2626; background: #1a0f12; }
+    .card-hazard { border-left-color: #f59e0b; background: #1f1406; }
 
     .card-header-line { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
     .event-title { font-size: 0.82rem; font-weight: 600; color: #f1f5f9; }
@@ -109,6 +117,7 @@
     .badge-critical { background: #450a0a; color: #f87171; border: 1px solid #ef4444; }
     .badge-high { background: #431407; color: #fb923c; border: 1px solid #f97316; }
     .badge-mod { background: #422006; color: #facc15; border: 1px solid #eab308; }
+    .badge-hazard { background: #451a03; color: #fcd34d; border: 1px solid #d97706; }
 
     .venue-meta { font-size: 0.72rem; color: #94a3b8; margin-top: 3px; display: flex; align-items: center; gap: 6px; }
     .geonet-tag { color: #38bdf8; font-weight: 600; }
@@ -173,6 +182,7 @@
       <div class="legend-item"><div class="legend-pin" style="background: #ef4444;"></div> Arena Surge / Game (Tier 1)</div>
       <div class="legend-item"><div class="legend-pin" style="background: #f97316;"></div> Major Convention / Expo (Tier 2)</div>
       <div class="legend-item"><div class="legend-pin" style="background: #dc2626; border-radius: 2px;"></div> Standing Roadwork / F1 Track</div>
+      <div class="legend-item"><div class="legend-pin" style="background: #f59e0b; border-radius: 2px;"></div> Open Incident / Road Hazard</div>
       <div class="legend-item"><div style="width: 14px; height: 3px; background: #10b981;"></div> Approved Green Bypass Corridor</div>
       <hr style="border-color: #334155; margin: 6px 0;">
       <div style="font-weight: 700; margin-bottom: 4px; color: #94a3b8;">TomTom Live Speeds</div>
@@ -183,14 +193,12 @@
   </div>
 
   <script>
-    // 1. Base Map Setup
     const map = L.map('map').setView([36.1147, -115.1728], 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // 2. TomTom Real-Time Traffic Flow Layer (Using your Key)
     const TOMTOM_KEY = '7AmW3Co9MICKphH26tLQ8xlZTlqYiBZP';
     const trafficLayer = L.tileLayer(
       `https://api.tomtom.com/traffic/map/4/tile/flow/relative0/{z}/{x}/{y}.png?key=${TOMTOM_KEY}`,
@@ -259,7 +267,8 @@
       listContainer.innerHTML = '';
 
       const standing = items.filter(i => i.type === 'STANDING_CLOSURE' || i.type === 'MUNICIPAL_PERMIT');
-      const dynamicEvents = items.filter(i => i.type !== 'STANDING_CLOSURE' && i.type !== 'MUNICIPAL_PERMIT');
+      const liveHazards = items.filter(i => i.type === 'LIVE_INCIDENT');
+      const dynamicEvents = items.filter(i => i.type !== 'STANDING_CLOSURE' && i.type !== 'MUNICIPAL_PERMIT' && i.type !== 'LIVE_INCIDENT');
 
       // 1. Bucketed Standing Construction & Road Closures Folder
       if (standing.length > 0) {
@@ -305,7 +314,51 @@
         listContainer.appendChild(closureFolder);
       }
 
-      // 2. Group Timed Events Chronologically into Folders
+      // 2. Bucketed Live Hazards & Unplanned Incidents Folder (NEW)
+      if (liveHazards.length > 0) {
+        const hazardFolder = document.createElement('div');
+        hazardFolder.className = 'date-folder hazard-folder';
+
+        const hHeader = document.createElement('div');
+        hHeader.className = 'date-folder-header';
+        hHeader.innerHTML = `
+          <div><span class="arrow">&#9658;</span> 🚨 LIVE HAZARDS & INCIDENTS</div>
+          <span class="count-pill">${liveHazards.length} active</span>
+        `;
+        hHeader.onclick = () => hazardFolder.classList.toggle('open');
+
+        const hBody = document.createElement('div');
+        hBody.className = 'date-folder-body';
+
+        liveHazards.forEach(hz => {
+          const pinIcon = L.divIcon({
+            className: 'c-pin',
+            html: `<div class="pin-pulse" style="background: #f59e0b; border-radius: 2px;"></div>`,
+            iconSize: [13, 13]
+          });
+          const marker = L.marker([hz.latitude, hz.longitude], { icon: pinIcon }).addTo(pinLayer);
+          marker.bindPopup(`<strong>${hz.title}</strong><br>${hz.venue}<br><span style="color:#fbbf24">${hz.source}</span>`);
+
+          const el = document.createElement('div');
+          el.className = 'event-card card-hazard';
+          el.innerHTML = `
+            <div class="card-header-line">
+              <div class="event-title">${hz.title}</div>
+              <span class="impact-badge badge-hazard">LIVE</span>
+            </div>
+            <div class="venue-meta">📍 ${hz.venue} • <span class="geonet-tag">${hz.source}</span></div>
+            <div class="event-detour">&#8618; ${hz.recommended_detour}</div>
+          `;
+          el.onclick = () => { map.flyTo([hz.latitude, hz.longitude], 16); marker.openPopup(); };
+          hBody.appendChild(el);
+        });
+
+        hazardFolder.appendChild(hHeader);
+        hazardFolder.appendChild(hBody);
+        listContainer.appendChild(hazardFolder);
+      }
+
+      // 3. Group Timed Events Chronologically into Folders
       dynamicEvents.sort((a, b) => new Date(a.start_time || 0) - new Date(b.start_time || 0));
       const grouped = {};
       dynamicEvents.forEach(ev => {
