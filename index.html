@@ -75,11 +75,13 @@
       font-weight: 600;
     }
     
+    /* Road Closure Folder Style */
     .closure-folder { border-color: #991b1b; }
     .closure-folder .date-folder-header { background: #2a1215; color: #f87171; }
     .closure-folder .date-folder-header:hover { background: #3b161b; }
     .closure-folder .count-pill { background: #7f1d1d; color: #fca5a5; }
 
+    /* Live Hazards Folder Style */
     .hazard-folder { border-color: #d97706; }
     .hazard-folder .date-folder-header { background: #331f08; color: #fbbf24; }
     .hazard-folder .date-folder-header:hover { background: #452a0a; }
@@ -140,7 +142,7 @@
     #map-container { flex: 1; position: relative; }
     #map { width: 100%; height: 100%; background: #0b0f19; }
     
-    /* Robust Mission Control HUD Panel */
+    /* Mission Control HUD Panel */
     .hud-panel {
       position: absolute;
       bottom: 24px;
@@ -213,7 +215,7 @@
   <div id="map-container">
     <div id="map"></div>
 
-    <!-- Redesigned Mission Control HUD -->
+    <!-- Mission Control HUD -->
     <div class="hud-panel">
       <div class="hud-header">
         <span>STRIP CORRIDOR TELEMETRY</span>
@@ -261,6 +263,10 @@
         <span style="color: #f87171;">24-Hr</span>
       </div>
       <div class="legend-row">
+        <div class="legend-row-left"><div class="legend-pin" style="background: #f59e0b; border-radius: 2px;"></div> Open Incident / Hazard</div>
+        <span style="color: #fcd34d;">Live</span>
+      </div>
+      <div class="legend-row">
         <div class="legend-row-left"><div style="width: 14px; height: 4px; background: #10b981;"></div> Green Bypass Route</div>
         <span style="color: #10b981;">Clear Corridor</span>
       </div>
@@ -272,10 +278,10 @@
   <script>
     const TOMTOM_KEY = '7AmW3Co9MICKphH26tLQ8xlZTlqYiBZP';
 
-    // 1. Sleek Tactical Basemaps
-    const darkTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-      attribution: '&copy; CartoDB &copy; OpenStreetMap'
+    // 1. Sleek Tactical Basemaps (Keyless Open Dark Theme)
+    const darkTileLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+      maxZoom: 20,
+      attribution: '&copy; Stadia Maps &copy; OpenStreetMap'
     });
 
     const streetTileLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -313,14 +319,14 @@
         .addTo(corridorLayer);
     });
 
-    // 3. Interactive Road Click-To-Inspect (Queries TomTom Flow Segment API)
+    // 3. Interactive Road Click-To-Inspect (With Correct Speed Labels & Corridor Limits)
     map.on('click', async function(e) {
       const lat = e.latlng.lat;
       const lng = e.latlng.lng;
 
       const clickPopup = L.popup()
         .setLatLng(e.latlng)
-        .setContent(`<div style="font-family:sans-serif; font-size:0.75rem; color:#0f172a;"><strong>Inspecting Traffic Telemetry...</strong></div>`)
+        .setContent(`<div style="font-family:sans-serif; font-size:0.75rem; color:#0f172a;"><strong>Querying Road Telemetry...</strong></div>`)
         .openOn(map);
 
       try {
@@ -337,32 +343,51 @@
 
         const currentSpeedMph = Math.round(flow.currentSpeed * 0.621371);
         const freeFlowMph = Math.round(flow.freeFlowSpeed * 0.621371);
-        const delayMinutes = Math.max(0, Math.round((flow.currentTravelTime - flow.freeFlowTravelTime) / 60));
-        const roadHealthPct = Math.round((flow.currentSpeed / (flow.freeFlowSpeed || 1)) * 100);
+        const delaySeconds = flow.currentTravelTime - flow.freeFlowTravelTime;
+        const delayMinutes = Math.max(0, Math.round(delaySeconds / 60));
+        const roadHealthPct = Math.min(100, Math.round((flow.currentSpeed / (flow.freeFlowSpeed || 1)) * 100));
+
+        // Determine Legal Posted Speed Limit by corridor coordinates
+        let legalSpeedLimit = "30 mph";
+        if (lng < -115.176 && lat > 36.08 && lat < 36.14) {
+          legalSpeedLimit = "35 mph (Frank Sinatra / Dean Martin)";
+        } else if (lng < -115.180) {
+          legalSpeedLimit = "65 mph (I-15 Freeway)";
+        } else if (lat > 36.113 && lat < 36.117) {
+          legalSpeedLimit = "35–45 mph (Flamingo Rd Arterial)";
+        } else if (lat > 36.098 && lat < 36.103) {
+          legalSpeedLimit = "35–45 mph (Tropicana Ave Arterial)";
+        } else if (lng > -115.158) {
+          legalSpeedLimit = "35 mph (Paradise Rd Corridor)";
+        } else {
+          legalSpeedLimit = "30 mph (Las Vegas Blvd Strip)";
+        }
 
         let healthColor = '#10b981';
         let healthLabel = 'Free Flowing';
         if (roadHealthPct < 45) {
           healthColor = '#ef4444';
           healthLabel = 'Heavy Standstill';
-        } else if (roadHealthPct < 80) {
+        } else if (roadHealthPct < 75) {
           healthColor = '#f59e0b';
           healthLabel = 'Moderate Delay';
         }
 
         clickPopup.setContent(`
-          <div style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto; color:#0f172a; min-width: 190px;">
-            <div style="font-size:0.72rem; font-weight:800; color:#64748b; text-transform:uppercase;">Road Telemetry Probe</div>
-            <div style="font-size:0.95rem; font-weight:700; margin-top:2px; color:${healthColor};">${healthLabel} (${roadHealthPct}%)</div>
-            <div style="margin: 6px 0; font-size:0.8rem; line-height: 1.4;">
-              ⚡ <strong>Speed:</strong> ${currentSpeedMph} mph / ${freeFlowMph} mph limit<br>
-              ⏱️ <strong>Delay Added:</strong> ${delayMinutes > 0 ? `+${delayMinutes} min delay` : 'None (Optimal)'}<br>
-              🔒 <strong>Road Closure:</strong> ${flow.roadClosure ? '<span style="color:#ef4444;font-weight:700;">YES</span>' : 'No'}
+          <div style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto; color:#0f172a; min-width: 215px;">
+            <div style="font-size:0.7rem; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:0.04em;">Road Telemetry Probe</div>
+            <div style="font-size:0.95rem; font-weight:700; margin-top:2px; color:${healthColor};">${healthLabel} (${roadHealthPct}% efficiency)</div>
+            <div style="margin: 6px 0; font-size:0.78rem; line-height: 1.45;">
+              🚗 <strong>Current Flow:</strong> <span style="font-weight:700;">${currentSpeedMph} mph</span><br>
+              ⏱️ <strong>Typical Uncongested:</strong> ${freeFlowMph} mph<br>
+              🛑 <strong>Legal Posted Sign:</strong> ${legalSpeedLimit}<br>
+              ⏳ <strong>Current Delay:</strong> ${delayMinutes > 0 ? `<span style="color:#dc2626;font-weight:700;">+${delayMinutes} min delay</span>` : '<span style="color:#16a34a;font-weight:600;">None (Optimal)</span>'}<br>
+              🔒 <strong>Physical Closure:</strong> ${flow.roadClosure ? '<span style="color:#ef4444;font-weight:700;">ROAD CLOSED</span>' : 'Open'}
             </div>
           </div>
         `);
       } catch (err) {
-        clickPopup.setContent(`<div style="font-size:0.75rem; color:#475569;">Off-network coordinate. Click a roadway for live data.</div>`);
+        clickPopup.setContent(`<div style="font-size:0.75rem; color:#475569;">Off-network coordinate. Click an active roadway for telemetry.</div>`);
       }
     });
 
