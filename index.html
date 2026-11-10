@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Las Vegas Strip AV Traffic & Geofence Monitor</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; display: flex; height: 100vh; overflow: hidden; }
+    #sidebar { width: 380px; background: #1e293b; border-right: 1px solid #334155; display: flex; flex-direction: column; }
+    .header { padding: 1.25rem; border-bottom: 1px solid #334155; }
+    .header h1 { font-size: 1.15rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+    .header p { font-size: 0.8rem; color: #94a3b8; margin-top: 4px; }
+    .status-bar { padding: 0.75rem 1.25rem; background: #0f172a; border-bottom: 1px solid #334155; font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
+    .status-live { display: inline-flex; align-items: center; gap: 6px; color: #4ade80; font-weight: 600; }
+    .status-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 6px #4ade80; }
+    #event-list { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .event-card { background: #0f172a; border-radius: 8px; padding: 0.85rem; border-left: 4px solid #94a3b8; cursor: pointer; transition: transform 0.15s ease; }
+    .event-card:hover { transform: translateX(2px); }
+    .card-critical { border-left-color: #ef4444; }
+    .card-severe { border-left-color: #f97316; }
+    .card-moderate { border-left-color: #eab308; }
+    .event-title { font-size: 0.88rem; font-weight: 600; color: #f1f5f9; }
+    .event-venue { font-size: 0.78rem; color: #38bdf8; margin-top: 2px; }
+    .event-detour { font-size: 0.72rem; color: #a5f3fc; background: #164e63; padding: 4px 6px; border-radius: 4px; margin-top: 6px; display: inline-block; }
+    .footer { padding: 1rem; border-top: 1px solid #334155; }
+    .btn-export { width: 100%; background: #0284c7; color: white; border: none; padding: 0.65rem; border-radius: 6px; font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+    .btn-export:hover { background: #0369a1; }
+    #map-container { flex: 1; position: relative; }
+    #map { width: 100%; height: 100%; }
+    .legend { position: absolute; bottom: 20px; right: 20px; background: rgba(15, 23, 42, 0.9); padding: 12px; border-radius: 8px; font-size: 0.75rem; border: 1px solid #334155; z-index: 1000; }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .legend-color { width: 12px; height: 12px; border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <aside id="sidebar">
+    <div class="header">
+      <h1><span>&#9888;</span> AV Strip Traffic Command</h1>
+      <p>Dynamic Exclusion Geofences & Green Corridors</p>
+    </div>
+    <div class="status-bar">
+      <span class="status-live"><span class="status-dot"></span> AUTO-SYNC</span>
+      <span id="last-updated" style="color: #64748b;">Loading feed...</span>
+    </div>
+    <div id="event-list"></div>
+    <div class="footer">
+      <button class="btn-export" onclick="downloadGeoJSON()">Export Active Geofence (GeoJSON)</button>
+    </div>
+  </aside>
+
+  <div id="map-container">
+    <div id="map"></div>
+    <div class="legend">
+      <div style="font-weight: 700; margin-bottom: 8px;">Routing Map Key</div>
+      <div class="legend-item"><div class="legend-color" style="background: #ef4444;"></div> Exclusion Zone (Critical/Game)</div>
+      <div class="legend-item"><div class="legend-color" style="background: #eab308;"></div> Throttled Zone (Moderate)</div>
+      <div class="legend-item"><div class="legend-color" style="background: #10b981; height: 3px;"></div> AV Green Corridor (Bypass)</div>
+    </div>
+  </div>
+
+  <script>
+    const map = L.map('map').setView([36.1147, -115.1728], 13);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+      attribution: '&copy; CartoDB &copy; OpenStreetMap'
+    }).addTo(map);
+
+    const exclusionLayer = L.layerGroup().addTo(map);
+    const corridorLayer = L.layerGroup().addTo(map);
+
+    const corridors = [
+      { name: "West Bypass (Frank Sinatra Dr)", coords: [[36.0945, -115.1798], [36.1150, -115.1792], [36.1250, -115.1805]] },
+      { name: "East Bypass (Paradise Rd)", coords: [[36.0910, -115.1541], [36.1310, -115.1543], [36.1510, -115.1545]] }
+    ];
+
+    corridors.forEach(c => {
+      L.polyline(c.coords, { color: '#10b981', weight: 4, dashArray: '6, 8', opacity: 0.9 })
+        .bindPopup(`<strong>Green Corridor:</strong> ${c.name}`)
+        .addTo(corridorLayer);
+    });
+
+    async function updateDashboard() {
+      try {
+        const res = await fetch(`vegas_events.json?timestamp=${Date.now()}`);
+        if (!res.ok) throw new Error("Awaiting first feed run");
+        const payload = await res.json();
+        document.getElementById('last-updated').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        renderEvents(payload.events);
+      } catch (err) {
+        console.log("Feed not populated yet. Waiting on initial Action run.");
+      }
+    }
+
+    function renderEvents(events) {
+      exclusionLayer.clearLayers();
+      const listContainer = document.getElementById('event-list');
+      listContainer.innerHTML = '';
+
+      events.forEach(ev => {
+        const isCritical = ev.severity === 'CRITICAL';
+        const color = isCritical ? '#ef4444' : '#eab308';
+
+        const circle = L.circle([ev.latitude, ev.longitude], {
+          color: color,
+          fillColor: color,
+          fillOpacity: 0.35,
+          radius: ev.exclusion_radius,
+          weight: 2
+        }).addTo(exclusionLayer);
+
+        circle.bindPopup(`
+          <div style="font-family: sans-serif; color: #1e293b;">
+            <strong style="font-size: 0.95rem;">${ev.title}</strong><br>
+            <span style="color: #64748b; font-size: 0.8rem;">${ev.venue}</span><br>
+            <div style="margin-top: 6px; font-size: 0.8rem;"><strong>Detour:</strong> ${ev.recommended_detour}</div>
+          </div>
+        `);
+
+        const card = document.createElement('div');
+        card.className = `event-card ${isCritical ? 'card-critical' : 'card-moderate'}`;
+        card.innerHTML = `
+          <div class="event-title">${ev.title}</div>
+          <div class="event-venue">${ev.venue}</div>
+          <div class="event-detour">&#8618; ${ev.recommended_detour}</div>
+        `;
+        card.onclick = () => {
+          map.flyTo([ev.latitude, ev.longitude], 15, { duration: 1.2 });
+          circle.openPopup();
+        };
+        listContainer.appendChild(card);
+      });
+    }
+
+    function downloadGeoJSON() {
+      window.open('vegas_av_geofences.geojson', '_blank');
+    }
+
+    updateDashboard();
+    setInterval(updateDashboard, 180000);
+  </script>
+</body>
+</html>
