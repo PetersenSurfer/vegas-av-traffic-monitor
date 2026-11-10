@@ -75,7 +75,7 @@
       font-weight: 600;
     }
 
-    /* Fixed Roadwork & Hazard Folders */
+    /* Roadwork & Incident Drawers */
     .f1-folder { border-color: #e11d48; }
     .f1-folder .date-folder-header { background: #310811; color: #fb7185; }
     .f1-folder .date-folder-header:hover { background: #440d18; }
@@ -459,12 +459,24 @@
       }
     }
 
+    // Unified Pacific Time zone date formatter (eliminates split folders)
     function formatTimeWindow(ev) {
       if (!ev.start_time) return { dateKey: 'Upcoming', dateLabel: 'Upcoming', timeLabel: 'TBD' };
       const date = new Date(ev.start_time);
-      const dateKey = date.toISOString().split('T')[0];
-      const dateLabel = date.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase();
-      const timeLabel = date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      
+      // Calculate date strictly using Las Vegas local time
+      const dateKey = date.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }); // Generates YYYY-MM-DD
+      const dateLabel = date.toLocaleDateString('en-US', { 
+        weekday: 'short', 
+        month: 'short', 
+        day: 'numeric',
+        timeZone: 'America/Los_Angeles' 
+      }).toUpperCase();
+      const timeLabel = date.toLocaleTimeString('en-US', { 
+        hour: 'numeric', 
+        minute: '2-digit',
+        timeZone: 'America/Los_Angeles'
+      });
       return { dateKey, dateLabel, timeLabel };
     }
 
