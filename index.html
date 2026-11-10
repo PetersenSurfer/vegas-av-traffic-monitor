@@ -94,46 +94,80 @@
       }
     }
 
-    function renderEvents(events) {
-      exclusionLayer.clearLayers();
-      const listContainer = document.getElementById('event-list');
-      listContainer.innerHTML = '';
+    function formatTimeWindow(isoString) {
+         if (!isoString) return { dateStr: 'TBD', peakStr: 'Active Window TBD' };
+         const start = new Date(isoString);
+         
+         // Format human-readable date & time (e.g. Fri, Mar 27 @ 7:00 PM)
+         const dateStr = start.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
+         const timeStr = start.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
-      events.forEach(ev => {
-        const isCritical = ev.severity === 'CRITICAL';
-        const color = isCritical ? '#ef4444' : '#eab308';
+         // AV traffic bottleneck starts 1 hour before and peaks ~2.5 hours after start (doors close / post-game exit)
+         const exitPeak = new Date(start.getTime() + (2.5 * 60 * 60 * 1000));
+         const exitTimeStr = exitPeak.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
-        const circle = L.circle([ev.latitude, ev.longitude], {
-          color: color,
-          fillColor: color,
-          fillOpacity: 0.35,
-          radius: ev.exclusion_radius,
-          weight: 2
-        }).addTo(exclusionLayer);
+         return {
+           formattedDate: `${dateStr} • ${timeStr}`,
+           surgeWindow: `Avoid: ${timeStr} – ${exitTimeStr}`
+         };
+       }
 
-        circle.bindPopup(`
-          <div style="font-family: sans-serif; color: #1e293b;">
-            <strong style="font-size: 0.95rem;">${ev.title}</strong><br>
-            <span style="color: #64748b; font-size: 0.8rem;">${ev.venue}</span><br>
-            <div style="margin-top: 6px; font-size: 0.8rem;"><strong>Detour:</strong> ${ev.recommended_detour}</div>
-          </div>
-        `);
+       function renderEvents(events) {
+         exclusionLayer.clearLayers();
+         const listContainer = document.getElementById('event-list');
+         listContainer.innerHTML = '';
 
-        const card = document.createElement('div');
-        card.className = `event-card ${isCritical ? 'card-critical' : 'card-moderate'}`;
-        card.innerHTML = `
-          <div class="event-title">${ev.title}</div>
-          <div class="event-venue">${ev.venue}</div>
-          <div class="event-detour">&#8618; ${ev.recommended_detour}</div>
-        `;
-        card.onclick = () => {
-          map.flyTo([ev.latitude, ev.longitude], 15, { duration: 1.2 });
-          circle.openPopup();
-        };
-        listContainer.appendChild(card);
-      });
-    }
+         events.forEach(ev => {
+           const isCritical = ev.severity === 'CRITICAL';
+           const color = isCritical ? '#ef4444' : '#eab308';
+           const timeInfo = formatTimeWindow(ev.start_time);
 
+           // Map Geofence Circle
+           const circle = L.circle([ev.latitude, ev.longitude], {
+             color: color,
+             fillColor: color,
+             fillOpacity: 0.35,
+             radius: ev.exclusion_radius,
+             weight: 2
+           }).addTo(exclusionLayer);
+
+           circle.bindPopup(`
+             <div style="font-family: sans-serif; color: #1e293b; min-width: 180px;">
+               <strong style="font-size: 0.95rem;">${ev.title}</strong><br>
+               <span style="color: #64748b; font-size: 0.8rem;">${ev.venue}</span><br>
+               <div style="margin: 6px 0; font-size: 0.8rem; color: #b91c1c; font-weight: 600;">
+                 ⏰ ${timeInfo.formattedDate}<br>
+                 ⚠️ ${timeInfo.surgeWindow}
+               </div>
+               <div style="font-size: 0.8rem;"><strong>Detour:</strong> ${ev.recommended_detour}</div>
+             </div>
+           `);
+
+           // Sidebar Item with live date & traffic window tags
+           const card = document.createElement('div');
+           card.className = `event-card ${isCritical ? 'card-critical' : 'card-moderate'}`;
+           card.innerHTML = `
+             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 4px;">
+               <div class="event-title">${ev.title}</div>
+               <span style="font-size: 0.68rem; font-weight: 700; color: ${color}; background: #1e293b; padding: 2px 6px; border-radius: 4px; border: 1px solid ${color}; white-space: nowrap;">${ev.severity}</span>
+             </div>
+             <div class="event-venue">${ev.venue}</div>
+             <div style="margin-top: 6px; font-size: 0.76rem; color: #fbbf24; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+               <span>📅 ${timeInfo.formattedDate}</span>
+             </div>
+             <div style="margin-top: 2px; font-size: 0.72rem; color: #f87171; font-weight: 500;">
+               🚫 ${timeInfo.surgeWindow}
+             </div>
+             <div class="event-detour">&#8618; ${ev.recommended_detour}</div>
+           `;
+
+           card.onclick = () => {
+             map.flyTo([ev.latitude, ev.longitude], 15, { duration: 1.2 });
+             circle.openPopup();
+           };
+           listContainer.appendChild(card);
+         });
+       }
     function downloadGeoJSON() {
       window.open('vegas_av_geofences.geojson', '_blank');
     }
