@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Las Vegas Strip AV Traffic & Geofence Monitor</title>
+  <title>Las Vegas Strip AV Traffic & Incident Monitor</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; display: flex; height: 100vh; overflow: hidden; }
     
-    #sidebar { width: 390px; background: #1e293b; border-right: 1px solid #334155; display: flex; flex-direction: column; }
+    #sidebar { width: 400px; background: #1e293b; border-right: 1px solid #334155; display: flex; flex-direction: column; }
     .header { padding: 1.1rem 1.25rem; border-bottom: 1px solid #334155; }
     .header h1 { font-size: 1.1rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
     .header p { font-size: 0.78rem; color: #94a3b8; margin-top: 3px; }
@@ -19,16 +19,37 @@
     .status-live { display: inline-flex; align-items: center; gap: 6px; color: #4ade80; font-weight: 600; }
     .status-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 6px #4ade80; }
     
-    .layer-controls { padding: 0.65rem 1.25rem; background: #182234; border-bottom: 1px solid #334155; display: flex; gap: 12px; font-size: 0.75rem; }
+    .layer-controls { padding: 0.65rem 1.25rem; background: #182234; border-bottom: 1px solid #334155; display: flex; gap: 16px; font-size: 0.75rem; }
     .layer-controls label { display: flex; align-items: center; gap: 6px; cursor: pointer; color: #cbd5e1; }
     
-    #event-list { flex: 1; overflow-y: auto; padding: 0.85rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    #event-list { flex: 1; overflow-y: auto; padding: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    /* Collapsible Date Accordion Styling */
+    .date-folder { border: 1px solid #334155; border-radius: 6px; background: #0f172a; overflow: hidden; }
+    .date-folder-header {
+      background: #182234;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #38bdf8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+    .date-folder-header:hover { background: #1e2d44; }
+    .date-folder-title { display: flex; align-items: center; gap: 8px; }
+    .date-folder-arrow { font-size: 0.7rem; transition: transform 0.2s ease; display: inline-block; }
+    .date-folder.open .date-folder-arrow { transform: rotate(90deg); }
+    .count-pill { background: #334155; color: #cbd5e1; font-size: 0.68rem; padding: 2px 7px; border-radius: 12px; font-weight: 600; }
     
-    .date-header { font-size: 0.75rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.6rem 0 0.2rem 0; padding-bottom: 3px; border-bottom: 1px dashed #334155; }
-    .date-header:first-child { margin-top: 0; }
+    .date-folder-body { display: none; padding: 0.6rem; flex-direction: column; gap: 0.45rem; }
+    .date-folder.open .date-folder-body { display: flex; }
     
-    .event-card { background: #0f172a; border-radius: 7px; padding: 0.75rem; border-left: 4px solid #94a3b8; cursor: pointer; transition: transform 0.15s ease, background 0.15s ease; margin-bottom: 0.4rem; }
-    .event-card:hover { transform: translateX(3px); background: #131d31; }
+    .event-card { background: #182234; border-radius: 6px; padding: 0.75rem; border-left: 4px solid #94a3b8; cursor: pointer; transition: transform 0.15s ease, background 0.15s ease; }
+    .event-card:hover { transform: translateX(3px); background: #1e2c42; }
     .card-critical { border-left-color: #ef4444; }
     .card-severe { border-left-color: #f97316; }
     .card-moderate { border-left-color: #eab308; }
@@ -49,7 +70,6 @@
     .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
     .legend-pin { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #fff; }
     
-    /* Clean pulse marker CSS */
     .pin-pulse { border-radius: 50%; height: 14px; width: 14px; position: absolute; left: -7px; top: -7px; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 8px rgba(0,0,0,0.6); }
     .pin-critical { background: #ef4444; }
     .pin-moderate { background: #eab308; }
@@ -61,7 +81,7 @@
   <aside id="sidebar">
     <div class="header">
       <h1><span>&#9888;</span> AV Strip Traffic Command</h1>
-      <p>Organized Incident & Closure Timeline</p>
+      <p>Interactive Filterable Timeline</p>
     </div>
     <div class="status-bar">
       <span class="status-live"><span class="status-dot"></span> LIVE TIMELINE</span>
@@ -70,7 +90,6 @@
     <div class="layer-controls">
       <label><input type="checkbox" id="toggle-events" checked onchange="toggleLayers()"> Event Pins</label>
       <label><input type="checkbox" id="toggle-closures" checked onchange="toggleLayers()"> NV 511 Roadwork</label>
-      <label><input type="checkbox" id="toggle-buffers" onchange="toggleLayers()"> Geofence Rings</label>
     </div>
     <div id="event-list"></div>
     <div class="footer">
@@ -97,7 +116,6 @@
     }).addTo(map);
 
     const pinLayer = L.layerGroup().addTo(map);
-    const bufferLayer = L.layerGroup(); // Off by default to avoid large blobs
     const closureLayer = L.layerGroup().addTo(map);
     const corridorLayer = L.layerGroup().addTo(map);
 
@@ -115,25 +133,22 @@
     function toggleLayers() {
       const showEvents = document.getElementById('toggle-events').checked;
       const showClosures = document.getElementById('toggle-closures').checked;
-      const showBuffers = document.getElementById('toggle-buffers').checked;
 
       if (showEvents) map.addLayer(pinLayer); else map.removeLayer(pinLayer);
       if (showClosures) map.addLayer(closureLayer); else map.removeLayer(closureLayer);
-      if (showBuffers) map.addLayer(bufferLayer); else map.removeLayer(bufferLayer);
     }
 
     function parseTimeInfo(isoString) {
-      if (!isoString) return { dateKey: 'Upcoming Events', dateLabel: 'Upcoming', timeLabel: 'TBD', surgeLabel: 'Surge window active' };
+      if (!isoString) return { dateLabel: 'Upcoming Dates', timeLabel: 'TBD', surgeLabel: 'Active Window TBD' };
       const date = new Date(isoString);
       
-      const dateKey = date.toISOString().split('T')[0];
-      const dateLabel = date.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
+      const dateLabel = date.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase();
       const timeLabel = date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
       
       const exitPeak = new Date(date.getTime() + (2.5 * 60 * 60 * 1000));
       const surgeLabel = `${timeLabel} – ${exitPeak.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}`;
 
-      return { dateKey, dateLabel, timeLabel, surgeLabel, timestamp: date.getTime() };
+      return { dateLabel, timeLabel, surgeLabel };
     }
 
     async function loadData() {
@@ -151,15 +166,13 @@
 
     function renderDashboard(items) {
       pinLayer.clearLayers();
-      bufferLayer.clearLayers();
       closureLayer.clearLayers();
       const listContainer = document.getElementById('event-list');
       listContainer.innerHTML = '';
 
-      // 1. Sort all items chronologically
       items.sort((a, b) => new Date(a.start_time || 0) - new Date(b.start_time || 0));
 
-      // 2. Group items by Day
+      // Group by Day
       const grouped = {};
       items.forEach(ev => {
         const timeInfo = parseTimeInfo(ev.start_time);
@@ -168,19 +181,34 @@
         grouped[groupKey].push({ ev, timeInfo });
       });
 
-      // 3. Render grouped timeline in sidebar and crisp pins on map
+      let isFirstFolder = true;
+
       Object.keys(grouped).forEach(dateLabel => {
-        const header = document.createElement('div');
-        header.className = 'date-header';
-        header.textContent = `📅 ${dateLabel}`;
-        listContainer.appendChild(header);
+        const folder = document.createElement('div');
+        folder.className = `date-folder ${isFirstFolder ? 'open' : ''}`; // First folder opens by default
+
+        const folderHeader = document.createElement('div');
+        folderHeader.className = 'date-folder-header';
+        folderHeader.innerHTML = `
+          <div class="date-folder-title">
+            <span class="date-folder-arrow">&#9658;</span>
+            <span>📅 ${dateLabel}</span>
+          </div>
+          <span class="count-pill">${grouped[dateLabel].length}</span>
+        `;
+
+        folderHeader.onclick = () => {
+          folder.classList.toggle('open');
+        };
+
+        const folderBody = document.createElement('div');
+        folderBody.className = 'date-folder-body';
 
         grouped[dateLabel].forEach(({ ev, timeInfo }) => {
           const isClosure = ev.id && ev.id.startsWith('ndot-');
           const isCritical = ev.severity === 'CRITICAL';
           const pinColor = isClosure ? '#dc2626' : (isCritical ? '#ef4444' : '#eab308');
 
-          // Subtle custom point pin
           const pinIcon = L.divIcon({
             className: 'custom-pin',
             html: `<div class="pin-pulse" style="background: ${pinColor}; ${isClosure ? 'border-radius:2px;' : ''}"></div>`,
@@ -208,22 +236,12 @@
             marker.addTo(pinLayer);
           }
 
-          // Optional subtle buffer circle (hidden by default)
-          L.circle([ev.latitude, ev.longitude], {
-            color: pinColor,
-            fillColor: pinColor,
-            fillOpacity: 0.12,
-            weight: 1,
-            radius: ev.exclusion_radius || 400
-          }).addTo(bufferLayer);
-
-          // Build sidebar entry
           const card = document.createElement('div');
           card.className = `event-card ${isClosure ? 'card-closure' : (isCritical ? 'card-critical' : 'card-moderate')}`;
           card.innerHTML = `
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 4px;">
               <div class="event-title">${ev.title}</div>
-              <span style="font-size: 0.65rem; font-weight: 700; color: ${pinColor}; background: #1e293b; padding: 2px 5px; border-radius: 4px; border: 1px solid ${pinColor}; white-space: nowrap;">
+              <span style="font-size: 0.65rem; font-weight: 700; color: ${pinColor}; background: #0f172a; padding: 2px 5px; border-radius: 4px; border: 1px solid ${pinColor}; white-space: nowrap;">
                 ${isClosure ? 'ROADWORK' : ev.severity}
               </span>
             </div>
@@ -239,8 +257,14 @@
             marker.openPopup();
           };
 
-          listContainer.appendChild(card);
+          folderBody.appendChild(card);
         });
+
+        folder.appendChild(folderHeader);
+        folder.appendChild(folderBody);
+        listContainer.appendChild(folder);
+
+        isFirstFolder = false; // Only leave the current/first date open initially
       });
     }
 
