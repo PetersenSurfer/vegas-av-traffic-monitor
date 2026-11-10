@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "generated_at": "2026-11-10T18:16:13.955091Z",
+    "active_events_count": 3,
+    "region": "Las Vegas Strip & Clark County"
+  },
+  "events": [
+    {
+      "id": "sim-vgk-01",
+      "title": "Vegas Golden Knights Match",
+      "venue": "T-Mobile Arena",
+      "start_time": "2026-11-10T21:16:13.955070",
+      "severity": "CRITICAL",
+      "latitude": 36.1028,
+      "longitude": -115.1783,
+      "exclusion_radius": 750,
+      "recommended_detour": "Reroute to Frank Sinatra Dr or Dean Martin Way"
+    },
+    {
+      "id": "sim-sphere-02",
+      "title": "Sphere Live Production",
+      "venue": "Sphere",
+      "start_time": "2026-11-10T23:16:13.955070",
+      "severity": "MODERATE",
+      "latitude": 36.1212,
+      "longitude": -115.1621,
+      "exclusion_radius": 700,
+      "recommended_detour": "Reroute to Paradise Rd"
+    },
+    {
+      "id": "sim-dtlv-03",
+      "title": "Downtown Fremont Block Gathering",
+      "venue": "Fremont Street Experience",
+      "start_time": "2026-11-11T00:16:13.955070",
+      "severity": "SEVERE",
+      "latitude": 36.1699,
+      "longitude": -115.1438,
+      "exclusion_radius": 600,
+      "recommended_detour": "Reroute to E Charleston Blvd"
+    }
+  ]
+}
