@@ -21,13 +21,24 @@
     
     .weather-banner { background: #172554; border-bottom: 1px solid #1e3a8a; padding: 6px 1.25rem; font-size: 0.72rem; color: #93c5fd; display: flex; align-items: center; justify-content: space-between; }
     
-    #event-list { flex: 1; overflow-y: auto; padding: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    #event-list { flex: 1; overflow-y: auto; padding: 0.75rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    #event-list::-webkit-scrollbar { width: 5px; }
+    #event-list::-webkit-scrollbar-track { background: #0b1120; }
+    #event-list::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
 
     /* Collapsible Folder Accordions */
-    .date-folder { border: 1px solid #1f2937; border-radius: 6px; background: #0f172a; overflow: hidden; }
+    .date-folder { 
+      flex-shrink: 0; 
+      border: 1px solid #1f2937; 
+      border-radius: 8px; 
+      background: #0f172a; 
+      overflow: hidden; 
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+    
     .date-folder-header {
       background: #182234;
-      padding: 0.65rem 0.85rem;
+      padding: 0.75rem 0.9rem;
       font-size: 0.76rem;
       font-weight: 700;
       color: #38bdf8;
@@ -36,23 +47,52 @@
       align-items: center;
       cursor: pointer;
       user-select: none;
+      transition: background 0.15s ease;
     }
     .date-folder-header:hover { background: #1e2d44; }
-    .date-folder.open .arrow { transform: rotate(90deg); }
-    .arrow { display: inline-block; transition: transform 0.2s ease; font-size: 0.65rem; margin-right: 6px; }
-    .count-pill { background: #334155; color: #94a3b8; font-size: 0.65rem; padding: 2px 7px; border-radius: 10px; }
     
-    /* Road Closure Folder Variation */
-    .closure-folder { border-color: #7f1d1d; background: #1a0f12; }
+    .date-folder .arrow { 
+      display: inline-block; 
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); 
+      font-size: 0.65rem; 
+      margin-right: 6px; 
+    }
+    .date-folder.open .arrow { transform: rotate(90deg); }
+    
+    .count-pill { 
+      background: #334155; 
+      color: #cbd5e1; 
+      font-size: 0.65rem; 
+      padding: 2px 7px; 
+      border-radius: 10px; 
+      font-weight: 600;
+    }
+    
+    .closure-folder { border-color: #991b1b; }
     .closure-folder .date-folder-header { background: #2a1215; color: #f87171; }
     .closure-folder .date-folder-header:hover { background: #3b161b; }
     .closure-folder .count-pill { background: #7f1d1d; color: #fca5a5; }
 
-    .date-folder-body { display: none; padding: 0.5rem; flex-direction: column; gap: 0.45rem; background: #0b1120; }
+    .date-folder-body { 
+      display: none; 
+      padding: 0.65rem; 
+      flex-direction: column; 
+      gap: 0.6rem; 
+      background: #090e1a; 
+      border-top: 1px solid #1f2937;
+    }
     .date-folder.open .date-folder-body { display: flex; }
     
     /* Event Cards */
-    .event-card { background: #111827; border: 1px solid #1f2937; border-radius: 6px; padding: 0.7rem; border-left: 4px solid #64748b; cursor: pointer; transition: transform 0.15s ease; }
+    .event-card { 
+      background: #111827; 
+      border: 1px solid #1f2937; 
+      border-radius: 6px; 
+      padding: 0.75rem; 
+      border-left: 4px solid #64748b; 
+      cursor: pointer; 
+      transition: transform 0.15s ease, border-color 0.15s ease; 
+    }
     .event-card:hover { transform: translateX(2px); border-color: #38bdf8; }
     .card-critical { border-left-color: #ef4444; }
     .card-high { border-left-color: #f97316; }
@@ -69,15 +109,15 @@
     .venue-meta { font-size: 0.72rem; color: #94a3b8; margin-top: 3px; display: flex; align-items: center; gap: 6px; }
     .geonet-tag { color: #38bdf8; font-weight: 600; }
     
-    .crowd-phase-box { background: #090e1a; border: 1px solid #1f2937; border-radius: 4px; padding: 5px 8px; margin-top: 6px; font-size: 0.7rem; }
-    .crowd-phase-line { display: flex; justify-content: space-between; margin-bottom: 2px; }
+    .crowd-phase-box { background: #0b1120; border: 1px solid #1f2937; border-radius: 4px; padding: 6px 8px; margin-top: 6px; font-size: 0.7rem; }
+    .crowd-phase-line { display: flex; justify-content: space-between; margin-bottom: 3px; }
     .clearing-text { color: #f87171; font-weight: 600; }
     
-    .factor-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 0.68rem; padding: 2px 5px; border-radius: 4px; margin-top: 4px; font-weight: 500; }
+    .factor-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 0.68rem; padding: 2px 6px; border-radius: 4px; margin-top: 5px; font-weight: 500; }
     .pudo-tag { background: #2e1065; color: #c084fc; border: 1px solid #7e22ce; }
     .ped-tag { background: #3b0764; color: #f472b6; border: 1px solid #db2777; margin-left: 4px; }
     
-    .event-detour { font-size: 0.7rem; color: #67e8f9; background: #164e63; padding: 3px 6px; border-radius: 4px; margin-top: 5px; display: inline-block; }
+    .event-detour { font-size: 0.7rem; color: #67e8f9; background: #164e63; padding: 3px 6px; border-radius: 4px; margin-top: 6px; display: inline-block; }
     
     .footer { padding: 0.85rem; border-top: 1px solid #1f2937; background: #0f172a; }
     .btn-export { width: 100%; background: #0284c7; color: white; border: none; padding: 0.65rem; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; }
@@ -183,7 +223,7 @@
       const standing = items.filter(i => i.type === 'STANDING_CLOSURE' || i.type === 'MUNICIPAL_PERMIT');
       const dynamicEvents = items.filter(i => i.type !== 'STANDING_CLOSURE' && i.type !== 'MUNICIPAL_PERMIT');
 
-      // 1. Bucketed Standing Construction & Road Closures Folder (Collapsible)
+      // 1. Bucketed Standing Construction & Road Closures Folder
       if (standing.length > 0) {
         const closureFolder = document.createElement('div');
         closureFolder.className = 'date-folder closure-folder';
@@ -191,7 +231,7 @@
         const fHeader = document.createElement('div');
         fHeader.className = 'date-folder-header';
         fHeader.innerHTML = `
-          <div><span class="arrow">&#9658;</span> 🚧 CONSTRUCTION & ROAD CLOSURES</div>
+          <div><span class="arrow">&#9658;</span> 🚧 ROAD CLOSURES & WORK</div>
           <span class="count-pill">${standing.length} closures</span>
         `;
         fHeader.onclick = () => closureFolder.classList.toggle('open');
