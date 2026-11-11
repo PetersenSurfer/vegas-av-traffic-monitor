@@ -471,7 +471,7 @@
       }
     }
 
-    // Unified Pacific Time zone date formatter
+    // Unified Pacific Time zone date formatter (prevents split folders)
     function formatTimeWindow(ev) {
       if (!ev.start_time) return { dateKey: 'Upcoming', dateLabel: 'Upcoming', timeLabel: 'TBD' };
       const date = new Date(ev.start_time);
@@ -556,12 +556,36 @@
       const listContainer = document.getElementById('event-list');
       listContainer.innerHTML = '';
 
+      // Client-Side Robust Deduplicator Failsafe
+      const seenDisplayKeys = new Set();
+      const dedupedItems = [];
+
+      for (const ev of items) {
+        const timeInfo = formatTimeWindow(ev);
+        let cleanTitle = (ev.title || '').replace(/\|.*$/, '').trim();
+        const parts = cleanTitle.toLowerCase().split(/\s+(?:vs\.?|at)\s+/);
+        let sportsKey = cleanTitle.toLowerCase().slice(0, 15);
+        if (parts.length === 2) {
+          const s1 = parts[0].replace(/[^a-z0-9]/g, '');
+          const s2 = parts[1].replace(/[^a-z0-9]/g, '');
+          sportsKey = [s1, s2].sort().join('_');
+        }
+        
+        const venueKey = (ev.venue || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        const dedupKey = `${venueKey}_${timeInfo.dateKey}_${timeInfo.timeLabel}_${sportsKey}`;
+
+        if (seenDisplayKeys.has(dedupKey)) continue;
+        seenDisplayKeys.add(dedupKey);
+        dedupedItems.push(ev);
+      }
+
+      items = dedupedItems;
+
       const f1Items = items.filter(i => i.type === 'F1_CLOSURE');
       const regionalItems = items.filter(i => i.type === 'RTC_SEEING_ORANGE');
       const liveHazards = items.filter(i => i.type === 'LIVE_INCIDENT');
       const dynamicEvents = items.filter(i => !['F1_CLOSURE', 'RTC_SEEING_ORANGE', 'LIVE_INCIDENT'].includes(i.type));
 
-      // Separate Allegiant Stadium & T-Mobile Arena into their own lists
       const allegiantEvents = dynamicEvents.filter(e => (e.venue || '').toUpperCase().includes('ALLEGIANT'));
       const tmobileEvents = dynamicEvents.filter(e => (e.venue || '').toUpperCase().includes('T-MOBILE'));
 
