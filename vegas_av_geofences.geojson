@@ -556,28 +556,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.1833,
-          36.0909
-        ]
-      },
-      "properties": {
-        "id": "tm-17AYv0G653GwmJq",
-        "title": "Las Vegas Raiders vs. Seattle Seahawks\u00a0| Official Hotel Packages",
-        "venue": "Allegiant Stadium",
-        "type": "TIMED_EVENT",
-        "severity": "CRITICAL",
-        "geonet_proximity": "120 m from geonet",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Lot N / Dean Martin PUDO Only",
-        "ped_density": "Hacienda Bridge Pedestrian Wave (25k+ crossing)",
-        "detour": "Reroute via Valley View Blvd or I-15 South Collector."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.1642896,
           36.1207267
         ]
@@ -1246,50 +1224,6 @@
         "id": "tm-1AyZk3pGkd12mGg",
         "title": "VIVA LA LISA",
         "venue": "The Colosseum at Caesars Palace",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.17247058,
-          36.10961689
-        ]
-      },
-      "properties": {
-        "id": "tm-1Ad0Z_oGkctuYgF",
-        "title": "Jeezy | Official Caesars Ticket + Hotel Packages\u00a0",
-        "venue": "PH Live at Planet Hollywood",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.17247058,
-          36.10961689
-        ]
-      },
-      "properties": {
-        "id": "tm-1Ad0Z_oGkctCZg1",
-        "title": "Jeezy | Official Caesars Ticket + Hotel Packages\u00a0",
-        "venue": "PH Live at Planet Hollywood",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -3688,28 +3622,6 @@
         "id": "tm-1Ad0ZbzGkS8icAH",
         "title": "Eiffel Tower Viewing Deck",
         "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1869771,
-          36.1153362
-        ]
-      },
-      "properties": {
-        "id": "tm-1kC8vPbgGACEYs1",
-        "title": "Gretchen Wilson | Official Rio Ticket + Hotel Packages",
-        "venue": "Penn & Teller Theater at Rio Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
