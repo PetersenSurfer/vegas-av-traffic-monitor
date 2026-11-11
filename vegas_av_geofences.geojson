@@ -3685,6 +3685,28 @@
         ]
       },
       "properties": {
+        "id": "tm-1Ad0ZbVGklvZb_m",
+        "title": "X Country",
+        "venue": "Harrah's Cabaret at Harrah's Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17262,
+          36.118379
+        ]
+      },
+      "properties": {
         "id": "tm-1Ad0ZbVGklZWz__",
         "title": "X Country",
         "venue": "Harrah's Cabaret at Harrah's Las Vegas",
@@ -3944,28 +3966,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.17272405,
-          36.11726269
-        ]
-      },
-      "properties": {
-        "id": "tm-1Ad0ZbVGkU_LyGt",
-        "title": "X Burlesque",
-        "venue": "Bugsy's Cabaret at Flamingo",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.18723682,
           36.11537173
         ]
@@ -4060,6 +4060,28 @@
       },
       "properties": {
         "id": "tm-1Ad0ZbVGkU_xaGs",
+        "title": "X Burlesque",
+        "venue": "Bugsy's Cabaret at Flamingo",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17272405,
+          36.11726269
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbVGkU_I_uA",
         "title": "X Burlesque",
         "venue": "Bugsy's Cabaret at Flamingo",
         "type": "TIMED_EVENT",
@@ -4543,28 +4565,6 @@
         ]
       },
       "properties": {
-        "id": "tm-1AyZkfKGkdp6m9z",
-        "title": "Willie Barcena at Laugh Factory Las Vegas",
-        "venue": "Laugh Factory at Horseshoe Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.16889906,
-          36.11376452
-        ]
-      },
-      "properties": {
         "id": "tm-1Ad0ZbzGkSIbcQm",
         "title": "Nick Thune at Laugh Factory Las Vegas",
         "venue": "Laugh Factory at Horseshoe Las Vegas",
@@ -4787,6 +4787,28 @@
       "properties": {
         "id": "tm-1Ad0ZbzGkSIPuhu",
         "title": "Laugh Factory Las Vegas",
+        "venue": "Laugh Factory at Horseshoe Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16889906,
+          36.11376452
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkfKGkdp5X9T",
+        "title": "Willie Barcena at Laugh Factory Las Vegas",
         "venue": "Laugh Factory at Horseshoe Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
@@ -6678,28 +6700,6 @@
       },
       "properties": {
         "id": "tm-17AYv0G6GKtvnly",
-        "title": "An R-Rated Magic Show",
-        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1708107,
-          36.1101115
-        ]
-      },
-      "properties": {
-        "id": "tm-17AYv0G6GKtdBiA",
         "title": "An R-Rated Magic Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
