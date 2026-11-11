@@ -21,23 +21,25 @@ BROWSER_HEADERS = {
 
 VENUE_PROFILES = {
     "T-Mobile Arena": {
+        "tm_id": "KovZ917AhJb",
         "coords": [36.1028, -115.1783],
         "geonet_dist": "83 m from geonet",
         "radius": 750,
         "impact_tier": "Tier 1 (Severe)",
         "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way.",
-        "pudo_status": "Valet Gate Throttled",
-        "ped_density": "High Pedestrian Spillover",
+        "pudo_status": "Valet Gate Throttled / Park Ave Blocked",
+        "ped_density": "Toshiba Plaza Heavy Foot Spillover",
         "capacity": 17500
     },
     "Allegiant Stadium": {
+        "tm_id": "KovZ917Ahox",
         "coords": [36.0908, -115.1833],
         "geonet_dist": "120 m from geonet",
         "radius": 1300,
         "impact_tier": "Tier 1 (Severe)",
         "detour": "Reroute via Valley View Blvd or I-15 South Collector.",
         "pudo_status": "Lot N / Dean Martin PUDO Only",
-        "ped_density": "Hacienda Bridge Wave",
+        "ped_density": "Hacienda Bridge Pedestrian Wave (25k+ crossing)",
         "capacity": 65000
     },
     "Sphere": {
@@ -95,7 +97,6 @@ def fetch_weather_advisories():
     return "Normal Mojave Operations (No Active Alerts)"
 
 def get_f1_strip_standing():
-    """F1 Circuit and immediate Strip track restrictions."""
     now = datetime.now(timezone.utc)
     return [
         {
@@ -149,14 +150,9 @@ def get_f1_strip_standing():
     ]
 
 def fetch_seeing_orange_regional():
-    """
-    Ingests Seeing Orange capital projects, multi-corridor road work,
-    and active work zones across the entire Las Vegas Valley.
-    """
     regional_work = []
     seen = set()
 
-    # 1. Ingest active roadwork and construction events from the open Nevada transportation feed
     try:
         url = "https://nvroads.com/api/v2/get/events"
         res = requests.get(url, headers=BROWSER_HEADERS, timeout=8)
@@ -193,98 +189,17 @@ def fetch_seeing_orange_regional():
     except Exception as e:
         print(f"Live construction feed notice: {e}")
 
-    # 2. Add RTC's Major Seeing Orange Capital Projects across the full valley
     active_rtc_corridors = [
-        {
-            "id": "so-i15-trop",
-            "title": "I-15 / Tropicana Interchange Project",
-            "venue": "I-15 at Tropicana Ave",
-            "agency": "NDOT",
-            "details": "Major bridge replacement and interchange reconfiguration.",
-            "duration": "Multi-Year Phase",
-            "lat": 36.1010, "lng": -115.1840
-        },
-        {
-            "id": "so-henderson-215",
-            "title": "Henderson 215 Widening & Green Valley DDI",
-            "venue": "I-215 (Pecos Rd to Stephanie St)",
-            "agency": "City of Henderson / RTC",
-            "details": "Widening 215 by two lanes each direction and constructing Diverging Diamond Interchange.",
-            "duration": "Active Construction",
-            "lat": 36.0275, "lng": -115.0880
-        },
-        {
-            "id": "so-summerlin-215",
-            "title": "CC-215 Beltway & Summerlin Pkwy Interchange",
-            "venue": "CC-215 at Summerlin Parkway",
-            "agency": "Clark County Public Works",
-            "details": "Ramp reconfigurations, new flyovers, and bridge widening.",
-            "duration": "Active Construction",
-            "lat": 36.1890, "lng": -115.2970
-        },
-        {
-            "id": "so-maryland-brt",
-            "title": "Maryland Parkway BRT Line",
-            "venue": "Maryland Pkwy (Russell Rd to Downtown)",
-            "agency": "RTC Southern Nevada",
-            "details": "Utility relocation, dedicated transit lanes, and roadway reconstruction.",
-            "duration": "Through Fall 2026",
-            "lat": 36.1360, "lng": -115.1365
-        },
-        {
-            "id": "so-lvblvd-south",
-            "title": "Las Vegas Blvd Improvement (Phases C & D)",
-            "venue": "Las Vegas Blvd (Russell Rd to Tropicana Ave)",
-            "agency": "Clark County",
-            "details": "Roadway resurfacing, smart traffic signals, bollards, and pedestrian lighting.",
-            "duration": "Active Strip Work",
-            "lat": 36.0960, "lng": -115.1725
-        },
-        {
-            "id": "so-boulder-hwy",
-            "title": "Reimagine Boulder Highway Transformation",
-            "venue": "Boulder Highway (Tropicana to Wagonwheel)",
-            "agency": "RTC / City of Henderson",
-            "details": "Complete streets overhaul, center transit running, and access management.",
-            "duration": "Multi-Phase Capital",
-            "lat": 36.0820, "lng": -115.0450
-        },
-        {
-            "id": "so-lake-mead-blvd",
-            "title": "Lake Mead Blvd Complete Streets Project",
-            "venue": "Lake Mead Blvd (Simmons St to Losee Rd)",
-            "agency": "City of North Las Vegas",
-            "details": "Pavement rehabilitation, new medians, ADA ramps, and bike lanes.",
-            "duration": "Active Construction",
-            "lat": 36.1965, "lng": -115.1480
-        },
-        {
-            "id": "so-cc215-south-widening",
-            "title": "CC-215 Southwest Beltway Widening",
-            "venue": "CC-215 (Decatur Blvd to Jones Blvd)",
-            "agency": "Clark County",
-            "details": "Lane additions, auxiliary lanes, and sound wall construction.",
-            "duration": "Active Widening",
-            "lat": 36.0680, "lng": -115.2100
-        },
-        {
-            "id": "so-charleston-west",
-            "title": "West Charleston Blvd Utility Rehab",
-            "venue": "Charleston Blvd (Rancho Dr to Martin L King)",
-            "agency": "City of Las Vegas",
-            "details": "Storm drain installation and arterial resurfacing.",
-            "duration": "Through Summer 2026",
-            "lat": 36.1585, "lng": -115.1630
-        },
-        {
-            "id": "so-flamingo-cimarron",
-            "title": "Flamingo Wash Bridge & Drainage Improvement",
-            "venue": "Flamingo Rd at Cimarron Rd",
-            "agency": "Clark County Regional Flood",
-            "details": "Bridge reinforcement and channel expansion. Right lanes shifted.",
-            "duration": "Active Project",
-            "lat": 36.1150, "lng": -115.2680
-        }
+        {"id": "so-i15-trop", "title": "I-15 / Tropicana Interchange Project", "venue": "I-15 at Tropicana Ave", "agency": "NDOT", "details": "Major bridge replacement and interchange reconfiguration.", "duration": "Multi-Year Phase", "lat": 36.1010, "lng": -115.1840},
+        {"id": "so-henderson-215", "title": "Henderson 215 Widening & Green Valley DDI", "venue": "I-215 (Pecos Rd to Stephanie St)", "agency": "City of Henderson / RTC", "details": "Widening 215 and constructing Diverging Diamond Interchange.", "duration": "Active Construction", "lat": 36.0275, "lng": -115.0880},
+        {"id": "so-summerlin-215", "title": "CC-215 Beltway & Summerlin Pkwy Interchange", "venue": "CC-215 at Summerlin Parkway", "agency": "Clark County Public Works", "details": "Ramp reconfigurations, new flyovers, and bridge widening.", "duration": "Active Construction", "lat": 36.1890, "lng": -115.2970},
+        {"id": "so-maryland-brt", "title": "Maryland Parkway BRT Line", "venue": "Maryland Pkwy (Russell Rd to Downtown)", "agency": "RTC Southern Nevada", "details": "Utility relocation, dedicated transit lanes, and reconstruction.", "duration": "Through Fall 2026", "lat": 36.1360, "lng": -115.1365},
+        {"id": "so-lvblvd-south", "title": "Las Vegas Blvd Improvement (Phases C & D)", "venue": "Las Vegas Blvd (Russell Rd to Tropicana Ave)", "agency": "Clark County", "details": "Roadway resurfacing, smart traffic signals, and bollards.", "duration": "Active Strip Work", "lat": 36.0960, "lng": -115.1725},
+        {"id": "so-boulder-hwy", "title": "Reimagine Boulder Highway Transformation", "venue": "Boulder Highway (Tropicana to Wagonwheel)", "agency": "RTC / City of Henderson", "details": "Complete streets overhaul and center transit running.", "duration": "Multi-Phase Capital", "lat": 36.0820, "lng": -115.0450},
+        {"id": "so-lake-mead-blvd", "title": "Lake Mead Blvd Complete Streets Project", "venue": "Lake Mead Blvd (Simmons St to Losee Rd)", "agency": "City of North Las Vegas", "details": "Pavement rehabilitation, new medians, and ADA ramps.", "duration": "Active Construction", "lat": 36.1965, "lng": -115.1480},
+        {"id": "so-cc215-south-widening", "title": "CC-215 Southwest Beltway Widening", "venue": "CC-215 (Decatur Blvd to Jones Blvd)", "agency": "Clark County", "details": "Lane additions, auxiliary lanes, and sound walls.", "duration": "Active Widening", "lat": 36.0680, "lng": -115.2100},
+        {"id": "so-charleston-west", "title": "West Charleston Blvd Utility Rehab", "venue": "Charleston Blvd (Rancho Dr to Martin L King)", "agency": "City of Las Vegas", "details": "Storm drain installation and arterial resurfacing.", "duration": "Through Summer 2026", "lat": 36.1585, "lng": -115.1630},
+        {"id": "so-flamingo-cimarron", "title": "Flamingo Wash Bridge & Drainage Improvement", "venue": "Flamingo Rd at Cimarron Rd", "agency": "Clark County Regional Flood", "details": "Bridge reinforcement and channel expansion. Right lanes shifted.", "duration": "Active Project", "lat": 36.1150, "lng": -115.2680}
     ]
 
     for proj in active_rtc_corridors:
@@ -321,7 +236,6 @@ def fetch_open_incidents():
                 headline = str(item.get("headline", "Road Incident"))
                 ev_type = str(item.get("type", "")).lower()
 
-                # Filter for unplanned live traffic hazards and crashes
                 if any(k in headline.lower() or k in ev_type for k in ["crash", "stall", "hazard", "debris", "emergency", "incident"]):
                     if lat is not None and lng is not None and (MIN_LAT <= float(lat) <= MAX_LAT) and (MIN_LNG <= float(lng) <= MAX_LNG):
                         events.append({
@@ -382,24 +296,163 @@ def fetch_conventions():
         })
     return results
 
-def fetch_ticketmaster_events():
-    """Expanded 15-mile radius and 2-page pagination covering the metro circle."""
+def fetch_stadium_and_arena_games(seen_keys):
+    """
+    Directly queries ESPN Open Schedule APIs for Las Vegas Raiders (NFL) and
+    Vegas Golden Knights (NHL) home games to guarantee zero stadium sports are missed.
+    """
+    sports_events = []
+    now = datetime.now(timezone.utc)
+    week_end = now + timedelta(days=8)
+
+    endpoints = [
+        {
+            "league": "NFL",
+            "team": "Las Vegas Raiders",
+            "venue": "Allegiant Stadium",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/lv/schedule",
+            "profile": VENUE_PROFILES["Allegiant Stadium"]
+        },
+        {
+            "league": "NHL",
+            "team": "Vegas Golden Knights",
+            "venue": "T-Mobile Arena",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams/vgk/schedule",
+            "profile": VENUE_PROFILES["T-Mobile Arena"]
+        }
+    ]
+
+    for item in endpoints:
+        try:
+            res = requests.get(item["url"], headers=BROWSER_HEADERS, timeout=8)
+            if res.status_code == 200:
+                events = res.json().get("events", [])
+                for ev in events:
+                    date_str = ev.get("date")
+                    if not date_str:
+                        continue
+                    dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+                    if now <= dt <= week_end:
+                        competitions = ev.get("competitions", [{}])[0]
+                        venue_info = competitions.get("venue", {})
+                        venue_name = venue_info.get("fullName", item["venue"])
+
+                        # Confirm match is hosted in Las Vegas
+                        competitors = competitions.get("competitors", [])
+                        home_team = next((c for c in competitors if c.get("homeAway") == "home"), {})
+                        if item["team"].lower() not in home_team.get("team", {}).get("displayName", "").lower():
+                            continue
+
+                        name = ev.get("name", f"{item['team']} Home Game")
+                        key = f"{name[:25]}_{venue_name}_{date_str[:10]}"
+                        if key in seen_keys:
+                            continue
+                        seen_keys.add(key)
+
+                        prof = item["profile"]
+                        clearing_start_dt = dt + timedelta(minutes=180)
+                        clearing_end_dt = clearing_start_dt + timedelta(minutes=60)
+
+                        sports_events.append({
+                            "id": f"espn-{ev.get('id', date_str[:10])}",
+                            "title": f"🏈 {name}" if item["league"] == "NFL" else f"🏒 {name}",
+                            "venue": item["venue"],
+                            "source": f"ESPN {item['league']} Direct",
+                            "type": "TIMED_EVENT",
+                            "start_time": dt.isoformat(),
+                            "arriving_time": (dt - timedelta(minutes=120)).isoformat(),
+                            "clearing_window": f"{clearing_start_dt.strftime('%I:%M %p')} - {clearing_end_dt.strftime('%I:%M %p')}",
+                            "capacity": f"~{prof['capacity']:,}",
+                            "severity": "CRITICAL",
+                            "impact_tier": "Tier 1 (Severe)",
+                            "geonet_dist": prof["geonet_dist"],
+                            "pudo_status": prof["pudo_status"],
+                            "ped_density": prof["ped_density"],
+                            "latitude": prof["coords"][0],
+                            "longitude": prof["coords"][1],
+                            "exclusion_radius": prof["radius"],
+                            "recommended_detour": prof["detour"]
+                        })
+        except Exception as e:
+            print(f"Sports schedule query notice for {item['league']}: {e}")
+
+    return sports_events
+
+def fetch_ticketmaster_events(seen_keys):
+    """
+    Directly queries Allegiant Stadium & T-Mobile Arena by exact venue ID,
+    followed by the expanded 15-mile valley query.
+    """
     if not TM_API_KEY:
         return []
 
     now = datetime.now(timezone.utc)
-    end_time = now + timedelta(days=7)
+    end_time = now + timedelta(days=8)
     results = []
-    seen = set()
 
-    for page in range(2):
+    # 1. Target Allegiant Stadium & T-Mobile Arena by explicit Ticketmaster Venue IDs
+    stadium_venue_ids = [
+        {"name": "Allegiant Stadium", "id": "KovZ917Ahox", "prof": VENUE_PROFILES["Allegiant Stadium"]},
+        {"name": "T-Mobile Arena", "id": "KovZ917AhJb", "prof": VENUE_PROFILES["T-Mobile Arena"]}
+    ]
+
+    for v_target in stadium_venue_ids:
+        url = (
+            f"https://app.ticketmaster.com/discovery/v2/events.json"
+            f"?apikey={TM_API_KEY}"
+            f"&venueId={v_target['id']}"
+            f"&startDateTime={now.strftime('%Y-%m-%dT%H:%M:%SZ')}"
+            f"&endDateTime={end_time.strftime('%Y-%m-%dT%H:%M:%SZ')}"
+            f"&size=50"
+        )
+        try:
+            res = requests.get(url, timeout=10)
+            if res.status_code == 200:
+                for item in res.json().get("_embedded", {}).get("events", []):
+                    name = item.get("name", "Stadium Event")
+                    start_utc = item.get("dates", {}).get("start", {}).get("dateTime", now.isoformat())
+                    key = f"{name[:25]}_{v_target['name']}_{start_utc[:10]}"
+                    if key in seen_keys:
+                        continue
+                    seen_keys.add(key)
+
+                    prof = v_target["prof"]
+                    start_dt = datetime.fromisoformat(start_utc.replace("Z", "+00:00"))
+                    clearing_start_dt = start_dt + timedelta(minutes=180)
+                    clearing_end_dt = clearing_start_dt + timedelta(minutes=60)
+
+                    results.append({
+                        "id": f"tm-stadium-{item.get('id')}",
+                        "title": name,
+                        "venue": v_target["name"],
+                        "source": "Ticketmaster Stadium Direct",
+                        "type": "TIMED_EVENT",
+                        "start_time": start_utc,
+                        "arriving_time": (start_dt - timedelta(minutes=120)).isoformat(),
+                        "clearing_window": f"{clearing_start_dt.strftime('%I:%M %p')} - {clearing_end_dt.strftime('%I:%M %p')}",
+                        "capacity": f"~{prof['capacity']:,}",
+                        "severity": "CRITICAL",
+                        "impact_tier": "Tier 1 (Severe)",
+                        "geonet_dist": prof["geonet_dist"],
+                        "pudo_status": prof["pudo_status"],
+                        "ped_density": prof["ped_density"],
+                        "latitude": prof["coords"][0],
+                        "longitude": prof["coords"][1],
+                        "exclusion_radius": prof["radius"],
+                        "recommended_detour": prof["detour"]
+                    })
+        except Exception as e:
+            print(f"Ticketmaster direct stadium query error ({v_target['name']}): {e}")
+
+    # 2. Query broad 15-mile valley radius (4 pages)
+    for page in range(4):
         url = (
             f"https://app.ticketmaster.com/discovery/v2/events.json"
             f"?apikey={TM_API_KEY}"
             f"&latlong={LAS_VEGAS_LAT},{LAS_VEGAS_LNG}&radius=15&unit=miles"
             f"&startDateTime={now.strftime('%Y-%m-%dT%H:%M:%SZ')}"
             f"&endDateTime={end_time.strftime('%Y-%m-%dT%H:%M:%SZ')}"
-            f"&size=100&page={page}&sort=date,asc"
+            f"&size=100&page={page}"
         )
         try:
             res = requests.get(url, timeout=12)
@@ -420,9 +473,9 @@ def fetch_ticketmaster_events():
                 start_utc = item.get("dates", {}).get("start", {}).get("dateTime", now.isoformat())
 
                 key = f"{name[:25]}_{venue_name}_{start_utc[:10]}"
-                if key in seen:
+                if key in seen_keys:
                     continue
-                seen.add(key)
+                seen_keys.add(key)
 
                 v_lat = float(venue_info.get("location", {}).get("latitude", LAS_VEGAS_LAT))
                 v_lng = float(venue_info.get("location", {}).get("longitude", LAS_VEGAS_LNG))
@@ -476,8 +529,7 @@ def fetch_ticketmaster_events():
 
     return results
 
-def fetch_community_events():
-    """Ingests off-Strip, Town Square, and community festivals across the valley."""
+def fetch_community_events(seen_keys):
     url = "https://www.vegascalendar.org/wp-json/vegascal/v1/events?days=7&per_page=30"
     community_items = []
     try:
@@ -491,13 +543,20 @@ def fetch_community_events():
                 v_name = venue_data.get("name", "Community Gathering")
 
                 if v_lat and v_lng and (MIN_LAT <= float(v_lat) <= MAX_LAT) and (MIN_LNG <= float(v_lng) <= MAX_LNG):
+                    title = f"Community: {ev.get('title', 'Public Festival')}"
+                    start_utc = ev.get("start_utc", datetime.now(timezone.utc).isoformat())
+                    key = f"{title[:25]}_{v_name}_{start_utc[:10]}"
+                    if key in seen_keys:
+                        continue
+                    seen_keys.add(key)
+
                     community_items.append({
                         "id": f"comm-{ev.get('id', v_lat)}",
-                        "title": f"Community: {ev.get('title', 'Public Festival')}",
+                        "title": title,
                         "venue": v_name,
                         "source": "Local Community Feed",
                         "type": "TIMED_EVENT",
-                        "start_time": ev.get("start_utc", datetime.now(timezone.utc).isoformat()),
+                        "start_time": start_utc,
                         "severity": "MODERATE",
                         "impact_tier": "Community Gathering",
                         "geonet_dist": "Inside Valley Operating Domain",
@@ -512,19 +571,23 @@ def fetch_community_events():
 
 def main():
     combined = []
+    seen_keys = set()
     weather_info = fetch_weather_advisories()
 
     # 1. Dedicated F1 Strip Core Work
     combined.extend(get_f1_strip_standing())
-    # 2. Regional Seeing Orange Valley-Wide Capital Projects
+    # 2. Regional Seeing Orange Valley-Wide Projects
     combined.extend(fetch_seeing_orange_regional())
-    # 3. Live Hazards & Open 511 Incidents
+    # 3. Live Roadway Incidents
     combined.extend(fetch_open_incidents())
-    # 4. Conventions & Ticketmaster Events (15-mile Valley Extent)
+    # 4. Conventions (LVCVA)
     combined.extend(fetch_conventions())
-    combined.extend(fetch_ticketmaster_events())
-    # 5. Local Community & Town Square Events
-    combined.extend(fetch_community_events())
+    # 5. Direct Stadium & Arena Matches (NFL Raiders & NHL Golden Knights)
+    combined.extend(fetch_stadium_and_arena_games(seen_keys))
+    # 6. Ticketmaster Direct Stadium Venues + 15-mile Extent
+    combined.extend(fetch_ticketmaster_events(seen_keys))
+    # 7. Local Community & Town Square
+    combined.extend(fetch_community_events(seen_keys))
 
     payload = {
         "metadata": {
@@ -561,7 +624,7 @@ def main():
     with open("vegas_av_geofences.geojson", "w", encoding="utf-8") as f:
         json.dump({"type": "FeatureCollection", "features": features}, f, indent=2)
 
-    print(f"Pipeline successfully generated {len(combined)} active operational elements.")
+    print(f"Mission control pipeline updated: {len(combined)} active elements populated.")
 
 if __name__ == "__main__":
     main()
