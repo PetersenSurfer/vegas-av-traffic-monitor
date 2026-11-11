@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 import requests
@@ -83,6 +84,28 @@ VENUE_PROFILES = {
         "capacity": 8000
     }
 }
+
+def normalize_event_key(title, venue, date_str):
+    """
+    Prevents duplicate entries when ESPN lists 'Team A at Team B'
+    and Ticketmaster lists 'Team B vs. Team A'.
+    """
+    clean_date = date_str[:10]
+    clean_venue = re.sub(r'[^a-z0-9]', '', venue.lower())
+    clean_title = title.lower()
+    clean_title = clean_title.replace("🏈", "").replace("🏒", "").strip()
+
+    # If it's a matchup with 'vs' or 'at', sort the opponents alphabetically
+    match = re.split(r'\s+(?:vs\.?|at)\s+', clean_title)
+    if len(match) == 2:
+        part1 = re.sub(r'[^a-z0-9]', '', match[0].strip())
+        part2 = re.sub(r'[^a-z0-9]', '', match[1].strip())
+        teams_sorted = sorted([part1, part2])
+        return f"{clean_venue}_{clean_date}_{teams_sorted[0]}_{teams_sorted[1]}"
+
+    # Fallback standard slug
+    slug = re.sub(r'[^a-z0-9]', '', clean_title)[:20]
+    return f"{clean_venue}_{clean_date}_{slug}"
 
 def fetch_weather_advisories():
     url = "https://api.weather.gov/alerts/active?zone=NVZ020"
@@ -297,10 +320,6 @@ def fetch_conventions():
     return results
 
 def fetch_stadium_and_arena_games(seen_keys):
-    """
-    Directly queries ESPN Open Schedule APIs for Las Vegas Raiders (NFL) and
-    Vegas Golden Knights (NHL) home games to guarantee zero stadium sports are missed.
-    """
     sports_events = []
     now = datetime.now(timezone.utc)
     week_end = now + timedelta(days=8)
@@ -334,17 +353,13 @@ def fetch_stadium_and_arena_games(seen_keys):
                     dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
                     if now <= dt <= week_end:
                         competitions = ev.get("competitions", [{}])[0]
-                        venue_info = competitions.get("venue", {})
-                        venue_name = venue_info.get("fullName", item["venue"])
-
-                        # Confirm match is hosted in Las Vegas
                         competitors = competitions.get("competitors", [])
                         home_team = next((c for c in competitors if c.get("homeAway") == "home"), {})
                         if item["team"].lower() not in home_team.get("team", {}).get("displayName", "").lower():
                             continue
 
                         name = ev.get("name", f"{item['team']} Home Game")
-                        key = f"{name[:25]}_{venue_name}_{date_str[:10]}"
+                        key = normalize_event_key(name, item["venue"], date_str)
                         if key in seen_keys:
                             continue
                         seen_keys.add(key)
@@ -379,10 +394,6 @@ def fetch_stadium_and_arena_games(seen_keys):
     return sports_events
 
 def fetch_ticketmaster_events(seen_keys):
-    """
-    Directly queries Allegiant Stadium & T-Mobile Arena by exact venue ID,
-    followed by the expanded 15-mile valley query.
-    """
     if not TM_API_KEY:
         return []
 
@@ -390,7 +401,7 @@ def fetch_ticketmaster_events(seen_keys):
     end_time = now + timedelta(days=8)
     results = []
 
-    # 1. Target Allegiant Stadium & T-Mobile Arena by explicit Ticketmaster Venue IDs
+    # 1. Target Allegiant Stadium & T-Mobile Arena directly
     stadium_venue_ids = [
         {"name": "Allegiant Stadium", "id": "KovZ917Ahox", "prof": VENUE_PROFILES["Allegiant Stadium"]},
         {"name": "T-Mobile Arena", "id": "KovZ917AhJb", "prof": VENUE_PROFILES["T-Mobile Arena"]}
@@ -411,7 +422,7 @@ def fetch_ticketmaster_events(seen_keys):
                 for item in res.json().get("_embedded", {}).get("events", []):
                     name = item.get("name", "Stadium Event")
                     start_utc = item.get("dates", {}).get("start", {}).get("dateTime", now.isoformat())
-                    key = f"{name[:25]}_{v_target['name']}_{start_utc[:10]}"
+                    key = normalize_event_key(name, v_target["name"], start_utc)
                     if key in seen_keys:
                         continue
                     seen_keys.add(key)
@@ -442,9 +453,9 @@ def fetch_ticketmaster_events(seen_keys):
                         "recommended_detour": prof["detour"]
                     })
         except Exception as e:
-            print(f"Ticketmaster direct stadium query error ({v_target['name']}): {e}")
+            print(f"Ticketmaster direct stadium error ({v_target['name']}): {e}")
 
-    # 2. Query broad 15-mile valley radius (4 pages)
+    # 2. Broad 15-mile valley query
     for page in range(4):
         url = (
             f"https://app.ticketmaster.com/discovery/v2/events.json"
@@ -472,7 +483,7 @@ def fetch_ticketmaster_events(seen_keys):
                 name = item.get("name", "Special Event")
                 start_utc = item.get("dates", {}).get("start", {}).get("dateTime", now.isoformat())
 
-                key = f"{name[:25]}_{venue_name}_{start_utc[:10]}"
+                key = normalize_event_key(name, venue_name, start_utc)
                 if key in seen_keys:
                     continue
                 seen_keys.add(key)
@@ -545,7 +556,7 @@ def fetch_community_events(seen_keys):
                 if v_lat and v_lng and (MIN_LAT <= float(v_lat) <= MAX_LAT) and (MIN_LNG <= float(v_lng) <= MAX_LNG):
                     title = f"Community: {ev.get('title', 'Public Festival')}"
                     start_utc = ev.get("start_utc", datetime.now(timezone.utc).isoformat())
-                    key = f"{title[:25]}_{v_name}_{start_utc[:10]}"
+                    key = normalize_event_key(title, v_name, start_utc)
                     if key in seen_keys:
                         continue
                     seen_keys.add(key)
