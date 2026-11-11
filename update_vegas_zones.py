@@ -86,24 +86,22 @@ VENUE_PROFILES = {
 }
 
 def normalize_event_key(title, venue, date_str):
-    """
-    Prevents duplicate entries when ESPN lists 'Team A at Team B'
-    and Ticketmaster lists 'Team B vs. Team A'.
-    """
     clean_date = date_str[:10]
     clean_venue = re.sub(r'[^a-z0-9]', '', venue.lower())
-    clean_title = title.lower()
-    clean_title = clean_title.replace("🏈", "").replace("🏒", "").strip()
+    
+    # Strip emojis and common package prefixes/suffixes
+    raw = title.replace("🏈", "").replace("🏒", "").strip()
+    raw = re.split(r'\|', raw)[0].strip()
+    clean_title = re.sub(r'[\(\[].*?[\)\]]', '', raw).strip().lower()
 
-    # If it's a matchup with 'vs' or 'at', sort the opponents alphabetically
+    # Normalize sports matches (Team A vs Team B / Team A at Team B)
     match = re.split(r'\s+(?:vs\.?|at)\s+', clean_title)
-    if len(match) == 2:
+    if len(match) >= 2:
         part1 = re.sub(r'[^a-z0-9]', '', match[0].strip())
         part2 = re.sub(r'[^a-z0-9]', '', match[1].strip())
-        teams_sorted = sorted([part1, part2])
+        teams_sorted = sorted([part1[:12], part2[:12]])
         return f"{clean_venue}_{clean_date}_{teams_sorted[0]}_{teams_sorted[1]}"
 
-    # Fallback standard slug
     slug = re.sub(r'[^a-z0-9]', '', clean_title)[:20]
     return f"{clean_venue}_{clean_date}_{slug}"
 
@@ -421,6 +419,11 @@ def fetch_ticketmaster_events(seen_keys):
             if res.status_code == 200:
                 for item in res.json().get("_embedded", {}).get("events", []):
                     name = item.get("name", "Stadium Event")
+                    
+                    # Ignore hotel and VIP add-on clones
+                    if any(pkg in name.lower() for pkg in ["hotel package", "vip package", "ticket package", "experience pass"]):
+                        continue
+
                     start_utc = item.get("dates", {}).get("start", {}).get("dateTime", now.isoformat())
                     key = normalize_event_key(name, v_target["name"], start_utc)
                     if key in seen_keys:
@@ -481,8 +484,11 @@ def fetch_ticketmaster_events(seen_keys):
                 venue_info = venues[0]
                 venue_name = venue_info.get("name", "Unknown Venue")
                 name = item.get("name", "Special Event")
-                start_utc = item.get("dates", {}).get("start", {}).get("dateTime", now.isoformat())
 
+                if any(pkg in name.lower() for pkg in ["hotel package", "vip package", "ticket package"]):
+                    continue
+
+                start_utc = item.get("dates", {}).get("start", {}).get("dateTime", now.isoformat())
                 key = normalize_event_key(name, venue_name, start_utc)
                 if key in seen_keys:
                     continue
