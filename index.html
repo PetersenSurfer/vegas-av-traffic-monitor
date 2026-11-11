@@ -75,7 +75,7 @@
       font-weight: 600;
     }
 
-    /* Roadwork & Incident Drawers */
+    /* Fixed Roadwork & Hazard Folders */
     .f1-folder { border-color: #e11d48; }
     .f1-folder .date-folder-header { background: #310811; color: #fb7185; }
     .f1-folder .date-folder-header:hover { background: #440d18; }
@@ -90,6 +90,18 @@
     .hazard-folder .date-folder-header { background: #2b0d0e; color: #f87171; }
     .hazard-folder .date-folder-header:hover { background: #3d1416; }
     .hazard-folder .count-pill { background: #991b1b; color: #fee2e2; border: 1px solid #ef4444; }
+
+    /* Dedicated Allegiant Stadium Drawer */
+    .allegiant-folder { border-color: #475569; }
+    .allegiant-folder .date-folder-header { background: #1e293b; color: #f8fafc; }
+    .allegiant-folder .date-folder-header:hover { background: #334155; }
+    .allegiant-folder .count-pill { background: #0f172a; color: #cbd5e1; border: 1px solid #64748b; }
+
+    /* Dedicated T-Mobile Arena Drawer */
+    .tmobile-folder { border-color: #b45309; }
+    .tmobile-folder .date-folder-header { background: #261b0c; color: #fcd34d; }
+    .tmobile-folder .date-folder-header:hover { background: #382812; }
+    .tmobile-folder .count-pill { background: #78350f; color: #fef3c7; border: 1px solid #d97706; }
 
     .date-folder-body { 
       display: none; 
@@ -238,7 +250,7 @@
   <aside id="sidebar">
     <div class="header">
       <h1><span>🚗</span> Mapping Event Mission Control</h1>
-      <p>Daily Operations & 4-Tier Hierarchy</p>
+      <p>Stadium / Arena Ops & 4-Tier Hierarchy</p>
     </div>
     
     <div class="status-bar">
@@ -459,13 +471,12 @@
       }
     }
 
-    // Unified Pacific Time zone date formatter (eliminates split folders)
+    // Unified Pacific Time zone date formatter
     function formatTimeWindow(ev) {
       if (!ev.start_time) return { dateKey: 'Upcoming', dateLabel: 'Upcoming', timeLabel: 'TBD' };
       const date = new Date(ev.start_time);
       
-      // Calculate date strictly using Las Vegas local time
-      const dateKey = date.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }); // Generates YYYY-MM-DD
+      const dateKey = date.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
       const dateLabel = date.toLocaleDateString('en-US', { 
         weekday: 'short', 
         month: 'short', 
@@ -498,7 +509,7 @@
           <div class="event-title">${ev.title}</div>
           <span class="impact-badge ${badgeClass}">${tierLabel}</span>
         </div>
-        <div class="venue-meta">📍 ${ev.venue} • <span class="geonet-tag">${timeInfo.timeLabel}</span></div>
+        <div class="venue-meta">📍 ${ev.venue} • <span class="geonet-tag">${timeInfo.dateLabel} @ ${timeInfo.timeLabel}</span></div>
         
         ${ev.clearing_window ? `
           <div class="crowd-phase-box">
@@ -549,6 +560,10 @@
       const regionalItems = items.filter(i => i.type === 'RTC_SEEING_ORANGE');
       const liveHazards = items.filter(i => i.type === 'LIVE_INCIDENT');
       const dynamicEvents = items.filter(i => !['F1_CLOSURE', 'RTC_SEEING_ORANGE', 'LIVE_INCIDENT'].includes(i.type));
+
+      // Separate Allegiant Stadium & T-Mobile Arena into their own lists
+      const allegiantEvents = dynamicEvents.filter(e => (e.venue || '').toUpperCase().includes('ALLEGIANT'));
+      const tmobileEvents = dynamicEvents.filter(e => (e.venue || '').toUpperCase().includes('T-MOBILE'));
 
       // 1. Dedicated F1 Track Work
       if (f1Items.length > 0) {
@@ -682,7 +697,53 @@
         listContainer.appendChild(hazardFolder);
       }
 
-      // --- 4. Group Events by Day, Then Nested Tiers 1-4 Inside Each Day ---
+      // 4. Dedicated Allegiant Stadium Drawer
+      if (allegiantEvents.length > 0) {
+        allegiantEvents.sort((a, b) => new Date(a.start_time || 0) - new Date(b.start_time || 0));
+        const alFolder = document.createElement('div');
+        alFolder.className = 'date-folder allegiant-folder';
+
+        const alHeader = document.createElement('div');
+        alHeader.className = 'date-folder-header';
+        alHeader.innerHTML = `
+          <div><span class="arrow">&#9658;</span> 🏈 ALLEGIANT STADIUM SURGE OPS</div>
+          <span class="count-pill">${allegiantEvents.length} events</span>
+        `;
+        alHeader.onclick = () => alFolder.classList.toggle('open');
+
+        const alBody = document.createElement('div');
+        alBody.className = 'date-folder-body';
+        allegiantEvents.forEach(ev => alBody.appendChild(buildEventCard(ev, '#ef4444', 'card-t1', 'badge-t1', 'Stadium Tier 1')));
+
+        alFolder.appendChild(alHeader);
+        alFolder.appendChild(alBody);
+        listContainer.appendChild(alFolder);
+      }
+
+      // 5. Dedicated T-Mobile Arena Drawer
+      if (tmobileEvents.length > 0) {
+        tmobileEvents.sort((a, b) => new Date(a.start_time || 0) - new Date(b.start_time || 0));
+        const tmFolder = document.createElement('div');
+        tmFolder.className = 'date-folder tmobile-folder';
+
+        const tmHeader = document.createElement('div');
+        tmHeader.className = 'date-folder-header';
+        tmHeader.innerHTML = `
+          <div><span class="arrow">&#9658;</span> 🏒 T-MOBILE ARENA & TOSHIBA PLAZA OPS</div>
+          <span class="count-pill">${tmobileEvents.length} events</span>
+        `;
+        tmHeader.onclick = () => tmFolder.classList.toggle('open');
+
+        const tmBody = document.createElement('div');
+        tmBody.className = 'date-folder-body';
+        tmobileEvents.forEach(ev => tmBody.appendChild(buildEventCard(ev, '#f97316', 'card-t1', 'badge-t1', 'Arena Tier 1')));
+
+        tmFolder.appendChild(tmHeader);
+        tmFolder.appendChild(tmBody);
+        listContainer.appendChild(tmFolder);
+      }
+
+      // 6. Chronological Date Folders with Nested 4-Tier Sub-Drawers
       dynamicEvents.sort((a, b) => new Date(a.start_time || 0) - new Date(b.start_time || 0));
 
       const groupedByDay = {};
