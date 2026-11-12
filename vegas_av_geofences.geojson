@@ -1331,7 +1331,7 @@
         ]
       },
       "properties": {
-        "id": "tm-G5ezZ_fhhHbaa",
+        "id": "tm-G5ezZ_fhhTzaC",
         "title": "Pro Padel League MGM Las Vegas",
         "venue": "Dolby Live",
         "type": "TIMED_EVENT",
@@ -1353,7 +1353,7 @@
         ]
       },
       "properties": {
-        "id": "tm-G5ezZ_fhhXFaG",
+        "id": "tm-G5ezZ_fhhHbaa",
         "title": "Pro Padel League MGM Las Vegas",
         "venue": "Dolby Live",
         "type": "TIMED_EVENT",
@@ -3597,7 +3597,7 @@
         ]
       },
       "properties": {
-        "id": "tm-G5ezZbsVdTpRy",
+        "id": "tm-G5ezZbsVd1kiy",
         "title": "Cirque du Soleil : \"O\"",
         "venue": "'O' Theatre at Bellagio Las Vegas",
         "type": "TIMED_EVENT",
@@ -6633,73 +6633,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G651lTP4P",
-        "title": "Popovich Comedy Pet Theater",
-        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1708107,
-          36.1101115
-        ]
-      },
-      "properties": {
         "id": "tm-17AYv0G651iZgpk",
-        "title": "Popovich Comedy Pet Theater",
-        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1708107,
-          36.1101115
-        ]
-      },
-      "properties": {
-        "id": "tm-17AYv0G651ivg9F",
-        "title": "Popovich Comedy Pet Theater",
-        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1708107,
-          36.1101115
-        ]
-      },
-      "properties": {
-        "id": "tm-17AYv0G651idAho",
         "title": "Popovich Comedy Pet Theater",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
