@@ -446,6 +446,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.1783,
+          36.1028
+        ]
+      },
+      "properties": {
+        "id": "espn-401892753",
+        "title": "\ud83c\udfd2 Dallas Stars at Vegas Golden Knights",
+        "venue": "T-Mobile Arena",
+        "type": "TIMED_EVENT",
+        "severity": "CRITICAL",
+        "geonet_proximity": "83 m from geonet",
+        "source": "ESPN NHL Direct",
+        "pudo_status": "Valet Gate Throttled / Park Ave Blocked",
+        "ped_density": "Toshiba Plaza Heavy Foot Spillover",
+        "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.1642896,
           36.1207267
         ]
@@ -847,28 +869,6 @@
         ]
       },
       "properties": {
-        "id": "tm-1kAYvN_IGAGL9hQ",
-        "title": "The Wizard of Oz at Sphere",
-        "venue": "Sphere",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "110 m from geonet",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Sands Porte-Cochere Queue",
-        "ped_density": "Manhattan St Crosswalk Wave",
-        "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1642896,
-          36.1207267
-        ]
-      },
-      "properties": {
         "id": "tm-16vjZbUffG7UGYf",
         "title": "The Wizard of Oz at Sphere",
         "venue": "Sphere",
@@ -1084,28 +1084,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.145103,
-          36.124401
-        ]
-      },
-      "properties": {
-        "id": "tm-Z7r9jZ1A7J4_-",
-        "title": "Vegas Golden Knights vs. Utah Mammoth",
-        "venue": "T-Mobile Arena",
-        "type": "TIMED_EVENT",
-        "severity": "CRITICAL",
-        "geonet_proximity": "83 m from geonet",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Valet Gate Throttled / Park Ave Blocked",
-        "ped_density": "Toshiba Plaza Heavy Foot Spillover",
-        "detour": "Avoid Toshiba Plaza / Frank Sinatra Dr. Use Dean Martin Way."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.174805,
           36.103949
         ]
@@ -1160,28 +1138,6 @@
         "venue": "Dolby Live",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.16923919,
-          36.12139406
-        ]
-      },
-      "properties": {
-        "id": "tm-1A9Zk3FGketMxz0",
-        "title": "The Book of Mormon (Touring)",
-        "venue": "The Venetian Theatre at The Venetian Resort",
-        "type": "TIMED_EVENT",
-        "severity": "HIGH",
         "geonet_proximity": "Valley Metro Corridor",
         "source": "Ticketmaster Live",
         "pudo_status": "Standard Curbside PUDO",
@@ -1331,28 +1287,6 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6Ck18F79",
-        "title": "SiriusXM Presents An Intimate Evening with SANTANA Greatest Hits Live",
-        "venue": "House of Blues Las Vegas ",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.174742,
-          36.087535
-        ]
-      },
-      "properties": {
         "id": "tm-17AYv0G6Ck1oI7r",
         "title": "SiriusXM Presents An Intimate Evening with SANTANA Greatest Hits Live",
         "venue": "House of Blues Las Vegas ",
@@ -1422,28 +1356,6 @@
         "id": "tm-1Ad0Z_6Gkmx5wS8",
         "title": "VIVA LA LISA",
         "venue": "The Colosseum at Caesars Palace",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1676835,
-          36.1276013
-        ]
-      },
-      "properties": {
-        "id": "tm-17AYv0G62K5zuJ3",
-        "title": "Lionel Richie - King of Hearts",
-        "venue": "Encore Theater at Wynn Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -2074,28 +1986,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.170162,
-          36.109695
-        ]
-      },
-      "properties": {
-        "id": "tm-1AyZk3FGkd3vd1W",
-        "title": "Criss Angel MINDFREAK (Las Vegas)",
-        "venue": "Criss Angel Theater at Planet Hollywood",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.1869771,
           36.1153362
         ]
@@ -2192,28 +2082,6 @@
         "id": "tm-1AyZk3FGkd3kd5G",
         "title": "Criss Angel MINDFREAK (Las Vegas)",
         "venue": "Criss Angel Theater at Planet Hollywood",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.16833797,
-          36.12425393
-        ]
-      },
-      "properties": {
-        "id": "tm-1AvjZbSGkIZDaKb",
-        "title": "Shin Lim",
-        "venue": "The Palazzo Theatre at The Venetian Resort",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -2497,28 +2365,6 @@
         ]
       },
       "properties": {
-        "id": "tm-17C8v0G61X4DVrb",
-        "title": "Absinthe",
-        "venue": "The Spiegeltent at Caesars Palace",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.175058,
-          36.116156
-        ]
-      },
-      "properties": {
         "id": "tm-17C8v0G61X4T0LN",
         "title": "Absinthe",
         "venue": "The Spiegeltent at Caesars Palace",
@@ -2544,6 +2390,28 @@
         "id": "tm-1AyZkubGkd2o_Xi",
         "title": "Luenell at Jimmy Kimmel's Comedy Club",
         "venue": "Jimmy Kimmel's Comedy Club",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.175058,
+          36.116156
+        ]
+      },
+      "properties": {
+        "id": "tm-17C8v0G61X4W7rn",
+        "title": "Absinthe",
+        "venue": "The Spiegeltent at Caesars Palace",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -2739,52 +2607,30 @@
         ]
       },
       "properties": {
-        "id": "tm-1ayZku_PSkbZeGd",
-        "title": "Michael Yo Clean Not Spotless Comedy at Jimmy Kimmel's Comedy Club",
-        "venue": "Jimmy Kimmel's Comedy Club",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.171531,
-          36.11793
-        ]
-      },
-      "properties": {
-        "id": "tm-1AyZku_Gkeg2_RJ",
-        "title": "Vicki Barbolak Trailer Park Happy Hour At Jimmy Kimmel's Comedy Club",
-        "venue": "Jimmy Kimmel's Comedy Club",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.171531,
-          36.11793
-        ]
-      },
-      "properties": {
         "id": "tm-17C8v0G61QqRHa0",
         "title": "Carlos Mencia Vegas Residency  At Jimmy Kimmel's Comedy Club",
+        "venue": "Jimmy Kimmel's Comedy Club",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.171531,
+          36.11793
+        ]
+      },
+      "properties": {
+        "id": "tm-1kC8vNj3GACdHXN",
+        "title": "Jay Reid Comedy & Cocktails At Jimmy Kimmel's Comedy Club",
         "venue": "Jimmy Kimmel's Comedy Club",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
@@ -2976,28 +2822,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.152356,
-          36.135691
-        ]
-      },
-      "properties": {
-        "id": "tm-1A9Zk3_Gkdcz4ID",
-        "title": "The King Comes Home",
-        "venue": "Westgate Las Vegas Cabaret Theater",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.17230026,
           36.11629558
         ]
@@ -3086,28 +2910,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.17228685,
-          36.11632233
-        ]
-      },
-      "properties": {
-        "id": "tm-1AyZkoAGkd_b7J0",
-        "title": "Piff the Magic Dragon (Las Vegas)",
-        "venue": "Flamingo Showroom at Flamingo Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.152356,
           36.135691
         ]
@@ -3136,6 +2938,28 @@
       },
       "properties": {
         "id": "tm-1A9Zk3_GkdcWPn6",
+        "title": "The King Comes Home",
+        "venue": "Westgate Las Vegas Cabaret Theater",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.152356,
+          36.135691
+        ]
+      },
+      "properties": {
+        "id": "tm-1A9Zk3_GkdcTgnT",
         "title": "The King Comes Home",
         "venue": "Westgate Las Vegas Cabaret Theater",
         "type": "TIMED_EVENT",
@@ -3328,6 +3152,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.17228685,
+          36.11632233
+        ]
+      },
+      "properties": {
+        "id": "tm-17C8v0G6Gmmn-Ty",
+        "title": "Piff the Magic Dragon (Las Vegas)",
+        "venue": "Flamingo Showroom at Flamingo Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.152356,
           36.135691
         ]
@@ -3358,28 +3204,6 @@
         "id": "tm-1AyZkoAGkd__fJI",
         "title": "Piff the Magic Dragon (Las Vegas)",
         "venue": "Flamingo Showroom at Flamingo Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1720183,
-          36.11955071
-        ]
-      },
-      "properties": {
-        "id": "tm-1AyZk8sGkdKGH0Z",
-        "title": "Donny",
-        "venue": "Harrah's Showroom at Harrah's Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -3702,14 +3526,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.187717,
-          36.117575
+          -115.171531,
+          36.11793
         ]
       },
       "properties": {
-        "id": "tm-1Ad0Z_eGkSpm5PR",
-        "title": "Comedy Cellar (Las Vegas)",
-        "venue": "Comedy Cellar at Rio Las Vegas",
+        "id": "tm-1Ad0ZbUGkgL0QmS",
+        "title": "John Caparulo At Jimmy Kimmel's Comedy Club",
+        "venue": "Jimmy Kimmel's Comedy Club",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -3795,7 +3619,51 @@
         ]
       },
       "properties": {
+        "id": "tm-1Ad0Z_eGkSpRhPs",
+        "title": "Comedy Cellar (Las Vegas)",
+        "venue": "Comedy Cellar at Rio Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.187717,
+          36.117575
+        ]
+      },
+      "properties": {
         "id": "tm-1Ad0Z_eGkSpBhJa",
+        "title": "Comedy Cellar (Las Vegas)",
+        "venue": "Comedy Cellar at Rio Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.187717,
+          36.117575
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_eGkS9vhJb",
         "title": "Comedy Cellar (Las Vegas)",
         "venue": "Comedy Cellar at Rio Las Vegas",
         "type": "TIMED_EVENT",
@@ -4054,28 +3922,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.17272405,
-          36.11726269
-        ]
-      },
-      "properties": {
-        "id": "tm-1Ad0ZbVGkXrD_-u",
-        "title": "Wayne: Up Close & Personal",
-        "venue": "Bugsy's Cabaret at Flamingo",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.18723682,
           36.11537173
         ]
@@ -4274,6 +4120,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.18723682,
+          36.11537173
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_eGkSQgDTC",
+        "title": "WOW - The Vegas Spectacular",
+        "venue": "Rio Showroom at Rio Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.17272405,
           36.11726269
         ]
@@ -4414,28 +4282,6 @@
         "id": "tm-1Ad0ZbVGkU_I_uA",
         "title": "X Burlesque",
         "venue": "Bugsy's Cabaret at Flamingo",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.17262,
-          36.118379
-        ]
-      },
-      "properties": {
-        "id": "tm-1kC8vN8IGAuzzoG",
-        "title": "Colin Cloud Mastermind",
-        "venue": "Harrah's Cabaret at Harrah's Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -4632,28 +4478,6 @@
       },
       "properties": {
         "id": "tm-17AYv0G6CBae63u",
-        "title": "MJ LIVE \u2013 Michael Jackson Tribute Concert",
-        "venue": "Saxe Theater at Planet Hollywood Inside the Miracle Mile Mall",
-        "type": "TIMED_EVENT",
-        "severity": "HIGH",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1708107,
-          36.11012884
-        ]
-      },
-      "properties": {
-        "id": "tm-17AYv0G6CBFTEoX",
         "title": "MJ LIVE \u2013 Michael Jackson Tribute Concert",
         "venue": "Saxe Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -4912,28 +4736,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.16889906,
-          36.11376452
-        ]
-      },
-      "properties": {
-        "id": "tm-1Ad0ZbzGkSIKWQ0",
-        "title": "Nick Thune at Laugh Factory Las Vegas",
-        "venue": "Laugh Factory at Horseshoe Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.17023373,
           36.10317532
         ]
@@ -5154,6 +4956,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.16889906,
+          36.11376452
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbzGkSIEcho",
+        "title": "Laugh Factory Las Vegas",
+        "venue": "Laugh Factory at Horseshoe Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.17197706,
           36.10959955
         ]
@@ -5225,7 +5049,7 @@
         ]
       },
       "properties": {
-        "id": "tm-G5ezZbw2xdMJv",
+        "id": "tm-G5ezZbw2xa9Jf",
         "title": "Blue Man Group Las Vegas",
         "venue": "Blue Man Theater at Luxor",
         "type": "TIMED_EVENT",
@@ -5247,7 +5071,7 @@
         ]
       },
       "properties": {
-        "id": "tm-G5ezZbw2xe6PE",
+        "id": "tm-G5ezZbw2xdMJv",
         "title": "Blue Man Group Las Vegas",
         "venue": "Blue Man Theater at Luxor",
         "type": "TIMED_EVENT",
@@ -5577,28 +5401,6 @@
         ]
       },
       "properties": {
-        "id": "tm-17C8v0G6GE65sTi",
-        "title": "The Empire Strips Back",
-        "venue": "Empire Strips Back Theater",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.18723682,
-          36.11537173
-        ]
-      },
-      "properties": {
         "id": "tm-17C8v0G6GE6uvTm",
         "title": "The Empire Strips Back",
         "venue": "Empire Strips Back Theater",
@@ -5880,6 +5682,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.18723682,
+          36.11537173
+        ]
+      },
+      "properties": {
+        "id": "tm-17C8v0G6GE63wZf",
+        "title": "The Empire Strips Back",
+        "venue": "Empire Strips Back Theater",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.171319,
           36.121289
         ]
@@ -5973,28 +5797,6 @@
         ]
       },
       "properties": {
-        "id": "tm-1A9Zk36GkdqeS1K",
-        "title": "Atomic Saloon Show",
-        "venue": "Atomic Saloon in the Grand Canal Shoppes",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.171319,
-          36.121289
-        ]
-      },
-      "properties": {
         "id": "tm-1A9Zk36GkdqAd1t",
         "title": "Atomic Saloon Show",
         "venue": "Atomic Saloon in the Grand Canal Shoppes",
@@ -6064,28 +5866,6 @@
         "id": "tm-1A9Zk36GkdqoKCQ",
         "title": "Atomic Saloon Show",
         "venue": "Atomic Saloon in the Grand Canal Shoppes",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.175511,
-          36.09889
-        ]
-      },
-      "properties": {
-        "id": "tm-G5ezZ_Ax_Il--",
-        "title": "Thunder From Down Under",
-        "venue": "Thunderland Showroom at Excalibur",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -6633,28 +6413,6 @@
         ]
       },
       "properties": {
-        "id": "tm-Z7r9jZ1A7x3jN",
-        "title": "Eddie Griffin",
-        "venue": "Planet Hollywood-Saxe Theater",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.145103,
-          36.124401
-        ]
-      },
-      "properties": {
         "id": "tm-Z7r9jZ1A7x3jP",
         "title": "Eddie Griffin",
         "venue": "Planet Hollywood-Saxe Theater",
@@ -6745,6 +6503,292 @@
       "properties": {
         "id": "tm-17AYv0G6Gua7fLK",
         "title": "Zombie Burlesque",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G651lTP4P",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G651iZgpk",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G651ivg9F",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G651idAho",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G651i74jt",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G651iA4r9",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GKtdBiA",
+        "title": "An R-Rated Magic Show",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GKteBlH",
+        "title": "An R-Rated Magic Show",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GKtA1i5",
+        "title": "An R-Rated Magic Show",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GKtkQif",
+        "title": "An R-Rated Magic Show",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GKt6niL",
+        "title": "An R-Rated Magic Show",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GG_-qDD",
+        "title": "V \u2013 The Ultimate Variety Show",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GKi7ldo",
+        "title": "Big Black Comedy Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
