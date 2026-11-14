@@ -2013,7 +2013,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbUGkBz9HBU",
+        "id": "tm-1Ad0ZbUGkBzbiBy",
         "title": "High Roller Wheel at The LINQ",
         "venue": "High Roller Wheel at The LINQ Promenade",
         "type": "TIMED_EVENT",
@@ -2602,28 +2602,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.175058,
-          36.116156
-        ]
-      },
-      "properties": {
-        "id": "tm-17C8v0G61Xpd7-o",
-        "title": "Absinthe",
-        "venue": "The Spiegeltent at Caesars Palace",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.171531,
           36.11793
         ]
@@ -2719,6 +2697,28 @@
       "properties": {
         "id": "tm-17C8v0G61Xrk4Ll",
         "title": "Josh Wolf at Jimmy Kimmel's Comedy Club",
+        "venue": "Jimmy Kimmel's Comedy Club",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.171531,
+          36.11793
+        ]
+      },
+      "properties": {
+        "id": "tm-17C8v0G62iq86t_",
+        "title": "The L8nite Set At Jimmy Kimmel's Comedy Club",
         "venue": "Jimmy Kimmel's Comedy Club",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
@@ -3817,7 +3817,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbzGkS8lqAz",
+        "id": "tm-1Ad0ZbzGkS8icAH",
         "title": "Eiffel Tower Viewing Deck",
         "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
         "type": "TIMED_EVENT",
@@ -3839,7 +3839,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0Z_oGklLJpbU",
+        "id": "tm-1Ad0Z_oGklLNpbi",
         "title": "Eiffel Tower F1",
         "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
         "type": "TIMED_EVENT",
@@ -4301,7 +4301,7 @@
         ]
       },
       "properties": {
-        "id": "tm-16d0ZbUrfG7BnOQ",
+        "id": "tm-16d0ZbUrfG7D1Oj",
         "title": "Fly LINQ Zipline at THE LINQ",
         "venue": "Fly LINQ Zipline at The LINQ Promenade",
         "type": "TIMED_EVENT",
@@ -6963,7 +6963,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbgGkS551pJ",
+        "id": "tm-1Ad0ZbgGkS5G1pt",
         "title": "Real Bodies",
         "venue": "Horseshoe Las Vegas",
         "type": "TIMED_EVENT",
