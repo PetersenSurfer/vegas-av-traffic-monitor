@@ -1507,28 +1507,6 @@
         ]
       },
       "properties": {
-        "id": "tm-1A9ZkuPGkdYlnIL",
-        "title": "The Wizard of Oz at Sphere",
-        "venue": "Sphere",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "110 m from geonet",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Sands Porte-Cochere Queue",
-        "ped_density": "Manhattan St Crosswalk Wave",
-        "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1642896,
-          36.1207267
-        ]
-      },
-      "properties": {
         "id": "tm-16vjZbUffG7UGYf",
         "title": "The Wizard of Oz at Sphere",
         "venue": "Sphere",
@@ -1904,28 +1882,6 @@
       },
       "properties": {
         "id": "tm-1A9Zk3FGketH3Ds",
-        "title": "The Book of Mormon (Touring)",
-        "venue": "The Venetian Theatre at The Venetian Resort",
-        "type": "TIMED_EVENT",
-        "severity": "HIGH",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.16923919,
-          36.12139406
-        ]
-      },
-      "properties": {
-        "id": "tm-1A9Zk3FGketWwH6",
         "title": "The Book of Mormon (Touring)",
         "venue": "The Venetian Theatre at The Venetian Resort",
         "type": "TIMED_EVENT",
@@ -2962,28 +2918,6 @@
         "id": "tm-1AyZkokGke0Awas",
         "title": "Mat Franco",
         "venue": "Mat Franco Theater at The Linq",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.152356,
-          36.135691
-        ]
-      },
-      "properties": {
-        "id": "tm-1A9Zk3_GkdcH4tl",
-        "title": "The King Comes Home",
-        "venue": "Westgate Las Vegas Cabaret Theater",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
