@@ -3328,6 +3328,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.174742,
+          36.087535
+        ]
+      },
+      "properties": {
+        "id": "tm-1AvjZ_3GkY2-XPl",
+        "title": "Gospel Brunch",
+        "venue": "House of Blues Las Vegas ",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.1720183,
           36.11955071
         ]
