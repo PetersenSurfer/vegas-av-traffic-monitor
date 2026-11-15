@@ -1463,7 +1463,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1avjZ_d7_GYZdGd2",
+        "id": "tm-16vjZbUffG7UGYf",
         "title": "The Wizard of Oz at Sphere",
         "venue": "Sphere",
         "type": "TIMED_EVENT",
@@ -6567,28 +6567,6 @@
         ]
       },
       "properties": {
-        "id": "tm-LvZ18QpU4TF7ICOZv35jB",
-        "title": "Punk Rock Brunch | 90\u2019s & Y2K Anthems",
-        "venue": "Rio Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.18647575,
-          36.11698951
-        ]
-      },
-      "properties": {
         "id": "tm-LvZ18Qn-ZkKNyr37tDTCK",
         "title": "Aussie Heat | Las Vegas' Most Hands-On Male Revue",
         "venue": "Rio Las Vegas",
@@ -6899,6 +6877,28 @@
       "properties": {
         "id": "tm-17C8v0G61Rpb6As",
         "title": "The Conjurors at The Magicians Room",
+        "venue": "The Magicians Room",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1717,
+          36.11817
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0Z_fGkXKZgyQ",
+        "title": "Beyond feat Mark Bautista at The Magicians Room",
         "venue": "The Magicians Room",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
