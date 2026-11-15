@@ -358,28 +358,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.1833,
-          36.0908
-        ]
-      },
-      "properties": {
-        "id": "espn-401873062",
-        "title": "\ud83c\udfc8 Seattle Seahawks at Las Vegas Raiders",
-        "venue": "Allegiant Stadium",
-        "type": "TIMED_EVENT",
-        "severity": "CRITICAL",
-        "geonet_proximity": "120 m from geonet",
-        "source": "ESPN NFL Direct",
-        "pudo_status": "Lot N / Dean Martin PUDO Only",
-        "ped_density": "Hacienda Bridge Pedestrian Wave (25k+ crossing)",
-        "detour": "Reroute via Valley View Blvd or I-15 South Collector."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.1783,
           36.1028
         ]
@@ -1463,28 +1441,6 @@
         ]
       },
       "properties": {
-        "id": "tm-16vjZbUffG7UGYf",
-        "title": "The Wizard of Oz at Sphere",
-        "venue": "Sphere",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "110 m from geonet",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Sands Porte-Cochere Queue",
-        "ped_density": "Manhattan St Crosswalk Wave",
-        "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1642896,
-          36.1207267
-        ]
-      },
-      "properties": {
         "id": "tm-17AYv0G6ulhoNA4",
         "title": "The Wizard of Oz at Sphere",
         "venue": "Sphere",
@@ -1774,28 +1730,6 @@
         "id": "tm-G5ezZ_fhjdIa4",
         "title": "Pro Padel League MGM Las Vegas: 4-Day Tournament Pass",
         "venue": "Dolby Live",
-        "type": "TIMED_EVENT",
-        "severity": "HIGH",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.16923919,
-          36.12139406
-        ]
-      },
-      "properties": {
-        "id": "tm-1A9Zk3FGketTeXK",
-        "title": "The Book of Mormon (Touring)",
-        "venue": "The Venetian Theatre at The Venetian Resort",
         "type": "TIMED_EVENT",
         "severity": "HIGH",
         "geonet_proximity": "Valley Metro Corridor",
@@ -2146,7 +2080,7 @@
       },
       "properties": {
         "id": "tm-1AyZkubGkd2o_Xi",
-        "title": "Luenell at Jimmy Kimmel's Comedy Club",
+        "title": "Kym Whitley at Jimmy Kimmel's Comedy Club",
         "venue": "Jimmy Kimmel's Comedy Club",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
@@ -6899,6 +6833,50 @@
       "properties": {
         "id": "tm-1Ad0Z_fGkXKZgyQ",
         "title": "Beyond feat Mark Bautista at The Magicians Room",
+        "venue": "The Magicians Room",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1717,
+          36.11817
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkfyGkeJJ3IP",
+        "title": "Dreams by Enrique De Leon at The Magicians Room",
+        "venue": "The Magicians Room",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1717,
+          36.11817
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkfyGkeJExII",
+        "title": "Dreams by Enrique De Leon at The Magicians Room",
         "venue": "The Magicians Room",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
