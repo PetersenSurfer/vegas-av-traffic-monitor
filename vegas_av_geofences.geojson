@@ -1810,28 +1810,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.17247058,
-          36.10961689
-        ]
-      },
-      "properties": {
-        "id": "tm-1AyZk39GkdDbXL9",
-        "title": "Jeezy: The Legend of The Snowman",
-        "venue": "PH Live at Planet Hollywood",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.174742,
           36.087535
         ]
@@ -1859,7 +1837,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbUGkBzbiBy",
+        "id": "tm-1Ad0ZbUGkBzjHDo",
         "title": "High Roller Wheel at The LINQ",
         "venue": "High Roller Wheel at The LINQ Promenade",
         "type": "TIMED_EVENT",
@@ -2206,28 +2184,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.175058,
-          36.116156
-        ]
-      },
-      "properties": {
-        "id": "tm-17C8v0G61XpkV0y",
-        "title": "Absinthe",
-        "venue": "The Spiegeltent at Caesars Palace",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.171531,
           36.11793
         ]
@@ -2257,28 +2213,6 @@
       "properties": {
         "id": "tm-1ayZku_PSCbZeGA",
         "title": "Michael Yo Clean Not Spotless Comedy at Jimmy Kimmel's Comedy Club",
-        "venue": "Jimmy Kimmel's Comedy Club",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.171531,
-          36.11793
-        ]
-      },
-      "properties": {
-        "id": "tm-17C8v0G62iqCMt9",
-        "title": "The L8nite Set At Jimmy Kimmel's Comedy Club",
         "venue": "Jimmy Kimmel's Comedy Club",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
@@ -3399,7 +3333,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbzGkS8icAH",
+        "id": "tm-1Ad0ZbzGkS8Ruke",
         "title": "Eiffel Tower Viewing Deck",
         "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
         "type": "TIMED_EVENT",
@@ -3773,7 +3707,7 @@
         ]
       },
       "properties": {
-        "id": "tm-16d0ZbUrfG7D1Oj",
+        "id": "tm-16d0ZbUrfG7XBOi",
         "title": "Fly LINQ Zipline at THE LINQ",
         "venue": "Fly LINQ Zipline at The LINQ Promenade",
         "type": "TIMED_EVENT",
@@ -6193,7 +6127,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbgGkS5G1pt",
+        "id": "tm-1Ad0ZbgGkS5GBpl",
         "title": "Real Bodies",
         "venue": "Horseshoe Las Vegas",
         "type": "TIMED_EVENT",
@@ -6899,6 +6833,72 @@
       "properties": {
         "id": "tm-17C8v0G61Rpb6As",
         "title": "The Conjurors at The Magicians Room",
+        "venue": "The Magicians Room",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1717,
+          36.11817
+        ]
+      },
+      "properties": {
+        "id": "tm-17C8v0G61RpQEAD",
+        "title": "The Conjurors at The Magicians Room",
+        "venue": "The Magicians Room",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1717,
+          36.11817
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkfyGkeJJ3IP",
+        "title": "Dreams by Enrique De Leon at The Magicians Room",
+        "venue": "The Magicians Room",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1717,
+          36.11817
+        ]
+      },
+      "properties": {
+        "id": "tm-1AyZkfyGkeJExII",
+        "title": "Dreams by Enrique De Leon at The Magicians Room",
         "venue": "The Magicians Room",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
