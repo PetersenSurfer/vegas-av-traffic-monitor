@@ -1837,7 +1837,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1kAYv0jZGAuWIAo",
+        "id": "tm-1kAYv0jZGAuHb7S",
         "title": "Awakening",
         "venue": "Awakening Theater at Wynn Las Vegas",
         "type": "TIMED_EVENT",
@@ -3685,6 +3685,28 @@
         ]
       },
       "properties": {
+        "id": "tm-1ayZk49JFroZe8C",
+        "title": "Paranormal Mind Reading Magic",
+        "venue": "Laugh Factory at Horseshoe Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16889906,
+          36.11376452
+        ]
+      },
+      "properties": {
         "id": "tm-1ayZk49JF1oZe85",
         "title": "Paranormal Mind Reading Magic",
         "venue": "Laugh Factory at Horseshoe Las Vegas",
@@ -4279,7 +4301,7 @@
         ]
       },
       "properties": {
-        "id": "tm-G5ezZbwNg-FFU",
+        "id": "tm-G5ezZbwNgPza6",
         "title": "Cirque du Soleil: KA",
         "venue": "KA Theatre at MGM Grand Hotel and Casino",
         "type": "TIMED_EVENT",
@@ -4301,7 +4323,7 @@
         ]
       },
       "properties": {
-        "id": "tm-G5ezZbwNgPza6",
+        "id": "tm-G5ezZbwNgOIFV",
         "title": "Cirque du Soleil: KA",
         "venue": "KA Theatre at MGM Grand Hotel and Casino",
         "type": "TIMED_EVENT",
@@ -5401,6 +5423,50 @@
         ]
       },
       "properties": {
+        "id": "tm-17AYv0G651iFg-O",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G651iag-B",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
         "id": "tm-17AYv0G6GKtkQif",
         "title": "An R-Rated Magic Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
@@ -5511,7 +5577,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GG_PuHt",
+        "id": "tm-17AYv0G6GG_JqHs",
         "title": "V \u2013 The Ultimate Variety Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -5533,7 +5599,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GG_JqHs",
+        "id": "tm-17AYv0G6GG_PuHt",
         "title": "V \u2013 The Ultimate Variety Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -5643,28 +5709,6 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GGvn4Ek",
-        "title": "The Mentalist",
-        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1708107,
-          36.1101115
-        ]
-      },
-      "properties": {
         "id": "tm-17AYv0G6GGvlPE8",
         "title": "The Mentalist",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
@@ -5688,6 +5732,28 @@
       },
       "properties": {
         "id": "tm-17AYv0G6GGvigEr",
+        "title": "The Mentalist",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GGvn4Ek",
         "title": "The Mentalist",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -5792,28 +5858,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.1717,
-          36.11817
-        ]
-      },
-      "properties": {
-        "id": "tm-17C8v0G613Kngan",
-        "title": "Farrell Dillon At The Magician's Room",
-        "venue": "The Magicians Room",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.1708107,
           36.1101115
         ]
@@ -5864,6 +5908,28 @@
       },
       "properties": {
         "id": "tm-17C8v0G613KiAaz",
+        "title": "Farrell Dillon At The Magician's Room",
+        "venue": "The Magicians Room",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1717,
+          36.11817
+        ]
+      },
+      "properties": {
+        "id": "tm-17C8v0G613Kwg5k",
         "title": "Farrell Dillon At The Magician's Room",
         "venue": "The Magicians Room",
         "type": "TIMED_EVENT",
@@ -6215,7 +6281,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GGqtmzC",
+        "id": "tm-17AYv0G6GGqnXzh",
         "title": "Vegas! The Show",
         "venue": "Saxe Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -6237,7 +6303,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GGqnXzh",
+        "id": "tm-17AYv0G6GGqtmzC",
         "title": "Vegas! The Show",
         "venue": "Saxe Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -6262,28 +6328,6 @@
         "id": "tm-17AYv0G6GGqiCzL",
         "title": "Vegas! The Show",
         "venue": "Saxe Theater at Planet Hollywood Inside the Miracle Mile Mall",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.18647575,
-          36.11698951
-        ]
-      },
-      "properties": {
-        "id": "tm-LvZ18QIqNQ_PB6EfuTmWd",
-        "title": "Haunted Brunch > Frighteningly Good Fun in Las Vegas!",
-        "venue": "Rio Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
