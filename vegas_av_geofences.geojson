@@ -6952,28 +6952,6 @@
         "ped_density": "Local Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1717,
-          36.11817
-        ]
-      },
-      "properties": {
-        "id": "tm-1Ad0Z_fGkXx8phd",
-        "title": "Finding Wonder at The Magicians Room feat. Tyler Reid",
-        "venue": "The Magicians Room",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
     }
   ]
 }
