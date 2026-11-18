@@ -3196,14 +3196,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.17209625,
-          36.11192703
+          -115.17262,
+          36.118379
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbzGkS8Yqk7",
-        "title": "Eiffel Tower Viewing Deck",
-        "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
+        "id": "tm-1kC8vN1_GAu74oU",
+        "title": "Menopause The Musical",
+        "venue": "Harrah's Cabaret at Harrah's Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -3218,14 +3218,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.17262,
-          36.118379
+          -115.17209625,
+          36.11192703
         ]
       },
       "properties": {
-        "id": "tm-1kC8vN1_GAu74oU",
-        "title": "Menopause The Musical",
-        "venue": "Harrah's Cabaret at Harrah's Las Vegas",
+        "id": "tm-1Ad0ZbzGkS8UqkK",
+        "title": "Eiffel Tower Viewing Deck",
+        "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
