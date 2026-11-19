@@ -1551,6 +1551,28 @@
         ]
       },
       "properties": {
+        "id": "tm-169Zk8skfZA2vGF2",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
+        "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1642896,
+          36.1207267
+        ]
+      },
+      "properties": {
         "id": "tm-17AYv0G6uEQv8l-",
         "title": "The Wizard of Oz at Sphere",
         "venue": "Sphere",
@@ -1666,28 +1688,6 @@
         "venue": "Dolby Live",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.174805,
-          36.103949
-        ]
-      },
-      "properties": {
-        "id": "tm-G5ezZ_fhjdIa4",
-        "title": "Pro Padel League MGM Las Vegas: 4-Day Tournament Pass",
-        "venue": "Dolby Live",
-        "type": "TIMED_EVENT",
-        "severity": "HIGH",
         "geonet_proximity": "Valley Metro Corridor",
         "source": "Ticketmaster Live",
         "pudo_status": "Standard Curbside PUDO",
@@ -1860,6 +1860,28 @@
       },
       "properties": {
         "id": "tm-1AvjZbSGkIZWyfP",
+        "title": "Shin Lim",
+        "venue": "The Palazzo Theatre at The Venetian Resort",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16833797,
+          36.12425393
+        ]
+      },
+      "properties": {
+        "id": "tm-1AvjZbSGkIZTa4v",
         "title": "Shin Lim",
         "venue": "The Palazzo Theatre at The Venetian Resort",
         "type": "TIMED_EVENT",
@@ -3795,6 +3817,28 @@
         ]
       },
       "properties": {
+        "id": "tm-1kC8v0uyGA5MDAf",
+        "title": "Paranormal Mind Reading Magic",
+        "venue": "Laugh Factory at Horseshoe Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16889906,
+          36.11376452
+        ]
+      },
+      "properties": {
         "id": "tm-1ayZk49JF1oZe85",
         "title": "Paranormal Mind Reading Magic",
         "venue": "Laugh Factory at Horseshoe Las Vegas",
@@ -4257,6 +4301,28 @@
         ]
       },
       "properties": {
+        "id": "tm-1Ad0ZbzGkSIEcho",
+        "title": "Laugh Factory Las Vegas",
+        "venue": "Laugh Factory at Horseshoe Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.16889906,
+          36.11376452
+        ]
+      },
+      "properties": {
         "id": "tm-1Ad0ZbzGkSIPuhu",
         "title": "Laugh Factory Las Vegas",
         "venue": "Laugh Factory at Horseshoe Las Vegas",
@@ -4281,28 +4347,6 @@
       "properties": {
         "id": "tm-1AyZkfKGkdp5X9T",
         "title": "Willie Barcena at Laugh Factory Las Vegas",
-        "venue": "Laugh Factory at Horseshoe Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.16889906,
-          36.11376452
-        ]
-      },
-      "properties": {
-        "id": "tm-1Ad0ZbzGkSIEcho",
-        "title": "Laugh Factory Las Vegas",
         "venue": "Laugh Factory at Horseshoe Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
@@ -5198,6 +5242,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.1698204,
+          36.10149378
+        ]
+      },
+      "properties": {
+        "id": "tm-G5ezZ_Gmiws8t",
+        "title": "Now You See Me Live",
+        "venue": "MGM Grand Theater",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.175511,
           36.09889
         ]
@@ -5775,6 +5841,28 @@
         ]
       },
       "properties": {
+        "id": "tm-17AYv0G651ioA0Z",
+        "title": "Popovich Comedy Pet Theater",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
         "id": "tm-17AYv0G6GG_icXd",
         "title": "V \u2013 The Ultimate Variety Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
@@ -5819,7 +5907,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GKtkQif",
+        "id": "tm-17AYv0G6GKtFniJ",
         "title": "An R-Rated Magic Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -5841,7 +5929,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GKtFniJ",
+        "id": "tm-17AYv0G6GKtkQif",
         "title": "An R-Rated Magic Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -6193,7 +6281,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GKiADdj",
+        "id": "tm-17AYv0G6GKi65dI",
         "title": "Big Black Comedy Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -6215,7 +6303,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6GKi65dI",
+        "id": "tm-17AYv0G6GKiADdj",
         "title": "Big Black Comedy Show",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
@@ -6370,6 +6458,28 @@
       },
       "properties": {
         "id": "tm-17C8v0G613KYA1s",
+        "title": "Farrell Dillon At The Magician's Room",
+        "venue": "The Magicians Room",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1717,
+          36.11817
+        ]
+      },
+      "properties": {
+        "id": "tm-17C8v0G613KVP5K",
         "title": "Farrell Dillon At The Magician's Room",
         "venue": "The Magicians Room",
         "type": "TIMED_EVENT",
