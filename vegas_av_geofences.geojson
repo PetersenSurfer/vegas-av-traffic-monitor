@@ -1678,28 +1678,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.174805,
-          36.103949
-        ]
-      },
-      "properties": {
-        "id": "tm-G5ezZ_fhjdIa4",
-        "title": "Pro Padel League MGM Las Vegas: 4-Day Tournament Pass",
-        "venue": "Dolby Live",
-        "type": "TIMED_EVENT",
-        "severity": "HIGH",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.17446213,
           36.11620512
         ]
@@ -3289,7 +3267,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbzGkS8wck1",
+        "id": "tm-1Ad0ZbzGkS8Dqkq",
         "title": "Eiffel Tower Viewing Deck",
         "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
         "type": "TIMED_EVENT",
@@ -6634,6 +6612,28 @@
       },
       "properties": {
         "id": "tm-17AYv0G6GGH5eTI",
+        "title": "Eddie Griffin (Las Vegas)",
+        "venue": "Saxe Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.11012884
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GGH8dZY",
         "title": "Eddie Griffin (Las Vegas)",
         "venue": "Saxe Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
