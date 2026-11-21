@@ -908,6 +908,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.1642896,
+          36.1207267
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6ulbr3Rr",
+        "title": "The Wizard of Oz at Sphere",
+        "venue": "Sphere",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "110 m from geonet",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Sands Porte-Cochere Queue",
+        "ped_density": "Manhattan St Crosswalk Wave",
+        "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.16126,
           36.13674
         ]
