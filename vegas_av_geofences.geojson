@@ -803,28 +803,6 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6uEQv8l-",
-        "title": "The Wizard of Oz at Sphere",
-        "venue": "Sphere",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "110 m from geonet",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Sands Porte-Cochere Queue",
-        "ped_density": "Manhattan St Crosswalk Wave",
-        "detour": "Reroute via Paradise Rd or Howard Hughes Pkwy."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.1642896,
-          36.1207267
-        ]
-      },
-      "properties": {
         "id": "tm-169Zk8s7yZAu8evF",
         "title": "The Wizard of Oz at Sphere",
         "venue": "Sphere",
@@ -913,7 +891,7 @@
         ]
       },
       "properties": {
-        "id": "tm-17AYv0G6ulbr3Rr",
+        "id": "tm-16vjZbUffG7BjYI",
         "title": "The Wizard of Oz at Sphere",
         "venue": "Sphere",
         "type": "TIMED_EVENT",
@@ -938,28 +916,6 @@
         "id": "tm-1A9Zk3vGkdf2mwm",
         "title": "Marc Anthony - Vegas... My Way!",
         "venue": "Fontainebleau Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.174805,
-          36.103949
-        ]
-      },
-      "properties": {
-        "id": "tm-G5ezZ_fhjvIaK",
-        "title": "Pro Padel League MGM Las Vegas",
-        "venue": "Dolby Live",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -2212,28 +2168,6 @@
       },
       "properties": {
         "id": "tm-1A9Zk3_GkdmdPlT",
-        "title": "The King Comes Home",
-        "venue": "Westgate Las Vegas Cabaret Theater",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.152356,
-          36.135691
-        ]
-      },
-      "properties": {
-        "id": "tm-1A9Zk3_Gkdme4lN",
         "title": "The King Comes Home",
         "venue": "Westgate Las Vegas Cabaret Theater",
         "type": "TIMED_EVENT",
@@ -3812,6 +3746,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -115.164908,
+          36.113366
+        ]
+      },
+      "properties": {
+        "id": "tm-1kC8v00aGAutxWV",
+        "title": "BattleBots Destruct-A-Thon",
+        "venue": "BattleBots Arena Behind Horseshoe Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -115.1720183,
           36.11955071
         ]
@@ -4786,28 +4742,6 @@
       },
       "properties": {
         "id": "tm-G5ezZbw2xb9EA",
-        "title": "Blue Man Group Las Vegas",
-        "venue": "Blue Man Theater at Luxor",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.176123,
-          36.095537
-        ]
-      },
-      "properties": {
-        "id": "tm-G5ezZbw2x56JQ",
         "title": "Blue Man Group Las Vegas",
         "venue": "Blue Man Theater at Luxor",
         "type": "TIMED_EVENT",
