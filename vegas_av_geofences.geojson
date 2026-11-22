@@ -2602,28 +2602,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.174742,
-          36.087535
-        ]
-      },
-      "properties": {
-        "id": "tm-LvZ18QJO6o605DgNrSTxc",
-        "title": "Reggae Fest Vegas at The House Of Blues Las Vegas",
-        "venue": "House of Blues Las Vegas ",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.187717,
           36.117575
         ]
@@ -5908,6 +5886,28 @@
       },
       "properties": {
         "id": "tm-17AYv0G6GGZ34fs",
+        "title": "Carpenters Legacy",
+        "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1708107,
+          36.1101115
+        ]
+      },
+      "properties": {
+        "id": "tm-17AYv0G6GGZfg4C",
         "title": "Carpenters Legacy",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
         "type": "TIMED_EVENT",
