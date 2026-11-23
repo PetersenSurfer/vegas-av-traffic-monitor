@@ -6006,6 +6006,28 @@
         "ped_density": "Local Foot Traffic",
         "detour": "Reroute to outer arterials."
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.145103,
+          36.124401
+        ]
+      },
+      "properties": {
+        "id": "tm-Z7r9jZ1A7x3-Y",
+        "title": "Eddie Griffin",
+        "venue": "Planet Hollywood-Saxe Theater",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
     }
   ]
 }
