@@ -671,7 +671,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbUGkBzqiDK",
+        "id": "tm-1Ad0ZbUGkBzxHDn",
         "title": "High Roller Wheel at The LINQ",
         "venue": "High Roller Wheel at The LINQ Promenade",
         "type": "TIMED_EVENT",
@@ -2602,28 +2602,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.17209625,
-          36.11192703
-        ]
-      },
-      "properties": {
-        "id": "tm-1Ad0ZbzGkS8Mck4",
-        "title": "Eiffel Tower Viewing Deck",
-        "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.187717,
           36.117575
         ]
@@ -2830,6 +2808,28 @@
         "id": "tm-1kC8vN1_GAu543F",
         "title": "Menopause The Musical",
         "venue": "Harrah's Cabaret at Harrah's Las Vegas",
+        "type": "TIMED_EVENT",
+        "severity": "MODERATE",
+        "geonet_proximity": "Valley Metro Corridor",
+        "source": "Ticketmaster Live",
+        "pudo_status": "Standard Curbside PUDO",
+        "ped_density": "Local Foot Traffic",
+        "detour": "Reroute to outer arterials."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.17209625,
+          36.11192703
+        ]
+      },
+      "properties": {
+        "id": "tm-1Ad0ZbzGkS8Dqkq",
+        "title": "Eiffel Tower Viewing Deck",
+        "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -3619,7 +3619,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1FC8vN_yfeZ75a7d",
+        "id": "tm-1FC8vN_yfAZ75a7A",
         "title": "Fly LINQ Zipline at THE LINQ",
         "venue": "Fly LINQ Zipline at The LINQ Promenade",
         "type": "TIMED_EVENT",
