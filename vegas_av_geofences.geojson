@@ -2959,7 +2959,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbzGkS8Bukh",
+        "id": "tm-1Ad0ZbzGkS8Dqkq",
         "title": "Eiffel Tower Viewing Deck",
         "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
         "type": "TIMED_EVENT",
@@ -3768,14 +3768,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.172557,
-          36.11745
+          -115.1720183,
+          36.11955071
         ]
       },
       "properties": {
-        "id": "tm-1FC8vN_yfFZ75a76",
-        "title": "Fly LINQ Zipline at THE LINQ",
-        "venue": "Fly LINQ Zipline at The LINQ Promenade",
+        "id": "tm-17C8v0G62rNvKjR",
+        "title": "Tell It To My Heart - The Taylor Dayne Experience",
+        "venue": "Harrah's Showroom at Harrah's Las Vegas",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
@@ -3790,14 +3790,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.1720183,
-          36.11955071
+          -115.172557,
+          36.11745
         ]
       },
       "properties": {
-        "id": "tm-17C8v0G62rNvKjR",
-        "title": "Tell It To My Heart - The Taylor Dayne Experience",
-        "venue": "Harrah's Showroom at Harrah's Las Vegas",
+        "id": "tm-16yZkuEP8ZA55a7a",
+        "title": "Fly LINQ Zipline at THE LINQ",
+        "venue": "Fly LINQ Zipline at The LINQ Promenade",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
