@@ -3179,7 +3179,7 @@
         ]
       },
       "properties": {
-        "id": "tm-1Ad0ZbzGkS8Dqkq",
+        "id": "tm-1Ad0ZbzGkS8HckL",
         "title": "Eiffel Tower Viewing Deck",
         "venue": "Eiffel Tower Viewing Deck at Paris Las Vegas",
         "type": "TIMED_EVENT",
@@ -3993,7 +3993,7 @@
         ]
       },
       "properties": {
-        "id": "tm-16yZkuEP8ZA55a7a",
+        "id": "tm-16yZkuEP8ZAC5a75",
         "title": "Fly LINQ Zipline at THE LINQ",
         "venue": "Fly LINQ Zipline at The LINQ Promenade",
         "type": "TIMED_EVENT",
@@ -6350,28 +6350,6 @@
         "id": "tm-17AYv0G651i340n",
         "title": "Popovich Comedy Pet Theater",
         "venue": "V Theater at Planet Hollywood Inside the Miracle Mile Mall",
-        "type": "TIMED_EVENT",
-        "severity": "MODERATE",
-        "geonet_proximity": "Valley Metro Corridor",
-        "source": "Ticketmaster Live",
-        "pudo_status": "Standard Curbside PUDO",
-        "ped_density": "Local Foot Traffic",
-        "detour": "Reroute to outer arterials."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.145103,
-          36.124401
-        ]
-      },
-      "properties": {
-        "id": "tm-Z7r9jZ1A7x3-Y",
-        "title": "Eddie Griffin",
-        "venue": "Planet Hollywood-Saxe Theater",
         "type": "TIMED_EVENT",
         "severity": "MODERATE",
         "geonet_proximity": "Valley Metro Corridor",
